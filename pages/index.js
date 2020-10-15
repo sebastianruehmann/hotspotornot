@@ -1,8 +1,20 @@
 import Head from 'next/head'
-import styled from 'styled-components';
-import styles from '../styles/Home.module.css'
+import { useRouter } from 'next/router'
+import styled from 'styled-components'
+import {useQuery} from 'react-query'
+import {useEffect} from 'react'
+import {usePosition} from '../hooks/usePosition'
+import {Main, Title} from '../components/Layout'
+import {search} from '../services/Api'
 
 export default function Home() {
+  const { coords, isIdle, request } = usePosition()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (coords) router.push(coords.join("/"))
+  }, [coords]);
+
   return (
     <div>
       <Head>
@@ -12,35 +24,22 @@ export default function Home() {
 
       <Main>
         <Title>
-          Am I in a Hotspot?
+          Am I in a Covid-19 Hotspot?
         </Title>
+        <Button onClick={request} disabled={isIdle}>{isIdle ? 'Loading...' : 'Find out'}</Button>
       </Main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by data from{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
 }
 
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
+const Button = styled.button`
+  background: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
 
-const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  :disabled {
+    background: #333;
+    color: white;
+  }
 `
