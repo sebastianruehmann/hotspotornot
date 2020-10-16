@@ -2,9 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import { useMutation } from 'react-query'
-import { useEffect, useState } from 'react'
-import { usePosition } from '../hooks/usePosition'
+import { useQuery } from 'react-query'
+import { useState } from 'react'
 import { Section, Main, Title, Paragraph } from '../components/Layout'
 import { getCoordinatesByAddress } from '../services/Geocoding'
 import { Input } from '../components/Input'
@@ -13,14 +12,21 @@ import { LocationButton } from '../components/LocationButton'
 const AddressForm = () => {
   const router = useRouter()
   const [address, setAddress] = useState('')
-  const [getCoordinates] = useMutation(getCoordinatesByAddress)
+  const { refetch: fetchCoordinates } = useQuery(
+    address,
+    getCoordinatesByAddress,
+    {
+      enabled: false,
+      refetchOnWindowFocus: false,
+    }
+  )
 
   const onSubmit = async (event) => {
     event.preventDefault()
 
     // TODO: handle errors properly.
     try {
-      const coordinates = await getCoordinates(address)
+      const coordinates = await fetchCoordinates(address)
       router.push(`/${coordinates.lat}/${coordinates.lng}`)
     } catch (e) {}
   }
