@@ -22,7 +22,7 @@ const Result = () => {
   const { GEN: area, cases7_per_100k: cases7Per100k } = data?.features?.[0]?.attributes || {}
 
   const riskLevel = mapRiskLevel(cases7Per100k)
-  const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium) ? `${area} is not a Covid-19 Hotspot` : `${area} is a Covid-19 Hotspot`;
+  const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium) ? `${area} ist ein Covid-19 Hotspot` : `${area} ist kein Covid-19 Hotspot`;
 
   return (
     <div>
@@ -35,8 +35,10 @@ const Result = () => {
         {isLoading ? <Loading /> : null}
         {isSuccess ? (
           <>
-            <Image src="/corona.jpg" />
-            <Card title={message} riskLevel={riskLevel} />
+            <Card riskLevel={riskLevel}>
+              <Image src="/corona.jpg" />
+              <Title>{message}</Title>
+            </Card>
             <Measures riskLevel={riskLevel} />
           </>
         ) : null}

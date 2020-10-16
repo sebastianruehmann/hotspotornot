@@ -20,14 +20,10 @@ const Wrapper = styled.div`
   padding: 1rem;
 `
 
-const Title = styled.div`
-  font-size: 2.5rem;
-`
-
-function Card({riskLevel, title}) {
+function Card({riskLevel, children}) {
   return (
     <Wrapper riskLevel={riskLevel}>
-      <Title>{title}</Title>
+      {children}
     </Wrapper>
   )
 }
