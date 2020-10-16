@@ -3,6 +3,7 @@ import {useRouter} from 'next/router'
 import {useQuery} from 'react-query'
 import {search} from '../services/Api'
 import {Main, Title, Footer} from '../components/Layout'
+import Measures from '../components/Measures'
 
 const Result = () => {
   const router = useRouter()
@@ -11,12 +12,13 @@ const Result = () => {
     isIdle, isLoading, isSuccess, isError, data, error, refetch,
   } = useQuery('area', () => search(coords[0], coords[1]), {
     enabled: !!coords,
-  });
+  })
 
-  const { GEN: area, cases7_per_100k } = data?.features?.[0]?.attributes || {};
-  const isRiskArea = cases7_per_100k >= 35;
+  const { GEN: area, cases7_per_100k } = data?.features?.[0]?.attributes || {}
+  const isLightRiskArea = cases7_per_100k >= 35
+  const isGeneralRiskArea = cases7_per_100k >= 50
 
-  const message = isRiskArea ? `${area} is a Covid-19 Hotspot` : `${area} is not a Covid-19 Hotspot`;
+  const message = isLightRiskArea ? `${area} is a Covid-19 Hotspot` : `${area} is not a Covid-19 Hotspot`;
 
   return (
     <div>
@@ -29,6 +31,7 @@ const Result = () => {
         <Title>
           {isSuccess ? message : 'Loading..'}
         </Title>
+        {isLightRiskArea ? <Measures extended /> : null}
       </Main>
 
       <Footer>

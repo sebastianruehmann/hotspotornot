@@ -1,18 +1,22 @@
 import styled from 'styled-components'
 
 const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: #f5f5f7;
+  padding: 5rem 2rem;
 `
 
 const Title = styled.h1`
-  margin: 0 0 3rem;
+  margin: 0 0 1.5rem;
   line-height: 1.15;
   font-size: 4rem;
+  font-weight: bold;
+`
+
+const Paragraph = styled.p`
+  margin: 0 0 3rem;
+  line-height: 1.15;
+  font-size: 2rem;
+  font-weight: bold;
 `
 
 const Footer = styled.footer`
@@ -24,4 +28,4 @@ const Footer = styled.footer`
   align-items: center;
 `
 
-export { Main, Title, Footer }
+export { Main, Title, Paragraph, Footer }
