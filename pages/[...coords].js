@@ -63,8 +63,7 @@ const Result = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by data from{' '}
-          RKI
+          Powered by data from RKI
         </a>
       </Footer>
     </div>

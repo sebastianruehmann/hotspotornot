@@ -1,5 +1,5 @@
+import React from 'react'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import {useQuery} from 'react-query'
 import {useEffect, useState} from 'react'
@@ -8,23 +8,23 @@ import {Section, Main, Title, Paragraph, Image} from '../components/Layout'
 import {Accordion} from '../components/Accordion'
 import {search} from '../services/Api'
 import Header from '../components/Header'
+import { LocationButton } from '../components/LocationButton'
+import { AddressForm } from '../components/AddressForm'
+
+const Actions = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  > * {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`
 
 export default function Home() {
-  const { coords, isIdle, isError, request } = usePosition()
-  const [error, setError] = useState(false);
-  const router = useRouter()
-
-  useEffect(() => {
-    if (coords) router.push(coords.join("/"))
-  }, [coords]);
-
-  useEffect(() => {
-    if (!isIdle && isError) {
-      setError(true)
-      setTimeout(() => setError(false), 3000)
-    }
-  }, [isIdle, isError]);
-
   return (
     <>
       <Head>
@@ -41,7 +41,10 @@ export default function Home() {
           <Paragraph>
             Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein <Nobr>Covid‑19</Nobr> Hotspot ist.
           </Paragraph>
-          <Button onClick={request} isError={error} isIdle={isIdle} disabled={isIdle || error}>{isIdle ? 'Standort angefragt...' : (error ? 'Standortabfrage nicht erfolgreich' : 'Überprüfen')}</Button>
+          <Actions>
+            <LocationButton />
+            <AddressForm />
+          </Actions>
         </Header>
         <Section>
           <Title>FAQ</Title>
@@ -59,7 +62,7 @@ const GreyTitle = styled(Title)`
 `
 
 const I = styled.i`
-  color: #FF0000;
+  color: #ff0000;
 `
 
 const Nobr = styled.span`
