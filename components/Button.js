@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-
+import styled from 'styled-components'
 
 export const Button = styled.button`
-  background: ${props => props.isIdle ? '#333' : (props.isError ? '#FF0000' : '#0071e3')};
+  background: ${(props) =>
+    props.isIdle ? '#333' : props.isError ? '#FF0000' : '#0071e3'};
   border: none;
   border-radius: 22px;
   color: white;

@@ -1,14 +1,14 @@
-import {useState} from 'react';
+import { useState } from 'react'
 
 export function usePosition() {
-  const [coords, setCoords] = useState(null);
-  const [isError, setIsError] = useState(false);
-  const [isIdle, setIsIdle] = useState(false);
+  const [coords, setCoords] = useState(null)
+  const [isError, setIsError] = useState(false)
+  const [isIdle, setIsIdle] = useState(false)
 
   const request = () => {
     setIsIdle(true)
     navigator.geolocation.getCurrentPosition(
-      ({ coords: { longitude, latitude }}) => {
+      ({ coords: { longitude, latitude } }) => {
         setCoords([longitude, latitude])
         setIsIdle(false)
       },
@@ -16,7 +16,7 @@ export function usePosition() {
         setIsError(true)
         setIsIdle(false)
       }
-    );
+    )
   }
 
   return { coords, isError, isIdle, request }

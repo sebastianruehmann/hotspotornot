@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 
 const Section = styled.section`
-  background: ${props => props.grey ? '#f5f5f7' : 'transparent'};
+  background: ${(props) => (props.grey ? '#f5f5f7' : 'transparent')};
   padding: 5rem 2rem;
 `
 
-const Main = styled.main`
-`
+const Main = styled.main``
 
 const Title = styled.h1`
   margin: 0 0 1.5rem;
