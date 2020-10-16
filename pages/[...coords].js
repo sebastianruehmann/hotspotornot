@@ -36,13 +36,28 @@ const PageHead = ({ title }) => (
 const Result = () => {
   const router = useRouter()
   const coords = router.query.coords
-  const { data } = useQuery(
+  const { data, isError } = useQuery(
     ['area', coords],
     () => search(coords[0], coords[1]),
     {
       enabled: !!coords,
     }
   )
+
+  if (isError) {
+    return (
+      <>
+        <PageHead title="Fehler beim Laden" />
+        <NoResultsWrapper>
+          <Section wrapped>
+            <Title>
+              Leider gab es einen Fehler beim Abrufen der Daten des RKIs.
+            </Title>
+          </Section>
+        </NoResultsWrapper>
+      </>
+    )
+  }
 
   if (!data) {
     return (
