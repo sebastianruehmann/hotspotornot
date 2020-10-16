@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { getCoordinatesByAddress } from '../services/Geocoding'
@@ -31,7 +31,7 @@ export const AddressForm = () => {
       <Input
         onChange={(event) => setAddress(event.target.value)}
         value={address}
-        placeholder="Enter a city"
+        placeholder="Gebe eine Stadt ein und drücke Enter"
       />
     </form>
   )

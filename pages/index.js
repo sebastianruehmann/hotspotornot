@@ -5,6 +5,19 @@ import { Section, Main, Title, Paragraph } from '../components/Layout'
 import { LocationButton } from '../components/LocationButton'
 import { AddressForm } from '../components/AddressForm'
 
+const Actions = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  > * {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`
+
 export default function Home() {
   return (
     <>
@@ -24,9 +37,11 @@ export default function Home() {
               Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort
               ein <Nobr>Covid‑19</Nobr> Hotspot ist.
             </Paragraph>
-            <LocationButton />
 
-            <AddressForm />
+            <Actions>
+              <LocationButton />
+              <AddressForm />
+            </Actions>
           </Container>
         </Section>
       </Main>
