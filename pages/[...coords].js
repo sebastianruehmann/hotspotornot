@@ -1,21 +1,31 @@
 import Head from 'next/head'
+import styled from 'styled-components'
 import {useRouter} from 'next/router'
 import {useQuery} from 'react-query'
 import {search} from '../services/Api'
-import {Main, Title, Footer, Image} from '../components/Layout'
+import {Main, Title, Subtitle, Footer, Image, Section} from '../components/Layout'
 import Measures from '../components/Measures'
 import Loading from '../components/Loading'
-import Card from '../components/Card'
+import Header from '../components/Header'
 import {RISK_LEVELS} from '../constants';
 import {hasHigherRiskLevel, mapRiskLevel} from '../services/RiskLevels';
+import CoronaIcon from '../components/assets/corona-icon';
 
+const WhiteCoronaIcon = styled(CoronaIcon)`
+  height: auto;
+  margin-bottom: 40px;
+  width: 125px;
+  path {
+    fill: white;
+  }
+`
 
 const Result = () => {
   const router = useRouter()
   const coords = router.query.coords
   const {
     isIdle, isLoading, isSuccess, isError, data, error, refetch,
-  } = useQuery('area', () => search(coords[0], coords[1]), {
+  } = useQuery(['area', coords], () => search(coords[0], coords[1]), {
     enabled: !!coords,
   })
 
@@ -35,11 +45,14 @@ const Result = () => {
         {isLoading ? <Loading /> : null}
         {isSuccess ? (
           <>
-            <Card riskLevel={riskLevel}>
-              <Image src="/corona.jpg" />
+            <Header riskLevel={riskLevel}>
+              <WhiteCoronaIcon />
               <Title>{message}</Title>
-            </Card>
-            <Measures riskLevel={riskLevel} />
+            </Header>
+            <Section wrapped>
+              <Subtitle>Auflagen</Subtitle>
+              <Measures riskLevel={riskLevel} />
+            </Section>
           </>
         ) : null}
       </Main>

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {RISK_LEVELS} from '../constants';
 import {hasHigherRiskLevel} from '../services/RiskLevels';
 
@@ -19,15 +20,33 @@ const measures = [{
   type: RISK_LEVELS.high
 }]
 
+const Wrapper = styled.div`
+`
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 2rem;
+`
+
+const Title = styled.h2`
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+`
+
 function Measures({riskLevel}) {
   const allMeasures =  measures.filter(({type}) => hasHigherRiskLevel(riskLevel, type));
   return (
     <div>
-      <ul>
+      <Grid>
         {allMeasures.map(({title, description}) => (
-          <li key={title}><strong>{title}</strong> {description}</li>
+          <Wrapper key={title}>
+            <Title>{title}</Title>
+            <p>{description}</p>
+          </Wrapper>
         ))}
-      </ul>
+      </Grid>
     </div>
   )
 }

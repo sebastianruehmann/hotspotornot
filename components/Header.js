@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {RISK_LEVELS} from '../constants';
+import {Section} from './Layout'
 
 const getColor = ({riskLevel}) => {
   switch (riskLevel) {
@@ -11,21 +12,23 @@ const getColor = ({riskLevel}) => {
     case RISK_LEVELS.high:
       return '#C34838'
   }
+  return '#f5f5f7'
 }
 
 const Wrapper = styled.div`
   background: ${props => getColor(props)};
-  border-radius: 10px;
   color: white;
   padding: 1rem;
 `
 
-function Card({riskLevel, children}) {
+function Header({riskLevel, children}) {
   return (
     <Wrapper riskLevel={riskLevel}>
-      {children}
+      <Section wrapped>
+        {children}
+      </Section>
     </Wrapper>
   )
 }
 
-export default Card
+export default Header

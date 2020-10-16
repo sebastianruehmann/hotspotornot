@@ -7,6 +7,7 @@ import {usePosition} from '../hooks/usePosition'
 import {Section, Main, Title, Paragraph, Image} from '../components/Layout'
 import {Accordion} from '../components/Accordion'
 import {search} from '../services/Api'
+import Header from '../components/Header'
 
 export default function Home() {
   const { coords, isIdle, isError, request } = usePosition()
@@ -32,18 +33,16 @@ export default function Home() {
       </Head>
 
       <Main>
-        <Section grey>
+        <Header>
           <Image src="/corona.jpg" />
-          <Container>
-            <Title>
-              Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
-            </Title>
-            <Paragraph>
-              Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein <Nobr>Covid‑19</Nobr> Hotspot ist.
-            </Paragraph>
-            <Button onClick={request} isError={error} isIdle={isIdle} disabled={isIdle || error}>{isIdle ? 'Standort angefragt...' : (error ? 'Standortabfrage nicht erfolgreich' : 'Überprüfen')}</Button>
-          </Container>
-        </Section>
+          <GreyTitle>
+            Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
+          </GreyTitle>
+          <Paragraph>
+            Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein <Nobr>Covid‑19</Nobr> Hotspot ist.
+          </Paragraph>
+          <Button onClick={request} isError={error} isIdle={isIdle} disabled={isIdle || error}>{isIdle ? 'Standort angefragt...' : (error ? 'Standortabfrage nicht erfolgreich' : 'Überprüfen')}</Button>
+        </Header>
         <Section>
           <Title>FAQ</Title>
           <Accordion itemId="test" label="Wieso braucht Ihr meinen Standort?">
@@ -55,17 +54,16 @@ export default function Home() {
   )
 }
 
+const GreyTitle = styled(Title)`
+  color: #1d1d1f;
+`
+
 const I = styled.i`
   color: #FF0000;
 `
 
 const Nobr = styled.span`
   white-space: nowrap;
-`
-
-const Container = styled.div`
-  max-width: 900px;
-  width: 100%;
 `
 
 const Button = styled.button`
