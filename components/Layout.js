@@ -32,4 +32,9 @@ const Footer = styled.footer`
   align-items: center;
 `
 
-export { Section, Main, Title, Paragraph, Footer }
+const Image = styled.img`
+  margin-bottom: 40px;
+  width: 125px;
+`
+
+export { Section, Main, Title, Paragraph, Footer, Image }

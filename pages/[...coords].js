@@ -2,8 +2,13 @@ import Head from 'next/head'
 import {useRouter} from 'next/router'
 import {useQuery} from 'react-query'
 import {search} from '../services/Api'
-import {Main, Title, Footer} from '../components/Layout'
+import {Main, Title, Footer, Image} from '../components/Layout'
 import Measures from '../components/Measures'
+import Loading from '../components/Loading'
+import Card from '../components/Card'
+import {RISK_LEVELS} from '../constants';
+import {hasHigherRiskLevel, mapRiskLevel} from '../services/RiskLevels';
+
 
 const Result = () => {
   const router = useRouter()
@@ -14,11 +19,10 @@ const Result = () => {
     enabled: !!coords,
   })
 
-  const { GEN: area, cases7_per_100k } = data?.features?.[0]?.attributes || {}
-  const isLightRiskArea = cases7_per_100k >= 35
-  const isGeneralRiskArea = cases7_per_100k >= 50
+  const { GEN: area, cases7_per_100k: cases7Per100k } = data?.features?.[0]?.attributes || {}
 
-  const message = isLightRiskArea ? `${area} is a Covid-19 Hotspot` : `${area} is not a Covid-19 Hotspot`;
+  const riskLevel = mapRiskLevel(cases7Per100k)
+  const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium) ? `${area} is not a Covid-19 Hotspot` : `${area} is a Covid-19 Hotspot`;
 
   return (
     <div>
@@ -28,10 +32,14 @@ const Result = () => {
       </Head>
 
       <Main>
-        <Title>
-          {isSuccess ? message : 'Loading..'}
-        </Title>
-        {isLightRiskArea ? <Measures extended /> : null}
+        {isLoading ? <Loading /> : null}
+        {isSuccess ? (
+          <>
+            <Image src="/corona.jpg" />
+            <Card title={message} riskLevel={riskLevel} />
+            <Measures riskLevel={riskLevel} />
+          </>
+        ) : null}
       </Main>
 
       <Footer>

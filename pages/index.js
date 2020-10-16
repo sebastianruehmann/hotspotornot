@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {useQuery} from 'react-query'
 import {useEffect, useState} from 'react'
 import {usePosition} from '../hooks/usePosition'
-import {Section, Main, Title, Paragraph} from '../components/Layout'
+import {Section, Main, Title, Paragraph, Image} from '../components/Layout'
 import {Accordion} from '../components/Accordion'
 import {search} from '../services/Api'
 
@@ -33,7 +33,7 @@ export default function Home() {
 
       <Main>
         <Section grey>
-          <Image src="/corona.jpg" width="100" />
+          <Image src="/corona.jpg" />
           <Container>
             <Title>
               Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
@@ -43,6 +43,12 @@ export default function Home() {
             </Paragraph>
             <Button onClick={request} isError={error} isIdle={isIdle} disabled={isIdle || error}>{isIdle ? 'Standort angefragt...' : (error ? 'Standortabfrage nicht erfolgreich' : 'Überprüfen')}</Button>
           </Container>
+        </Section>
+        <Section>
+          <Title>FAQ</Title>
+          <Accordion itemId="test" label="Wieso braucht Ihr meinen Standort?">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </Accordion>
         </Section>
       </Main>
     </>
@@ -60,11 +66,6 @@ const Nobr = styled.span`
 const Container = styled.div`
   max-width: 900px;
   width: 100%;
-`
-
-const Image = styled.img`
-  margin-bottom: 40px;
-  width: 125px;
 `
 
 const Button = styled.button`
