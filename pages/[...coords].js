@@ -9,15 +9,19 @@ import Measures from '../components/Measures'
 import Header from '../components/Header'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
-import CoronaIcon from '../components/assets/corona-icon'
+import CoronaIcon from '../components/assets/coronavirus'
 import { LoadingIndicator } from '../components/LoadingIndicator'
 
 const WhiteCoronaIcon = styled(CoronaIcon)`
   height: auto;
   margin-bottom: 40px;
   width: 125px;
-  path {
+
+  & .body {
     fill: white;
+  }
+  & .circles {
+    fill: lightgrey;
   }
 `
 

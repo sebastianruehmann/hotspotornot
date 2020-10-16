@@ -1,15 +1,16 @@
 import React from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
-import {useQuery} from 'react-query'
-import {useEffect, useState} from 'react'
-import {usePosition} from '../hooks/usePosition'
-import {Section, Main, Title, Paragraph, Image} from '../components/Layout'
-import {Accordion} from '../components/Accordion'
-import {search} from '../services/Api'
+import { useQuery } from 'react-query'
+import { useEffect, useState } from 'react'
+import { usePosition } from '../hooks/usePosition'
+import { Section, Main, Title, Paragraph, Image } from '../components/Layout'
+import { Accordion } from '../components/Accordion'
+import { search } from '../services/Api'
 import Header from '../components/Header'
 import { LocationButton } from '../components/LocationButton'
 import { AddressForm } from '../components/AddressForm'
+import CoronaIcon from '../components/assets/coronavirus'
 
 const Actions = styled.div`
   display: flex;
@@ -34,12 +35,13 @@ export default function Home() {
 
       <Main>
         <Header>
-          <Image src="/corona.jpg" />
+          <RedCoronaIcon />
           <GreyTitle>
             Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
           </GreyTitle>
           <Paragraph>
-            Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein <Nobr>Covid‑19</Nobr> Hotspot ist.
+            Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein{' '}
+            <Nobr>Covid‑19</Nobr> Hotspot ist.
           </Paragraph>
           <Actions>
             <LocationButton />
@@ -49,7 +51,15 @@ export default function Home() {
         <Section>
           <Title>FAQ</Title>
           <Accordion itemId="test" label="Wieso braucht Ihr meinen Standort?">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
           </Accordion>
         </Section>
       </Main>
@@ -57,12 +67,25 @@ export default function Home() {
   )
 }
 
+const RedCoronaIcon = styled(CoronaIcon)`
+  height: auto;
+  margin-bottom: 40px;
+  width: 125px;
+
+  & .body {
+    fill: #d73d34;
+  }
+  & .circles {
+    fill: #ad3129;
+  }
+`
+
 const GreyTitle = styled(Title)`
   color: #1d1d1f;
 `
 
 const I = styled.i`
-  color: #ff0000;
+  color: #d73d34;
 `
 
 const Nobr = styled.span`
@@ -70,7 +93,8 @@ const Nobr = styled.span`
 `
 
 const Button = styled.button`
-  background: ${props => props.isIdle ? '#333' : (props.isError ? '#FF0000' : '#0071e3')};
+  background: ${(props) =>
+    props.isIdle ? '#333' : props.isError ? '#FF0000' : '#0071e3'};
   border: none;
   border-radius: 22px;
   color: white;
