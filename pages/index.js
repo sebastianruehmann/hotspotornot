@@ -21,7 +21,7 @@ const AddressForm = () => {
     // TODO: handle errors properly.
     try {
       const coordinates = await getCoordinates(address)
-      router.push(`/${coordinates.lng}/${coordinates.lat}`)
+      router.push(`/${coordinates.lat}/${coordinates.lng}`)
     } catch (e) {}
   }
 

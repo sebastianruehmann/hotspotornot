@@ -9,7 +9,7 @@ export function usePosition() {
     setIsIdle(true)
     navigator.geolocation.getCurrentPosition(
       ({ coords: { longitude, latitude } }) => {
-        setCoords([longitude, latitude])
+        setCoords([latitude, longitude])
         setIsIdle(false)
       },
       () => {

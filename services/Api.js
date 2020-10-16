@@ -9,7 +9,7 @@ const params = {
   f: 'json',
 }
 
-export function search(lng, lat) {
+export function search(lat, lng) {
   return axios
     .get(process.env.NEXT_PUBLIC_RKI_API, {
       params: {
