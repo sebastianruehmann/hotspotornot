@@ -13,28 +13,28 @@ const measures = [
     description:
       'Extended mask obligation in places where people come together more closely or for longer periods.',
     type: RISK_LEVELS.medium,
-    icon: MasksIcon,
+    Icon: MasksIcon,
   },
   {
     title: 'Private celebrations',
     description:
       'Private celebrations are generally limited to a maximum of ten participants and two households.',
     type: RISK_LEVELS.high,
-    icon: GroupIcon,
+    Icon: GroupIcon,
   },
   {
     title: 'Contact restrictions',
     description:
       'Maximum of ten people are allowed to meet in public spaces. If the new measures do not bring the increase to a halt, this can be reduced to up to five people or the members of two households.',
     type: RISK_LEVELS.high,
-    icon: SocialDistancingIcon,
+    Icon: SocialDistancingIcon,
   },
   {
     title: 'Curfew',
     description:
       'A curfew is imposed at 23.00 for the catering trade. Bars and clubs will be closed.',
     type: RISK_LEVELS.high,
-    icon: BarIcon,
+    Icon: BarIcon,
   },
 ]
 
@@ -59,9 +59,9 @@ function Measures({ riskLevel }) {
   return (
     <div>
       <Grid>
-        {allMeasures.map(({ title, description, icon }) => (
+        {allMeasures.map(({ title, description, Icon }) => (
           <Wrapper key={title}>
-            {icon}
+            <Icon />
             <Title>{title}</Title>
             <p>{description}</p>
           </Wrapper>
