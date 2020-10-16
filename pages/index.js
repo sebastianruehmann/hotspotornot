@@ -1,29 +1,40 @@
+import React from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import {useQuery} from 'react-query'
+import {useMutation} from 'react-query';
 import {useEffect, useState} from 'react'
 import {usePosition} from '../hooks/usePosition'
 import {Section, Main, Title, Paragraph} from '../components/Layout'
-import {Accordion} from '../components/Accordion'
-import {search} from '../services/Api'
+import {getCoordinatesByAddress} from '../services/Geocoding';
+import { Input } from '../components/Input';
+import {LocationButton} from '../components/LocationButton';
+
+const AddressForm = () => {
+  const router = useRouter()
+  const [address, setAddress] = useState('');
+  const [getCoordinates] = useMutation(getCoordinatesByAddress);
+
+  const onSubmit = async event => {
+    event.preventDefault();
+
+    // TODO: handle errors properly.
+    try {
+      const coordinates = await getCoordinates(address);
+      router.push((`/${coordinates.lng}/${coordinates.lat}`))
+    } catch (e) {
+
+    }
+  }
+
+  return (
+      <form onSubmit={onSubmit}>
+        <Input onChange={event => setAddress(event.target.value)} value={address} placeholder="Enter a city" />
+      </form>
+  )
+}
 
 export default function Home() {
-  const { coords, isIdle, isError, request } = usePosition()
-  const [error, setError] = useState(false);
-  const router = useRouter()
-
-  useEffect(() => {
-    if (coords) router.push(coords.join("/"))
-  }, [coords]);
-
-  useEffect(() => {
-    if (!isIdle && isError) {
-      setError(true)
-      setTimeout(() => setError(false), 3000)
-    }
-  }, [isIdle, isError]);
-
   return (
     <>
       <Head>
@@ -41,7 +52,10 @@ export default function Home() {
             <Paragraph>
               Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein <Nobr>Covid‑19</Nobr> Hotspot ist.
             </Paragraph>
-            <Button onClick={request} isError={error} isIdle={isIdle} disabled={isIdle || error}>{isIdle ? 'Standort angefragt...' : (error ? 'Standortabfrage nicht erfolgreich' : 'Überprüfen')}</Button>
+            <LocationButton />
+
+            <AddressForm />
+
           </Container>
         </Section>
       </Main>
@@ -65,14 +79,4 @@ const Container = styled.div`
 const Image = styled.img`
   margin-bottom: 40px;
   width: 125px;
-`
-
-const Button = styled.button`
-  background: ${props => props.isIdle ? '#333' : (props.isError ? '#FF0000' : '#0071e3')};
-  border: none;
-  border-radius: 22px;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 400;
-  padding: 13px 25px;
 `
