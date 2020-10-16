@@ -1,35 +1,57 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
-export const Checkbox = styled.input`
+const Checkbox = styled.input`
   display: none;
   visibility: hidden;
 `;
 
-export const Label = styled.label`
+const Label = styled.label`
   display: flex;
-  justify-content: center;
-  padding: 3px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
+  color: #686868;
+  line-height: 1.15;
+  font-size: 1.6rem;
+  font-weight: 400;
   &:after {
-    content: "\u25BA";
-    transform: ${props => (props.isExpanded ? "rotate(90deg)" : "none")};
-    transition: 100ms linear all;
+    content: "${props => (props.isExpanded ? "\\02796" : "\\02795")}";
+    font-size: 1.2rem;
+    align-self: center;
+    margin-left: auto;
   }
 `;
 
-export const Accordion = ({ onAccordionClick, itemId, expanded }) => (
-  <React.Fragment>
-    <Checkbox
-      type="checkbox"
-      id={itemId}
-      name={itemId}
-      onClick={() => onAccordionClick(itemId)}
-    />
-    <Label isExpanded={expanded} htmlFor={itemId} />
-  </React.Fragment>
-);
+const Wrapper = styled.div`
+  border: 2px solid #f5f5f7;
+  padding: 1rem;
+`
+
+const Content = styled.div`
+  color: #686868;
+  font-size: 1rem;
+  margin-top: ${props => (props.isExpanded ? "1rem" : "0")};
+  max-height: ${props => (props.isExpanded ? "100%" : "0")};
+  overflow: hidden;
+`;
+
+export const Accordion = ({ itemId, label, children }) => {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <Wrapper>
+      <Checkbox
+        type="checkbox"
+        id={itemId}
+        name={itemId}
+        onChange={() => setExpanded(expanded => !expanded)}
+      />
+      <Label isExpanded={expanded} htmlFor={itemId}>{label}</Label>
+      <Content isExpanded={expanded}>
+        {children}
+      </Content>
+    </Wrapper>
+  );
+}
 
 export default {
   Accordion

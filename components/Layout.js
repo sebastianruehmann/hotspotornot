@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
-const Main = styled.main`
-  background: #f5f5f7;
+const Section = styled.section`
+  background: ${props => props.grey ? '#f5f5f7' : 'transparent'};
   padding: 5rem 2rem;
+`
+
+const Main = styled.main`
 `
 
 const Title = styled.h1`
@@ -13,10 +16,11 @@ const Title = styled.h1`
 `
 
 const Paragraph = styled.p`
+  color: #686868;
   margin: 0 0 3rem;
   line-height: 1.15;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 500;
 `
 
 const Footer = styled.footer`
@@ -28,4 +32,4 @@ const Footer = styled.footer`
   align-items: center;
 `
 
-export { Main, Title, Paragraph, Footer }
+export { Section, Main, Title, Paragraph, Footer }
