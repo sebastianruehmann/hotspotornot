@@ -49,6 +49,7 @@ export default class MyDocument extends Document {
             content="/favicons/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta
             name="description"
             content="Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein Covid‑19 Hotspot ist."
