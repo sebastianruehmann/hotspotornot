@@ -101,6 +101,9 @@ const Result = () => {
         <Header riskLevel={riskLevel}>
           <WhiteCoronaIcon />
           <Title>{message}</Title>
+          <Subtitle>
+            Die 7-Tage-Inzidenz liegt aktuell bei {cases7Per100k.toFixed(2)}.
+          </Subtitle>
         </Header>
         <Section wrapped>
           <Subtitle>Bundesweite Auflagen</Subtitle>
