@@ -30,7 +30,7 @@ export const LocationButton = () => {
         ? 'Standort angefragt...'
         : error
         ? 'Standortabfrage nicht erfolgreich'
-        : 'Lasse dich orten'}
+        : 'Lass dich orten'}
     </Button>
   )
 }

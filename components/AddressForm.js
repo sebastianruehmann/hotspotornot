@@ -51,7 +51,7 @@ export const AddressForm = () => {
       <Input
         onChange={(event) => setAddress(event.target.value)}
         value={address}
-        placeholder="Gebe eine Stadt ein..."
+        placeholder="Gib deinen Ort ein..."
       />
       <SubmitButton disabled={!address}>Suchen</SubmitButton>
     </Form>
