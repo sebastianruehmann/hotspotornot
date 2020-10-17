@@ -16,8 +16,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Hotspot or not?</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Impressum</title>
       </Head>
 
       <Main>
