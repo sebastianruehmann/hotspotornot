@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
 import { Main, Title, Subtitle, Section } from '../components/Layout'
@@ -99,7 +100,11 @@ const Result = () => {
 
       <Main>
         <Header riskLevel={riskLevel}>
-          <WhiteCoronaIcon />
+          <Link href="/">
+            <a>
+              <WhiteCoronaIcon />
+            </a>
+          </Link>
           <Title>{message}</Title>
           <Subtitle>
             Die 7-Tage-Inzidenz liegt aktuell bei {cases7Per100k.toFixed(2)}.
