@@ -42,7 +42,7 @@ const Wrapper = styled.div``
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
 `
 
@@ -58,6 +58,7 @@ function Measures({ riskLevel }) {
   )
   return (
     <div>
+      {!allMeasures.length && 'Keine besonderen Auflagen'}
       <Grid>
         {allMeasures.map(({ title, description, Icon }) => (
           <Wrapper key={title}>

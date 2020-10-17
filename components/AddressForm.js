@@ -20,6 +20,10 @@ const SubmitButton = styled.button`
   }
 `
 
+const Form = styled.form`
+  display: flex;
+`
+
 export const AddressForm = () => {
   const router = useRouter()
   const [address, setAddress] = useState('')
@@ -43,13 +47,13 @@ export const AddressForm = () => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <Input
         onChange={(event) => setAddress(event.target.value)}
         value={address}
-        placeholder="Gebe eine Stadt ein"
+        placeholder="Gebe eine Stadt ein..."
       />
       <SubmitButton disabled={!address}>Suchen</SubmitButton>
-    </form>
+    </Form>
   )
 }

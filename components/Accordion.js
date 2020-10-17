@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   color: #686868;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding-bottom: ${(props) => (props.isExpanded ? '1rem' : '0')};
   padding-left: ${(props) => (props.isExpanded ? '1rem' : '0')};
   padding-right: ${(props) => (props.isExpanded ? '1rem' : '0')};

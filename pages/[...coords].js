@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
-import { Main, Title, Subtitle, Footer, Section } from '../components/Layout'
+import { Main, Title, Subtitle, Section } from '../components/Layout'
 import Measures from '../components/Measures'
 import Header from '../components/Header'
 import { RISK_LEVELS } from '../constants'
@@ -104,20 +104,14 @@ const Result = () => {
           <Title>{message}</Title>
         </Header>
         <Section wrapped>
-          <Subtitle>Auflagen</Subtitle>
+          <Subtitle>Bundesweite Auflagen</Subtitle>
           <Measures riskLevel={riskLevel} />
+          <div>
+            Je nach Bundesland und Landkreis kann es noch weitergehende Auflagen
+            geben.
+          </div>
         </Section>
       </Main>
-
-      <Footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by data from RKI
-        </a>
-      </Footer>
     </>
   )
 }
