@@ -5,15 +5,13 @@ import styled from 'styled-components'
 
 import { getCoordinatesByAddress } from '../services/Geocoding'
 import { Input } from './Input'
+import { Button } from './Button'
 
-const SubmitButton = styled.button`
-  height: 100%;
-  border: 0;
-  background: #0071e3;
+const SubmitButton = styled(Button)`
   color: white;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding: 0 12px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0 12px 0 15px;
 
   &:disabled {
     background: silver;
@@ -27,7 +25,7 @@ const Form = styled.form`
 export const AddressForm = () => {
   const router = useRouter()
   const [address, setAddress] = useState('')
-  const { refetch: fetchCoordinates } = useQuery(
+  const { isLoading, refetch: fetchCoordinates } = useQuery(
     address,
     getCoordinatesByAddress,
     {
@@ -42,7 +40,9 @@ export const AddressForm = () => {
     // TODO: handle errors properly.
     try {
       const coordinates = await fetchCoordinates(address)
-      router.push(`/${coordinates.lat}/${coordinates.lng}`)
+      router
+        .push(`/${coordinates.lat}/${coordinates.lng}`)
+        .then(() => window.scrollTo(0, 0))
     } catch (e) {}
   }
 
@@ -53,7 +53,9 @@ export const AddressForm = () => {
         value={address}
         placeholder="Gib deinen Ort ein..."
       />
-      <SubmitButton disabled={!address}>Suchen</SubmitButton>
+      <SubmitButton isLoading={isLoading} disabled={!address}>
+        {isLoading ? 'Lädt...' : 'Suchen'}
+      </SubmitButton>
     </Form>
   )
 }

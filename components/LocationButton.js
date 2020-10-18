@@ -9,7 +9,7 @@ export const LocationButton = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (coords) router.push(coords.join('/'))
+    if (coords) router.push(coords.join('/')).then(() => window.scrollTo(0, 0))
   }, [coords])
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const LocationButton = () => {
     <Button
       onClick={request}
       isError={error}
-      isIdle={isIdle}
+      isLoading={isIdle}
       disabled={isIdle || error}
     >
       {isIdle
