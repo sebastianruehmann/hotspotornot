@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Title } from './Layout'
+import { Subtitle } from './Layout'
 import { Accordion } from './Accordion'
 
 const questionAndAnswers = [
@@ -49,7 +49,7 @@ const Stack = styled.div`
 export const FAQ = () => {
   return (
     <>
-      <Title>FAQ</Title>
+      <Subtitle>FAQ</Subtitle>
       <Stack>
         {questionAndAnswers.map((it) => (
           <Accordion key={it.id} itemId={it.id} label={it.label}>
