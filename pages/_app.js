@@ -1,5 +1,6 @@
 import '../styles/resets.css'
 import '../styles/globals.css'
+import Link from 'next/link'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 
@@ -9,9 +10,14 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
       <Footer>
         <Item>
-          <a href="/impressum">Impressum</a>
+          <Link href="/impressum">
+            <a>Impressum</a>
+          </Link>
         </Item>
-        <Item>Erstellt von Julian, Sebastian und Jonas</Item>
+        <Item>
+          Die Köpfe dahinter <a href="https://seb.astian.eu">Sebastian</a>,{' '}
+          <a href="">Julian</a> und <a href="https://jonas.re">Jonas</a>
+        </Item>
         <Right>
           <span>Daten bereitgestellt von: </span>
           <a href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">
@@ -24,6 +30,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 const Item = styled.div`
+  font-weight: 500;
   margin-right: 2rem;
   margin-bottom: 2rem;
 `
