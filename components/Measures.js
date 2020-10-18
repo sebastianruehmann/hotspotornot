@@ -6,6 +6,7 @@ import BarIcon from './assets/bar'
 import GroupIcon from './assets/group'
 import MasksIcon from './assets/masks'
 import SocialDistancingIcon from './assets/social-distancing'
+import MoreIcon from './assets/more'
 
 const measures = [
   {
@@ -23,6 +24,13 @@ const measures = [
     Icon: GroupIcon,
   },
   {
+    title: 'Curfew',
+    description:
+      'A curfew is imposed at 23.00 for the catering trade. Bars and clubs will be closed.',
+    type: RISK_LEVELS.high,
+    Icon: BarIcon,
+  },
+  {
     title: 'Contact restrictions',
     description:
       'Maximum of ten people are allowed to meet in public spaces. If the new measures do not bring the increase to a halt, this can be reduced to up to five people or the members of two households.',
@@ -30,26 +38,37 @@ const measures = [
     Icon: SocialDistancingIcon,
   },
   {
-    title: 'Curfew',
+    title: 'Weitere Maßnahmen',
     description:
-      'A curfew is imposed at 23.00 for the catering trade. Bars and clubs will be closed.',
+      'Bitte informieren Sie sich über mögliche weitere Maßnahmen Ihres Landkreises. <a target="_blank" href="https://corona-was-darf-ich.de/de/Berlin">Was darf ich?</a>',
     type: RISK_LEVELS.high,
-    Icon: BarIcon,
+    Icon: MoreIcon,
   },
 ]
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  display: flex;
+`
+
+const IconWrapper = styled.div`
+  margin-right: 1rem;
+  & svg {
+    fill: #0071e3;
+    height: 2rem;
+  }
+`
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 1rem 2rem;
 `
 
-const Title = styled.h2`
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+const AdditionalMeasures = styled.div`
+  background: silver;
+  border-radius: 8px;
+  padding: 1rem;
+  color: white;
 `
 
 function Measures({ riskLevel }) {
@@ -62,9 +81,13 @@ function Measures({ riskLevel }) {
       <Grid>
         {allMeasures.map(({ title, description, Icon }) => (
           <Wrapper key={title}>
-            <Icon />
-            <Title>{title}</Title>
-            <p>{description}</p>
+            <IconWrapper>
+              <Icon />
+            </IconWrapper>
+            <div>
+              <h4>{title}</h4>
+              <p dangerouslySetInnerHTML={{ __html: description }} />
+            </div>
           </Wrapper>
         ))}
       </Grid>

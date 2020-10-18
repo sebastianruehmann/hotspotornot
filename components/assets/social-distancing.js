@@ -3,9 +3,7 @@ import React from 'react'
 const SocialDistancingIcon = (props) => (
   <svg
     enableBackground="new 0 0 24 24"
-    height="24"
     viewBox="0 0 24 24"
-    width="24"
     version="1.1"
     id="svg16"
     {...props}

@@ -115,12 +115,8 @@ const Result = () => {
           </Subtitle>
         </Header>
         <Section wrapped>
-          <Subtitle>Bundesweite Auflagen</Subtitle>
+          <Subtitle>Maßnahmen</Subtitle>
           <Measures riskLevel={riskLevel} />
-          <div>
-            Je nach Bundesland und Landkreis kann es noch weitergehende Auflagen
-            geben.
-          </div>
         </Section>
       </Main>
     </>
