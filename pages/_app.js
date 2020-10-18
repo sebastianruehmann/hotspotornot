@@ -30,7 +30,10 @@ function MyApp({ Component, pageProps }) {
         </Item>
         <Right>
           <span>Daten bereitgestellt von: </span>
-          <a href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">
+          <a
+            target="_blank"
+            href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+          >
             <img src="/robert-koch-institut.jpeg" width="200" />
           </a>
         </Right>
