@@ -20,3 +20,31 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 200%;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 180%;
+  margin-bottom: 1.4rem;
+}
+
+h3 {
+  font-size: 150%;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 120%;
+  margin-bottom: 0.6rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 2rem;
+}
