@@ -40,7 +40,7 @@ const measures = [
   {
     title: 'Weitere Maßnahmen',
     description:
-      'Bitte informieren Sie sich über mögliche weitere Maßnahmen Ihres Landkreises. <a target="_blank" href="https://corona-was-darf-ich.de/de/Berlin">Was darf ich?</a>',
+      'Bitte informiere dich auch über mögliche weitere Maßnahmen für deinen Landkreises. <a target="_blank" href="https://corona-was-darf-ich.de/de/Berlin">Was darf ich?</a>',
     type: RISK_LEVELS.high,
     Icon: MoreIcon,
   },
