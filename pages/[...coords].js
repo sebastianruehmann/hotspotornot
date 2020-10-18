@@ -107,7 +107,11 @@ const Result = () => {
           </Link>
           <Title>{message}</Title>
           <Subtitle>
-            Die 7-Tage-Inzidenz liegt aktuell bei {cases7Per100k.toFixed(2)}.
+            Die 7-Tage-Inzidenz liegt aktuell bei{' '}
+            {cases7Per100k.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
+            })}
+            .
           </Subtitle>
         </Header>
         <Section wrapped>
