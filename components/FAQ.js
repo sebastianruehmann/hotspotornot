@@ -32,7 +32,7 @@ const questionAndAnswers = [
     id: 'uptodate',
     label: 'Sind die Ergebnisse von “Hotspot or not?” aktuell?',
     answer:
-      '"Hotspot or not?" gleicht Ihren Standort stets mit dem aktuellsten Covid-19 Infektionszahlen des Robert-Koch Instituts ab.',
+      '"Hotspot or not?" gleicht Ihren Standort stets mit dem aktuellsten Covid-19 Infektionszahlen des Robert-Koch Instituts ab. In Ausnahmefällen kann die von Ihrem Landkreis gemeldete Inzidenzzahl jedoch aktueller sein. Die unterschiedlichen Zahlen sind dann in der Regel auf einen Meldeverzug beim RKI zurückzuführen.',
   },
 ]
 
