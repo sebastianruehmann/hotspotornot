@@ -7,6 +7,6 @@ export const Input = styled.input`
   border-bottom-left-radius: 8px;
   border: 1px solid silver;
   border-right: 0;
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
 `
