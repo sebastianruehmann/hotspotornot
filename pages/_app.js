@@ -13,8 +13,9 @@ function MyApp({ Component, pageProps }) {
         </Item>
         <Item>Erstellt von Julian, Sebastian und Jonas</Item>
         <Right>
+          <span>Daten bereitgestellt von: </span>
           <a href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">
-            <img src="/download.jpeg" width="200" />
+            <img src="/robert-koch-institut.jpeg" width="200" />
           </a>
         </Right>
       </Footer>
