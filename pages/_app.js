@@ -15,8 +15,18 @@ function MyApp({ Component, pageProps }) {
           </Link>
         </Item>
         <Item>
-          Die Köpfe dahinter <a href="https://seb.astian.eu">Sebastian</a>,{' '}
-          <a href="">Julian</a> und <a href="https://jonas.re">Jonas</a>
+          Die Köpfe dahinter{' '}
+          <a target="_blank" href="https://seb.astian.eu">
+            Sebastian
+          </a>
+          ,{' '}
+          <a target="_blank" href="">
+            Julian
+          </a>{' '}
+          und{' '}
+          <a target="_blank" href="https://jonas.re">
+            Jonas
+          </a>
         </Item>
         <Right>
           <span>Daten bereitgestellt von: </span>
