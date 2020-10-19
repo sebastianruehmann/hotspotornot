@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
             Sebastian
           </a>
           ,{' '}
-          <a target="_blank" href="">
+          <a target="_blank" href="https://julianblohm.vercel.app">
             Julian
           </a>{' '}
           und{' '}
