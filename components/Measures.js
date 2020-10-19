@@ -81,7 +81,6 @@ function Measures({ riskLevel }) {
   const allMeasures = measures.filter(({ type }) => riskLevel === type)
   return (
     <div>
-      {!allMeasures.length && 'Keine besonderen Auflagen'}
       <Grid>
         {allMeasures.map(({ title, description, Icon }) => (
           <Wrapper key={title}>
