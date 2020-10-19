@@ -41,7 +41,13 @@ export const AddressForm = () => {
     try {
       const coordinates = await fetchCoordinates(address)
       router
-        .push(`/${coordinates.lat}/${coordinates.lng}`)
+        .push(
+          {
+            pathname: '/result',
+            query: { coords },
+          },
+          '/result'
+        )
         .then(() => window.scrollTo(0, 0))
     } catch (e) {}
   }
