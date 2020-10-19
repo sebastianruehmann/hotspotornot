@@ -103,10 +103,7 @@ function Measures({ riskLevel }) {
             <p>
               Bitte informiere dich auch über mögliche weitere Maßnahmen für
               deinen Landkreises.{' '}
-              <a
-                target="_blank"
-                href="https://corona-was-darf-ich.de/de/Berlin"
-              >
+              <a target="_blank" href="https://corona-was-darf-ich.de/">
                 Was darf ich?
               </a>
             </p>
