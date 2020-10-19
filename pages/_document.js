@@ -57,6 +57,12 @@ export default class MyDocument extends Document {
             name="description"
             content="Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein Covid‑19 Hotspot ist."
           />
+          <script
+            async
+            defer
+            data-domain="hotspotornot.de"
+            src="https://plausible.io/js/plausible.js"
+          ></script>
         </Head>
         <body>
           <Main />
