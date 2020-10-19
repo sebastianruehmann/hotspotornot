@@ -100,8 +100,8 @@ function Measures({ riskLevel }) {
           <div>
             <h4>Weitere Maßnahmen</h4>
             <p>
-              Bitte informiere dich auch über mögliche weitere Maßnahmen für
-              deinen Landkreises.{' '}
+              Bitte informiere dich auch über mögliche weitere Maßnahmen deines
+              Landkreises.{' '}
               <a target="_blank" href="https://corona-was-darf-ich.de/">
                 Was darf ich?
               </a>
