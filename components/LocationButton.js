@@ -9,7 +9,16 @@ export const LocationButton = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (coords) router.push(coords.join('/')).then(() => window.scrollTo(0, 0))
+    if (coords)
+      router
+        .push(
+          {
+            pathname: '/result',
+            query: { coords },
+          },
+          '/result'
+        )
+        .then(() => window.scrollTo(0, 0))
   }, [coords])
 
   useEffect(() => {
