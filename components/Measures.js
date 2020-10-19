@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { RISK_LEVELS } from '../constants'
-import { hasHigherRiskLevel } from '../services/RiskLevels'
 
 import BarIcon from './assets/bar'
 import GroupIcon from './assets/group'
@@ -10,39 +9,46 @@ import MoreIcon from './assets/more'
 
 const measures = [
   {
-    title: 'Mask obligation',
+    title: 'Maskenpflicht',
     description:
-      'Extended mask obligation in places where people come together more closely or for longer periods.',
+      'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen.',
     type: RISK_LEVELS.medium,
     Icon: MasksIcon,
   },
   {
-    title: 'Private celebrations',
+    title: 'Private Feiern',
     description:
-      'Private celebrations are generally limited to a maximum of ten participants and two households.',
+      'Höchstens 25 Personen sind im öffentlichen Raum erlaubt, 15 aus maximal zwei Haushalten bei Feiern zuhause.',
+    type: RISK_LEVELS.medium,
+    Icon: GroupIcon,
+  },
+  {
+    title: 'Maskenpflicht',
+    description:
+      'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen. Individuelle Erweiterung möglich.',
     type: RISK_LEVELS.high,
     Icon: GroupIcon,
   },
   {
-    title: 'Curfew',
+    title: 'Private Feiern',
     description:
-      'A curfew is imposed at 23.00 for the catering trade. Bars and clubs will be closed.',
+      'Höchstens 10 Personen sind im öffentlichen Raum erlaubt, 10 aus maximal zwei Haushalten bei Feiern zuhause.',
+    type: RISK_LEVELS.high,
+    Icon: GroupIcon,
+  },
+  {
+    title: 'Sperrstunde für Gastronomie',
+    description:
+      'Verbindliche Sperrstunde um 23 Uhr, außerdem Außenabgabeverbot von Alkohol ab 23 Uhr.',
     type: RISK_LEVELS.high,
     Icon: BarIcon,
   },
   {
-    title: 'Contact restrictions',
+    title: 'Kontaktbeschränkungen',
     description:
-      'Maximum of ten people are allowed to meet in public spaces. If the new measures do not bring the increase to a halt, this can be reduced to up to five people or the members of two households.',
+      'Höchstens 10 Personen sind im öffentlichen Raum erlaubt. Wenn weitere Maßnahmen keine Besserung bringen, kann die Beschränkung auf 5 Personen oder zwei Haushalte reduziert werden.',
     type: RISK_LEVELS.high,
     Icon: SocialDistancingIcon,
-  },
-  {
-    title: 'Weitere Maßnahmen',
-    description:
-      'Bitte informiere dich auch über mögliche weitere Maßnahmen für deinen Landkreises. <a target="_blank" href="https://corona-was-darf-ich.de/de/Berlin">Was darf ich?</a>',
-    type: RISK_LEVELS.low,
-    Icon: MoreIcon,
   },
 ]
 
@@ -72,9 +78,7 @@ const AdditionalMeasures = styled.div`
 `
 
 function Measures({ riskLevel }) {
-  const allMeasures = measures.filter(({ type }) =>
-    hasHigherRiskLevel(riskLevel, type)
-  )
+  const allMeasures = measures.filter(({ type }) => riskLevel === type)
   return (
     <div>
       {!allMeasures.length && 'Keine besonderen Auflagen'}
@@ -86,10 +90,28 @@ function Measures({ riskLevel }) {
             </IconWrapper>
             <div>
               <h4>{title}</h4>
-              <p dangerouslySetInnerHTML={{ __html: description }} />
+              <p>{description}</p>
             </div>
           </Wrapper>
         ))}
+        <Wrapper>
+          <IconWrapper>
+            <MoreIcon />
+          </IconWrapper>
+          <div>
+            <h4>Weitere Maßnahmen</h4>
+            <p>
+              Bitte informiere dich auch über mögliche weitere Maßnahmen für
+              deinen Landkreises.{' '}
+              <a
+                target="_blank"
+                href="https://corona-was-darf-ich.de/de/Berlin"
+              >
+                Was darf ich?
+              </a>
+            </p>
+          </div>
+        </Wrapper>
       </Grid>
     </div>
   )
