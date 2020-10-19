@@ -39,14 +39,14 @@ export const AddressForm = () => {
 
     // TODO: handle errors properly.
     try {
-      const coordinates = await fetchCoordinates(address)
+      const { lat, lng } = await fetchCoordinates(address)
       router
         .push(
           {
             pathname: '/result',
-            query: { coords },
+            query: { coords: [lat, lng] },
           },
-          '/result'
+          '/'
         )
         .then(() => window.scrollTo(0, 0))
     } catch (e) {}

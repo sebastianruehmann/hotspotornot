@@ -48,8 +48,6 @@ const Result = () => {
     }
   )
 
-  console.log(coords)
-
   if (isError) {
     return (
       <>
