@@ -27,7 +27,7 @@ const measures = [
     description:
       'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen. Individuelle Erweiterung möglich.',
     type: RISK_LEVELS.high,
-    Icon: GroupIcon,
+    Icon: MasksIcon,
   },
   {
     title: 'Private Feiern',
