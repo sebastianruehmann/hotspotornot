@@ -40,6 +40,7 @@ export const AddressForm = () => {
     // TODO: handle errors properly.
     try {
       const { lat, lng } = await fetchCoordinates(address)
+      plausible('Submitted searched location')
       router
         .push(
           {

@@ -9,7 +9,8 @@ export const LocationButton = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (coords)
+    if (coords) {
+      plausible('Submitted current location')
       router
         .push(
           {
@@ -19,6 +20,7 @@ export const LocationButton = () => {
           '/'
         )
         .then(() => window.scrollTo(0, 0))
+    }
   }, [coords])
 
   useEffect(() => {
