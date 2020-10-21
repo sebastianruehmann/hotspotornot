@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { getCoordinatesByAddress } from '../services/Geocoding'
 import { Input } from './Input'
 import { Button } from './Button'
+import { track } from '../helpers/track'
 
 const SubmitButton = styled(Button)`
   color: white;
@@ -40,7 +41,7 @@ export const AddressForm = () => {
     // TODO: handle errors properly.
     try {
       const { lat, lng } = await fetchCoordinates(address)
-      plausible('Submitted searched location')
+      track('Submitted searched location')
       router
         .push(
           {

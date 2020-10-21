@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { usePosition } from '../hooks/usePosition'
 import { useRouter } from 'next/router'
 import { Button } from './Button'
+import { track } from '../helpers/track'
 
 export const LocationButton = () => {
   const { coords, isIdle, isError, request } = usePosition()
@@ -10,7 +11,7 @@ export const LocationButton = () => {
 
   useEffect(() => {
     if (coords) {
-      plausible('Submitted current location')
+      track('Submitted current location')
       router
         .push(
           {
