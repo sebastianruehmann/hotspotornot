@@ -57,12 +57,38 @@ export default class MyDocument extends Document {
             name="description"
             content="Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein Covid‑19 Hotspot ist."
           />
+          <meta property="og:title" content="Bin ich in einem Hotspot?" />
+          <meta
+            property="og:description"
+            content="Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein Covid‑19 Hotspot ist."
+          />
+          <meta
+            property="og:image"
+            content="https://hotspotornot.de/thumbnail.jpg"
+          />
+          <meta property="og:url" content="https://hotspotornot.de" />
+          <meta name="twitter:title" content="Bin ich in einem Hotspot?" />
+          <meta
+            name="twitter:description"
+            content="Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein Covid‑19 Hotspot ist."
+          />
+          <meta
+            name="twitter:image"
+            content="https://hotspotornot.de/thumbnail.jpg"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
           <script
             async
             defer
             data-domain="hotspotornot.de"
             src="https://plausible.io/js/plausible.js"
           ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+            }}
+          />
         </Head>
         <body>
           <Main />
