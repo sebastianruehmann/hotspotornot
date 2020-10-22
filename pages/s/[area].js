@@ -6,6 +6,7 @@ import { Section, Title } from '../../components/Layout'
 import { PageHead } from '../../components/PageHead'
 import { NoResultsWrapper } from '../../components/NoResultsWrapper'
 import { LoadingIndicator } from '../../components/LoadingIndicator'
+import { Footer } from '../../components/Footer'
 
 const Area = (props) => {
   console.log(props)
@@ -51,6 +52,8 @@ const Area = (props) => {
             </Title>
           </Section>
         </NoResultsWrapper>
+
+        <Footer />
       </>
     )
   }
@@ -60,6 +63,8 @@ const Area = (props) => {
       <>
         <PageHead title="Laden..." />
         <LoadingIndicator />
+
+        <Footer />
       </>
     )
   }

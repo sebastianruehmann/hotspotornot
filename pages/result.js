@@ -14,6 +14,7 @@ import CoronaIcon from '../components/assets/coronavirus'
 import { LoadingIndicator } from '../components/LoadingIndicator'
 import { PageHead } from '../components/PageHead'
 import { NoResultsWrapper } from '../components/NoResultsWrapper'
+import { Footer } from '../components/Footer'
 
 const WhiteCoronaIcon = styled(CoronaIcon)`
   height: auto;
@@ -64,6 +65,7 @@ const Result = () => {
       <>
         <PageHead title="Laden..." />
         <LoadingIndicator />
+        <Footer />
       </>
     )
   }
@@ -78,6 +80,8 @@ const Result = () => {
             <Title>Das RKI hat leider keine Daten für den Standort.</Title>
           </Section>
         </NoResultsWrapper>
+
+        <Footer />
       </>
     )
   }
@@ -119,6 +123,8 @@ const Result = () => {
           <Measures riskLevel={riskLevel} />
         </Section>
       </Main>
+
+      <Footer />
     </>
   )
 }

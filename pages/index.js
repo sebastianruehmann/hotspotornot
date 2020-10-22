@@ -7,6 +7,7 @@ import { LocationButton } from '../components/LocationButton'
 import { AddressForm } from '../components/AddressForm'
 import CoronaIcon from '../components/assets/coronavirus'
 import { FAQ } from '../components/FAQ'
+import { Footer } from '../components/Footer'
 
 const Actions = styled.div`
   display: flex;
@@ -50,6 +51,8 @@ export default function Home() {
           <FAQ />
         </Section>
       </Main>
+
+      <Footer />
     </>
   )
 }
@@ -73,15 +76,4 @@ const I = styled.i`
 
 const Nobr = styled.span`
   white-space: nowrap;
-`
-
-const Button = styled.button`
-  background: ${(props) =>
-    props.isIdle ? '#333' : props.isError ? '#FF0000' : '#0071e3'};
-  border: none;
-  border-radius: 22px;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 400;
-  padding: 13px 25px;
 `
