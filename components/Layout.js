@@ -16,14 +16,18 @@ const Section = styled.section`
 const Main = styled.main``
 
 const Title = styled.h1`
-  margin-bottom: 75px;
+  margin-bottom: 35px;
+  @media only screen and (max-width: 640px) {
+    margin-bottom: 75px;
+  }
 `
 
 const Paragraph = styled.p`
   color: #686868;
   margin: 0 0 3rem;
-  font-size: 1.285rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 500;
+  max-width: 700px;
 `
 
 const Image = styled.img`

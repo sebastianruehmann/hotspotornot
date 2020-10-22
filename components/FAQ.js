@@ -7,13 +7,13 @@ const questionAndAnswers = [
     id: 'function',
     label: 'Wie funktioniert “Hotspot or not?”',
     answer:
-      '"Hotspot or not?" zeigt Ihnen, ob Sie sich in einem Covid-19 Hotspot befinden. Sie können Ihren aktuellen Standort nutzen oder nach einer Stadt suchen. Diese Position wird mit den aktuellen Daten Covid-19 Infektionszahlen des Robert Koch Instituts abgeglichen. "Hotspot or not?" berechnet, ob Ihr Landkreis nach den Beschlüssen der Landtagssitzung ein Covid-19 Hotspot ist.',
+      '"Hotspot or not?" zeigen dir, ob Du dich in einem Covid-19 Hotspot befindest. Du kannst Deinen aktuellen Standort nutzen oder nach einer Stadt suchen. Diese Position wird mit den aktuellen Covid-19 Infektionszahlen des Robert Koch Instituts abgeglichen. "Hotspot or not?" berechnet, ob Dein Landkreis nach den Beschlüssen der Landtagssitzung ein Covid-19 Hotspot ist.',
   },
   {
     id: 'location',
     label: 'Wofür nutzt “Hotspot or not?” meinen Standort?',
     answer:
-      'Sie haben die Option "Hotspot or not?" Ihren Standort freizugeben. Anhand Ihres Standort werden die aktuellen Covid-19 Infektionszahlen in Ihrem Landkreis abgerufen.',
+      'Du hast die Option "Hotspot or not?" Deinen Standort freizugeben. Anhand Deines Standort wird die aktuelle 7-Tage-Inzidenz mit Covid-19 Infizierten in Deinem Landkreis abgerufen.',
   },
   {
     id: 'privacy',
@@ -31,7 +31,20 @@ const questionAndAnswers = [
     id: 'uptodate',
     label: 'Sind die Ergebnisse von “Hotspot or not?” aktuell?',
     answer:
-      '"Hotspot or not?" gleicht Ihren Standort stets mit dem aktuellsten Covid-19 Infektionszahlen des Robert-Koch Instituts ab. In Ausnahmefällen kann die von Ihrem Landkreis gemeldete Inzidenzzahl jedoch aktueller sein. Die unterschiedlichen Zahlen sind dann in der Regel auf einen Meldeverzug beim RKI zurückzuführen.',
+      '"Hotspot or not?" ruft stets den aktuellen Covid-19 Inzidenzwert des RKI für Deinen Standort ab. In Ausnahmefällen kann die von Deinem Landkreis gemeldete Inzidenzzahl jedoch aktueller sein. Die unterschiedlichen Zahlen sind dann in der Regel auf einen Meldeverzug beim RKI zurückzuführen.',
+  },
+  {
+    id: 'differentincidencevalue',
+    label:
+      'Warum kann der Inzidenzwert von "hotspot or not?" von dem meines örtlichen Gesundheitsämtes abweichen?',
+    answer:
+      'Bei der Übermittlung der Fälle von den Gesundheitsämtern über die zuständigen Landesbehörden bis ans RKI kann es zu einem Melde- und Übermittlungsverzug von einigen Tagen kommen.',
+  },
+  {
+    id: 'incidencevalue',
+    label: 'Was ist der Inzidenzwert?',
+    answer:
+      'Der Inzidenzwert ist die Maßzahl dafür, wie viele von 100.000 Einwohnern innerhalb von 7 Tagen an Covid-19 erkrankt sind.',
   },
 ]
 

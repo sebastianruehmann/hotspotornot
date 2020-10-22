@@ -133,9 +133,7 @@ const Result = () => {
             </Link>
             <Title>{message}</Title>
             <IncidenceValue>
-              Die 7-Tage-Inzidenz
-              <br />
-              liegt aktuell bei{' '}
+              Die 7-Tage-Inzidenz liegt aktuell bei{' '}
               {cases7Per100k.toLocaleString('de-DE', {
                 maximumFractionDigits: 2,
               })}

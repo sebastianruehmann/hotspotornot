@@ -65,6 +65,12 @@ const IconWrapper = styled.div`
   }
 `
 
+const MeasureHeadline = styled.h4`
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.3rem;
+`
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -102,7 +108,7 @@ function Measures({ riskLevel }) {
                 <Icon />
               </IconWrapper>
               <div>
-                <h4>{title}</h4>
+                <MeasureHeadline>{title}</MeasureHeadline>
                 <p>{description}</p>
               </div>
             </Wrapper>
