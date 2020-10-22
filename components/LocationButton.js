@@ -18,7 +18,7 @@ export const LocationButton = () => {
             pathname: '/result',
             query: { coords },
           },
-          '/results'
+          '/result'
         )
         .then(() => window.scrollTo(0, 0))
     }
