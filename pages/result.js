@@ -48,8 +48,6 @@ const Result = () => {
     }
   )
 
-  console.log('vercel alter')
-
   if (isError) {
     return (
       <>
