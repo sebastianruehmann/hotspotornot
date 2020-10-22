@@ -37,7 +37,7 @@ const Result = () => {
   const coords = router.query.coords || []
   console.log(router.query)
   const { data, isError } = useQuery(
-    ['area', ...coords],
+    ['area', coords.join(',')],
     () => search(coords[0], coords[1]),
     {
       enabled: !!coords,
