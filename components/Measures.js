@@ -6,6 +6,7 @@ import GroupIcon from './assets/group'
 import MasksIcon from './assets/masks'
 import SocialDistancingIcon from './assets/social-distancing'
 import MoreIcon from './assets/more'
+import { Section } from './Layout'
 
 const measures = [
   {
@@ -79,37 +80,36 @@ const AdditionalMeasures = styled.div`
 
 function Measures({ riskLevel }) {
   const allMeasures = measures.filter(({ type }) => riskLevel === type)
+
+  if (!allMeasures.length) {
+    return null
+  }
+
   return (
-    <div>
-      <Grid>
-        {allMeasures.map(({ title, description, Icon }) => (
-          <Wrapper key={title}>
-            <IconWrapper>
-              <Icon />
-            </IconWrapper>
-            <div>
-              <h4>{title}</h4>
-              <p>{description}</p>
-            </div>
-          </Wrapper>
-        ))}
-        <Wrapper>
-          <IconWrapper>
-            <MoreIcon />
-          </IconWrapper>
-          <div>
-            <h4>Weitere Maßnahmen</h4>
-            <p>
-              Bitte informiere dich auch über mögliche weitere Maßnahmen deines
-              Landkreises.{' '}
-              <a target="_blank" href="https://corona-was-darf-ich.de/">
-                Was darf ich?
-              </a>
-            </p>
-          </div>
-        </Wrapper>
-      </Grid>
-    </div>
+    <>
+      <h2>Generelle Maßnahmen</h2>
+      <p>
+        Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke
+        jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen
+        können.
+      </p>
+
+      <div>
+        <Grid>
+          {allMeasures.map(({ title, description, Icon }) => (
+            <Wrapper key={title}>
+              <IconWrapper>
+                <Icon />
+              </IconWrapper>
+              <div>
+                <h4>{title}</h4>
+                <p>{description}</p>
+              </div>
+            </Wrapper>
+          ))}
+        </Grid>
+      </div>
+    </>
   )
 }
 
