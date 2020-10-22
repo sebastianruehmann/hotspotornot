@@ -35,9 +35,8 @@ const IncidenceValue = styled.h2`
 const Result = () => {
   const router = useRouter()
   const coords = router.query.coords || []
-  console.log(router.query)
   const { data } = useQuery(
-    ['area', coords.join(',')],
+    ['area', coords],
     () => search(coords[0], coords[1]),
     {
       enabled: !!coords,
