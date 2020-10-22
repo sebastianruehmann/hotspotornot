@@ -48,7 +48,7 @@ export const AddressForm = () => {
             pathname: '/result',
             query: { coords: [lat, lng] },
           },
-          '/'
+          '/result'
         )
         .then(() => window.scrollTo(0, 0))
     } catch (e) {}

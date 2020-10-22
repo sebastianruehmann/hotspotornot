@@ -73,7 +73,7 @@ const Result = () => {
           return
         }
 
-        router.push(
+        router.replace(
           {
             pathname: '/result',
             query: { coords },
