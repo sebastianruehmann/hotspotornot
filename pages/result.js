@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
-import { Main, Title, Subtitle, Section } from '../components/Layout'
+import { Main, Title, Section } from '../components/Layout'
 import Measures from '../components/Measures'
 import Header from '../components/Header'
 import { RISK_LEVELS } from '../constants'
@@ -29,6 +29,10 @@ const WhiteCoronaIcon = styled(CoronaIcon)`
 const NoResultsWrapper = styled.div`
   height: 100vh;
   background: #f5f5f7;
+`
+
+const IncidenceValue = styled.h2`
+  font-weight: bold;
 `
 
 const PageHead = ({ title }) => (
@@ -99,23 +103,27 @@ const Result = () => {
       <PageHead title={message} />
 
       <Main>
-        <Header riskLevel={riskLevel}>
-          <Link href="/">
-            <a>
-              <WhiteCoronaIcon />
-            </a>
-          </Link>
-          <Title>{message}</Title>
-          <Subtitle>
-            Die 7-Tage-Inzidenz liegt aktuell bei{' '}
-            {cases7Per100k.toLocaleString('de-DE', {
-              maximumFractionDigits: 2,
-            })}
-            .
-          </Subtitle>
+        <Header riskLevel={riskLevel} inversed>
+          <Section wrapped>
+            <Link href="/">
+              <a>
+                <WhiteCoronaIcon />
+              </a>
+            </Link>
+            <Title>{message}</Title>
+            <IncidenceValue>
+              Die 7-Tage-Inzidenz
+              <br />
+              liegt aktuell bei{' '}
+              {cases7Per100k.toLocaleString('de-DE', {
+                maximumFractionDigits: 2,
+              })}
+              .
+            </IncidenceValue>
+          </Section>
         </Header>
         <Section wrapped>
-          <Subtitle>Maßnahmen</Subtitle>
+          <h2>Maßnahmen</h2>
           <Measures riskLevel={riskLevel} />
         </Section>
       </Main>

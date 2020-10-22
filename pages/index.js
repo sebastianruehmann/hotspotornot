@@ -31,18 +31,20 @@ export default function Home() {
 
       <Main>
         <Header>
-          <RedCoronaIcon />
-          <GreyTitle>
-            Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
-          </GreyTitle>
-          <Paragraph>
-            Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein{' '}
-            <Nobr>Covid‑19</Nobr> Hotspot ist.
-          </Paragraph>
-          <Actions>
-            <LocationButton />
-            <AddressForm />
-          </Actions>
+          <Section wrapped>
+            <RedCoronaIcon />
+            <h1>
+              Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
+            </h1>
+            <Paragraph>
+              Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort
+              ein <Nobr>Covid‑19</Nobr> Hotspot ist.
+            </Paragraph>
+            <Actions>
+              <LocationButton />
+              <AddressForm />
+            </Actions>
+          </Section>
         </Header>
         <Section wrapped>
           <FAQ />
@@ -63,10 +65,6 @@ const RedCoronaIcon = styled(CoronaIcon)`
   & .circles {
     fill: #ad3129;
   }
-`
-
-const GreyTitle = styled(Title)`
-  color: #1d1d1f;
 `
 
 const I = styled.i`

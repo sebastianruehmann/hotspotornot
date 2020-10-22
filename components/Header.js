@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import {RISK_LEVELS} from '../constants';
-import {Section} from './Layout'
+import { RISK_LEVELS } from '../constants'
 
-const getColor = ({riskLevel}) => {
+const getColor = ({ riskLevel }) => {
   switch (riskLevel) {
     case RISK_LEVELS.low:
       return '#57b160'
@@ -16,17 +15,14 @@ const getColor = ({riskLevel}) => {
 }
 
 const Wrapper = styled.div`
-  background: ${props => getColor(props)};
-  color: white;
-  padding: 1rem;
+  background: ${(props) => getColor(props)};
+  color: ${(props) => (props.inversed ? 'white' : 'inherit')};
 `
 
-function Header({riskLevel, children}) {
+function Header({ riskLevel, inversed, children }) {
   return (
-    <Wrapper riskLevel={riskLevel}>
-      <Section wrapped>
-        {children}
-      </Section>
+    <Wrapper inversed={inversed} riskLevel={riskLevel}>
+      {children}
     </Wrapper>
   )
 }

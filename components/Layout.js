@@ -16,22 +16,14 @@ const Section = styled.section`
 const Main = styled.main``
 
 const Title = styled.h1`
-  margin: 0 0 1.5rem;
-  font-size: 3rem;
-  font-weight: bold;
-`
-
-const Subtitle = styled.h2`
-  margin: 0 0 1.5rem;
-  font-size: 2.2rem;
-  font-weight: bold;
+  margin-bottom: 75px;
 `
 
 const Paragraph = styled.p`
   color: #686868;
   margin: 0 0 3rem;
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 1.285rem;
+  font-weight: 400;
 `
 
 const Image = styled.img`
@@ -39,4 +31,4 @@ const Image = styled.img`
   width: 125px;
 `
 
-export { Section, Main, Title, Subtitle, Paragraph, Image }
+export { Section, Main, Title, Paragraph, Image }
