@@ -12,6 +12,8 @@ import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
 import CoronaIcon from '../components/assets/coronavirus'
 import { LoadingIndicator } from '../components/LoadingIndicator'
+import { PageHead } from '../components/PageHead'
+import { NoResultsWrapper } from '../components/NoResultsWrapper'
 
 const WhiteCoronaIcon = styled(CoronaIcon)`
   height: auto;
@@ -26,20 +28,9 @@ const WhiteCoronaIcon = styled(CoronaIcon)`
   }
 `
 
-const NoResultsWrapper = styled.div`
-  height: 100vh;
-  background: #f5f5f7;
-`
-
 const IncidenceValue = styled.h2`
   font-weight: bold;
 `
-
-const PageHead = ({ title }) => (
-  <Head>
-    <title>{title}</title>
-  </Head>
-)
 
 const Result = () => {
   const router = useRouter()
@@ -49,23 +40,24 @@ const Result = () => {
     () => search(coords[0], coords[1]),
     {
       enabled: !!coords,
+      onSuccess: (data) => {
+        const attributes = data.features[0]?.attributes || {}
+
+        if (!Object.keys(attributes).length) {
+          return
+        }
+
+        router.push(
+          {
+            pathname: '/result',
+            query: { coords },
+          },
+          `/s/${attributes.GEN}`,
+          { shallow: true }
+        )
+      },
     }
   )
-
-  if (isError) {
-    return (
-      <>
-        <PageHead title="Fehler beim Laden" />
-        <NoResultsWrapper>
-          <Section wrapped>
-            <Title>
-              Leider gab es einen Fehler beim Abrufen der Daten des RKIs.
-            </Title>
-          </Section>
-        </NoResultsWrapper>
-      </>
-    )
-  }
 
   if (!data) {
     return (

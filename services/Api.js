@@ -9,6 +9,8 @@ const params = {
   f: 'json',
 }
 
+//  TODO: Rename fields in here.
+
 export function search(lat, lng) {
   return axios
     .get(process.env.NEXT_PUBLIC_RKI_API, {
