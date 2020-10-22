@@ -9,8 +9,6 @@ import { LoadingIndicator } from '../../components/LoadingIndicator'
 import { Footer } from '../../components/Footer'
 
 const Area = (props) => {
-  console.log(props)
-
   const router = useRouter()
 
   const { area } = router.query
@@ -20,8 +18,6 @@ const Area = (props) => {
     enabled: area,
     retry: false,
   })
-
-  console.log(isError)
 
   useEffect(() => {
     if (!data) {
