@@ -4,7 +4,8 @@ body {
   line-height: 1.3;
   padding: 0;
   margin: 0;
-  font-family: Helvetica Neue;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 @media only screen and (max-width: 640px) {
