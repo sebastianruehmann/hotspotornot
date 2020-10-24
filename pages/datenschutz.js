@@ -28,7 +28,7 @@ export default function Home() {
                 <RedCoronaIcon />
               </a>
             </Link>
-            <Title>Datenschutzerklärung</Title>
+            <Title>Datenschutz&shy;erklärung</Title>
           </Section>
         </Header>
         <Section wrapped>
