@@ -68,7 +68,7 @@ const IconWrapper = styled.div`
 const MeasureHeadline = styled.h4`
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 0.3rem;
+  margin: 0.3rem 0 0.2rem;
 `
 
 const Grid = styled.div`
