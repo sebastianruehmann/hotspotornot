@@ -42,7 +42,7 @@ export const Footer = () => {
         </Link>
       </Item>
       <Item>
-        <Link href="/Datenschutz">
+        <Link href="/datenschutz">
           <a>Datenschutz</a>
         </Link>
       </Item>
