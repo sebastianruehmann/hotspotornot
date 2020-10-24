@@ -17,17 +17,19 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Impressum</title>
+        <title>Hotspot or not? - Impressum</title>
       </Head>
 
       <Main>
         <Header>
-          <Link href="/">
-            <a>
-              <RedCoronaIcon />
-            </a>
-          </Link>
-          <GreyTitle>Impressum</GreyTitle>
+          <Section wrapped>
+            <Link href="/">
+              <a>
+                <RedCoronaIcon />
+              </a>
+            </Link>
+            <Title>Impressum</Title>
+          </Section>
         </Header>
         <Section wrapped>
           <p>
@@ -39,11 +41,8 @@ export default function Home() {
             Franz-Künstler Str. 23
             <br />
             10969 Berlin
-          </p>
-          <h2>Kontaktaufnahme</h2>
-          <p>
-            Telefon: +49 151 7288 48 44
             <br />
+            Telefon: +49 151 7288 48 44
             <br />
             E-Mail:{' '}
             <a href="mailto:service@hotspotornot.de">service@hotspotornot.de</a>
@@ -135,8 +134,4 @@ const RedCoronaIcon = styled(CoronaIcon)`
   & .circles {
     fill: #ad3129;
   }
-`
-
-const GreyTitle = styled(Title)`
-  color: #1d1d1f;
 `

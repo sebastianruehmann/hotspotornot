@@ -30,6 +30,7 @@ const Item = styled.div`
 const Right = styled(Item)`
   margin-left: auto;
   margin-right: 0;
+  text-align: center;
 `
 
 export const Footer = () => {
@@ -41,7 +42,12 @@ export const Footer = () => {
         </Link>
       </Item>
       <Item>
-        Die Köpfe dahinter{' '}
+        <Link href="/Datenschutz">
+          <a>Datenschutz</a>
+        </Link>
+      </Item>
+      <Right>
+        Die Köpfe hinter "Hotspot or not?"{' '}
         <a target="_blank" href="https://seb.astian.eu">
           Sebastian
         </a>
@@ -52,15 +58,6 @@ export const Footer = () => {
         und{' '}
         <a target="_blank" href="https://jonas.re">
           Jonas
-        </a>
-      </Item>
-      <Right>
-        <span>Daten bereitgestellt von: </span>
-        <a
-          target="_blank"
-          href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
-        >
-          <img src="/robert-koch-institut.jpeg" width="200" />
         </a>
       </Right>
     </FooterWrapper>
