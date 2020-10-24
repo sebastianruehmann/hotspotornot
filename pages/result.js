@@ -61,24 +61,19 @@ const Grid = styled.div`
 const Result = () => {
   const router = useRouter()
   const coords = router.query.coords || []
-  const { data } = useQuery(
+  const { isError, data } = useQuery(
     ['area', coords],
     () => search(coords[0], coords[1]),
     {
       enabled: !!coords,
+      retry: false,
       onSuccess: (data) => {
-        const attributes = data.features[0]?.attributes || {}
-
-        if (!Object.keys(attributes).length) {
-          return
-        }
-
         router.replace(
           {
             pathname: '/result',
             query: { coords },
           },
-          `/s/${attributes.GEN}`,
+          `/s/${data.area}`,
           { shallow: true }
         )
       },
@@ -95,7 +90,7 @@ const Result = () => {
     )
   }
 
-  if (!data.features.length) {
+  if (isError) {
     return (
       <>
         <PageHead title="Keine Daten" />
@@ -111,8 +106,7 @@ const Result = () => {
     )
   }
 
-  const { GEN: area, cases7_per_100k: cases7Per100k } =
-    data.features[0]?.attributes || {}
+  const { area, cases7Per100k, state } = data
 
   const riskLevel = mapRiskLevel(cases7Per100k)
   const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium)
@@ -151,7 +145,12 @@ const Result = () => {
           </p>
 
           <Grid>
-            <CustomLink href="https://corona-was-darf-ich.de/de">
+            <CustomLink
+              href={`https://corona-was-darf-ich.de/de/${state.replace(
+                '-',
+                '_'
+              )}`}
+            >
               FAQ über lokale Regelungen
             </CustomLink>
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const params = {
-  outFields: 'OBJECTID,cases7_per_100k,GEN',
+  outFields: 'OBJECTID,cases7_per_100k,GEN,last_update,BL',
   geometryType: 'esriGeometryPoint',
   spatialRel: 'esriSpatialRelWithin',
   inSR: '4326',
@@ -19,5 +19,24 @@ export function search(lat, lng) {
         geometry: lng + ',' + lat,
       },
     })
-    .then((response) => response.data)
+    .then((response) => {
+      const features = response.data.features
+      if (!features.length) {
+        throw new Error('No area data found')
+      }
+
+      const {
+        GEN: area,
+        cases7_per_100k: cases7Per100k,
+        last_update: lastUpdated,
+        BL: state,
+      } = features[0]?.attributes || {}
+
+      return {
+        area,
+        cases7Per100k,
+        lastUpdated,
+        state,
+      }
+    })
 }
