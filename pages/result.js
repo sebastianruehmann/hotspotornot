@@ -142,7 +142,7 @@ const Result = () => {
           </Section>
         </Header>
         <Section wrapped>
-          <h2>Spezielle Maßnahmen</h2>
+          <h2>Gezielte Maßnahmen</h2>
           <p>
             Pro Bundesland und Landkreis können abweichende Regelungen gelten.
             Da sich diese stetig ändern, findest du hier entsprechende Links,

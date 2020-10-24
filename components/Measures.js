@@ -93,11 +93,11 @@ function Measures({ riskLevel }) {
 
   return (
     <>
-      <h2>Generelle Maßnahmen</h2>
+      <h2>Grundsätzliche Maßnahmen</h2>
       <p>
-        Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke
-        jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen
-        können.
+        Wie in der deutschen Hotspot-Strategie vorgesehen, sind mindestens die
+        folgenden Maßnahmen einzuhalten. Diese Regelungen gelten grundsätzlich,
+        können aber durch die gezielten Maßnahmen verschärft worden sein.
       </p>
 
       <div>
