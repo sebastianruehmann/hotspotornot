@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { RISK_LEVELS } from '../constants'
 
-import { CoronaIcon as OriginalCoronaIcon } from './icons'
+import { CoronaIcon as OriginalCoronaIcon } from '../icons'
 import Link from 'next/link'
 import { Section } from './Layout'
 
@@ -64,7 +64,7 @@ const Wrapper = styled.div`
   ${backgroundStyles};
 `
 
-function Header({ riskLevel, inversed, children }) {
+export const Header = ({ riskLevel, inversed, children }) => {
   return (
     <Wrapper inversed={inversed} riskLevel={riskLevel}>
       <Section>
@@ -79,5 +79,3 @@ function Header({ riskLevel, inversed, children }) {
     </Wrapper>
   )
 }
-
-export default Header

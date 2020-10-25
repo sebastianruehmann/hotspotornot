@@ -3,15 +3,19 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
-import { Main, Title, Section } from '../components/Layout'
-import { Measures } from '../components/Measures/Measures'
-import Header from '../components/Header'
+import {
+  Main,
+  Title,
+  Section,
+  Measures,
+  Header,
+  LoadingIndicator,
+  PageHead,
+  NoResultsWrapper,
+  Footer,
+} from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
-import { LoadingIndicator } from '../components/LoadingIndicator'
-import { PageHead } from '../components/PageHead'
-import { NoResultsWrapper } from '../components/NoResultsWrapper'
-import { Footer } from '../components/Footer'
 
 const IncidenceValue = styled.h2`
   font-weight: bold;

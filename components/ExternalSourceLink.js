@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ExternalIcon } from './icons'
+import { ExternalIcon } from '../icons'
 
 export const Link = styled.a.attrs({
   target: '_blank',

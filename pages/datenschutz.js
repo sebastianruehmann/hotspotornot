@@ -1,9 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { Section, Main, Title } from '../components/Layout'
-import Header from '../components/Header'
-import { Footer } from '../components/Footer'
+import { Section, Main, Title, Header, Footer } from '../components'
 
 export default function Datenschutz() {
   return (
