@@ -36,7 +36,7 @@ const questionAndAnswers = [
   {
     id: 'differentincidencevalue',
     label:
-      'Warum kann der Inzidenzwert von "Hotspot or not?" von dem meines örtlichen Gesundheitsämtes abweichen?',
+      'Warum kann der Inzidenzwert von "Hotspot or not?" von dem meines örtlichen Gesundheitsamtes abweichen?',
     answer:
       'Bei der Übermittlung der Fälle von den Gesundheitsämtern über die zuständigen Landesbehörden bis ans RKI kann es zu einem Melde- und Übermittlungsverzug von einigen Tagen kommen.',
   },
