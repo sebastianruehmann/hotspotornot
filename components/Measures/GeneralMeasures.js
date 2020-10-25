@@ -1,12 +1,13 @@
+import React from 'react'
+import { RISK_LEVELS } from '../../constants'
+import MasksIcon from '../assets/masks'
+import GroupIcon from '../assets/group'
+import BarIcon from '../assets/bar'
+import SocialDistancingIcon from '../assets/social-distancing'
+import { Section } from '../Layout'
+import { Grid } from '../Grid'
 import styled from 'styled-components'
-import { RISK_LEVELS } from '../constants'
-
-import BarIcon from './assets/bar'
-import GroupIcon from './assets/group'
-import MasksIcon from './assets/masks'
-import SocialDistancingIcon from './assets/social-distancing'
-import MoreIcon from './assets/more'
-import { Section } from './Layout'
+import { Headline2 } from '../Headline2'
 
 const measures = [
   {
@@ -53,6 +54,12 @@ const measures = [
   },
 ]
 
+const MeasureHeadline = styled.h4`
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.3rem;
+`
+
 const Wrapper = styled.div`
   display: flex;
 `
@@ -65,26 +72,7 @@ const IconWrapper = styled.div`
   }
 `
 
-const MeasureHeadline = styled.h4`
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0.3rem 0 0.2rem;
-`
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem 2rem;
-`
-
-const AdditionalMeasures = styled.div`
-  background: silver;
-  border-radius: 8px;
-  padding: 1rem;
-  color: white;
-`
-
-function Measures({ riskLevel }) {
+export const GeneralMeasures = ({ riskLevel }) => {
   const allMeasures = measures.filter(({ type }) => riskLevel === type)
 
   if (!allMeasures.length) {
@@ -92,12 +80,12 @@ function Measures({ riskLevel }) {
   }
 
   return (
-    <>
-      <h2>Grundsätzliche Maßnahmen</h2>
+    <Section wrapped style={{ paddingTop: 0 }}>
+      <Headline2>Grundsätzliche Maßnahmen</Headline2>
       <p>
-        Wie in der deutschen Hotspot-Strategie vorgesehen, sind mindestens die
-        folgenden Maßnahmen einzuhalten. Diese Regelungen gelten grundsätzlich,
-        können aber durch die gezielten Maßnahmen verschärft worden sein.
+        Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke
+        jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen
+        können.
       </p>
 
       <div>
@@ -115,8 +103,6 @@ function Measures({ riskLevel }) {
           ))}
         </Grid>
       </div>
-    </>
+    </Section>
   )
 }
-
-export default Measures
