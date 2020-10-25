@@ -1,19 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import styled from 'styled-components'
-import { useQuery } from 'react-query'
-import { useEffect, useState } from 'react'
-import { usePosition } from '../hooks/usePosition'
-import { Section, Main, Title, Paragraph, Image } from '../components/Layout'
-import { Accordion } from '../components/Accordion'
-import { search } from '../services/Api'
-import Header from '../components/Header'
-import { LocationButton } from '../components/LocationButton'
-import { AddressForm } from '../components/AddressForm'
-import CoronaIcon from '../components/assets/coronavirus'
 
-export default function Home() {
+import { Section, Main, Title } from '../components/Layout'
+import Header from '../components/Header'
+import { Footer } from '../components/Footer'
+
+export default function Datenschutz() {
   return (
     <>
       <Head>
@@ -22,16 +14,9 @@ export default function Home() {
 
       <Main>
         <Header>
-          <Section wrapped>
-            <Link href="/">
-              <a>
-                <RedCoronaIcon />
-              </a>
-            </Link>
-            <Title>Datenschutz&shy;erklärung</Title>
-          </Section>
+          <Title>Datenschutz&shy;erklärung</Title>
         </Header>
-        <Section wrapped>
+        <Section>
           <p>
             Die Nutzung unserer Seite ist ohne eine Angabe von personenbezogenen
             Daten möglich. Für die Nutzung einzelner Services unserer Seite
@@ -98,19 +83,8 @@ export default function Home() {
           </p>
         </Section>
       </Main>
+
+      <Footer />
     </>
   )
 }
-
-const RedCoronaIcon = styled(CoronaIcon)`
-  height: auto;
-  margin-bottom: 40px;
-  width: 125px;
-
-  & .body {
-    fill: #d73d34;
-  }
-  & .circles {
-    fill: #ad3129;
-  }
-`

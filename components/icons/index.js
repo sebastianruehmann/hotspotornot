@@ -1,0 +1,6 @@
+export { BarIcon } from './BarIcon'
+export { CoronaIcon } from './CoronaIcon'
+export { ExternalIcon } from './ExternalIcon'
+export { GroupIcon } from './GroupIcon'
+export { MasksIcon } from './MasksIcon'
+export { SocialDistancingIcon } from './SocialDistancingIcon'

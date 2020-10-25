@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CoronaIcon = (props) => (
+export const CoronaIcon = (props) => (
   <svg
     width="100%"
     height="100%"
@@ -96,5 +96,3 @@ const CoronaIcon = (props) => (
     </g>
   </svg>
 )
-
-export default CoronaIcon

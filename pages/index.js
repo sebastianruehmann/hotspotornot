@@ -5,7 +5,7 @@ import { Section, Main, Paragraph } from '../components/Layout'
 import Header from '../components/Header'
 import { LocationButton } from '../components/LocationButton'
 import { AddressForm } from '../components/AddressForm'
-import CoronaIcon from '../components/assets/coronavirus'
+import { CoronaIcon } from '../components/icons'
 import { FAQ } from '../components/FAQ'
 import { Footer } from '../components/Footer'
 
@@ -32,20 +32,17 @@ export default function Home() {
 
       <Main>
         <Header>
-          <Section>
-            <RedCoronaIcon />
-            <h1>
-              Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
-            </h1>
-            <Paragraph>
-              Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort
-              ein <Nobr>Covid‑19</Nobr> Hotspot ist.
-            </Paragraph>
-            <Actions>
-              <LocationButton />
-              <AddressForm />
-            </Actions>
-          </Section>
+          <h1>
+            Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
+          </h1>
+          <Paragraph>
+            Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein{' '}
+            <Nobr>Covid‑19</Nobr> Hotspot ist.
+          </Paragraph>
+          <Actions>
+            <LocationButton />
+            <AddressForm />
+          </Actions>
         </Header>
         <Section>
           <FAQ />

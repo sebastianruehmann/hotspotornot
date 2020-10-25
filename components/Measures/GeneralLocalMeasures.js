@@ -6,7 +6,7 @@ import { Headline2 } from '../Headline2'
 
 export const GeneralLocalMeasures = ({ state }) => {
   return (
-    <Section wrapped>
+    <Section>
       <Headline2>Gezielte Maßnahmen</Headline2>
       <p>
         Pro Bundesland und Landkreis können abweichende Regelungen gelten. Da

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GroupIcon = (props) => (
+export const GroupIcon = (props) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -13,5 +13,3 @@ const GroupIcon = (props) => (
     </g>
   </svg>
 )
-
-export default GroupIcon

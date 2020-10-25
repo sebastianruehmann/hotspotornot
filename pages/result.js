@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
 import { Main, Title, Section } from '../components/Layout'
@@ -9,24 +8,10 @@ import { Measures } from '../components/Measures/Measures'
 import Header from '../components/Header'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
-import CoronaIcon from '../components/assets/coronavirus'
 import { LoadingIndicator } from '../components/LoadingIndicator'
 import { PageHead } from '../components/PageHead'
 import { NoResultsWrapper } from '../components/NoResultsWrapper'
 import { Footer } from '../components/Footer'
-
-const WhiteCoronaIcon = styled(CoronaIcon)`
-  height: auto;
-  margin-bottom: 40px;
-  width: 125px;
-
-  & .body {
-    fill: white;
-  }
-  & .circles {
-    fill: lightgrey;
-  }
-`
 
 const IncidenceValue = styled.h2`
   font-weight: bold;
@@ -93,21 +78,14 @@ const Result = () => {
 
       <Main>
         <Header riskLevel={riskLevel} inversed>
-          <Section>
-            <Link href="/">
-              <a>
-                <WhiteCoronaIcon />
-              </a>
-            </Link>
-            <Title>{message}</Title>
-            <IncidenceValue>
-              Die 7-Tage-Inzidenz liegt aktuell bei{' '}
-              {cases7Per100k.toLocaleString('de-DE', {
-                maximumFractionDigits: 2,
-              })}
-              .
-            </IncidenceValue>
-          </Section>
+          <Title>{message}</Title>
+          <IncidenceValue>
+            Die 7-Tage-Inzidenz liegt aktuell bei{' '}
+            {cases7Per100k.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
+            })}
+            .
+          </IncidenceValue>
         </Header>
 
         <Measures riskLevel={riskLevel} area={area} state={state} />

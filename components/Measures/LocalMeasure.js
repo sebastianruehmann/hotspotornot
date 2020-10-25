@@ -9,7 +9,7 @@ export const LocalMeasure = ({ area }) => {
   const localMeasure = useLocalMeasure(area)
 
   return (
-    <Section wrapped>
+    <Section>
       <Headline2>Gezielte Maßnahmen für {area}</Headline2>
       <p>
         Unter dem folgendem Link findest du die aktuell geltenden Regeln für{' '}

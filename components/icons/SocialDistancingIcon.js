@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SocialDistancingIcon = (props) => (
+export const SocialDistancingIcon = (props) => (
   <svg
     enableBackground="new 0 0 24 24"
     viewBox="0 0 24 24"
@@ -39,5 +39,3 @@ const SocialDistancingIcon = (props) => (
     </g>
   </svg>
 )
-
-export default SocialDistancingIcon

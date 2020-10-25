@@ -3,11 +3,8 @@ import styled from 'styled-components'
 import { Section } from '../Layout'
 import { Grid } from '../Grid'
 import { Headline2 } from '../Headline2'
-import MasksIcon from '../assets/masks'
+import { MasksIcon, GroupIcon, BarIcon, SocialDistancingIcon } from '../icons'
 import { RISK_LEVELS } from '../../constants'
-import GroupIcon from '../assets/group'
-import BarIcon from '../assets/bar'
-import SocialDistancingIcon from '../assets/social-distancing'
 
 const measures = [
   {
@@ -80,7 +77,7 @@ export const GeneralMeasures = ({ riskLevel }) => {
   }
 
   return (
-    <Section wrapped style={{ paddingTop: 0 }}>
+    <Section style={{ paddingTop: 0 }}>
       <Headline2>Grundsätzliche Maßnahmen</Headline2>
       <p>
         Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke

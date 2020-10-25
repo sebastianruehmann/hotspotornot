@@ -1,12 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import styled from 'styled-components'
 import { Section, Main, Title } from '../components/Layout'
 import Header from '../components/Header'
-import CoronaIcon from '../components/assets/coronavirus'
+import { Footer } from '../components/Footer'
 
-export default function Home() {
+export default function Impressum() {
   return (
     <>
       <Head>
@@ -15,14 +13,7 @@ export default function Home() {
 
       <Main>
         <Header>
-          <Section wrapped>
-            <Link href="/">
-              <a>
-                <RedCoronaIcon />
-              </a>
-            </Link>
-            <Title>Impressum</Title>
-          </Section>
+          <Title>Impressum</Title>
         </Header>
         <Section>
           <p>
@@ -112,19 +103,8 @@ export default function Home() {
           </p>
         </Section>
       </Main>
+
+      <Footer />
     </>
   )
 }
-
-const RedCoronaIcon = styled(CoronaIcon)`
-  height: auto;
-  margin-bottom: 40px;
-  width: 125px;
-
-  & .body {
-    fill: #d73d34;
-  }
-  & .circles {
-    fill: #ad3129;
-  }
-`
