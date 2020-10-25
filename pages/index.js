@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
-import { Section, Main, Title, Paragraph } from '../components/Layout'
+import { Section, Main, Paragraph } from '../components/Layout'
 import Header from '../components/Header'
 import { LocationButton } from '../components/LocationButton'
 import { AddressForm } from '../components/AddressForm'
@@ -32,7 +32,7 @@ export default function Home() {
 
       <Main>
         <Header>
-          <Section wrapped>
+          <Section>
             <RedCoronaIcon />
             <h1>
               Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
@@ -47,7 +47,7 @@ export default function Home() {
             </Actions>
           </Section>
         </Header>
-        <Section wrapped>
+        <Section>
           <FAQ />
         </Section>
       </Main>

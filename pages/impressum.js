@@ -2,15 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { useQuery } from 'react-query'
-import { useEffect, useState } from 'react'
-import { usePosition } from '../hooks/usePosition'
-import { Section, Main, Title, Paragraph, Image } from '../components/Layout'
-import { Accordion } from '../components/Accordion'
-import { search } from '../services/Api'
+import { Section, Main, Title } from '../components/Layout'
 import Header from '../components/Header'
-import { LocationButton } from '../components/LocationButton'
-import { AddressForm } from '../components/AddressForm'
 import CoronaIcon from '../components/assets/coronavirus'
 
 export default function Home() {
@@ -31,7 +24,7 @@ export default function Home() {
             <Title>Impressum</Title>
           </Section>
         </Header>
-        <Section wrapped>
+        <Section>
           <p>
             <strong>Angaben gem. § 5 TMG:</strong>
             <br />

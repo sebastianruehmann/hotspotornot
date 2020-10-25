@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -15,7 +14,6 @@ import { LoadingIndicator } from '../components/LoadingIndicator'
 import { PageHead } from '../components/PageHead'
 import { NoResultsWrapper } from '../components/NoResultsWrapper'
 import { Footer } from '../components/Footer'
-import MoreIcon from '../components/assets/more'
 
 const WhiteCoronaIcon = styled(CoronaIcon)`
   height: auto;
@@ -30,15 +28,11 @@ const WhiteCoronaIcon = styled(CoronaIcon)`
   }
 `
 
-const Wrapper = styled.div`
-  display: flex;
-`
-
 const IncidenceValue = styled.h2`
   font-weight: bold;
 `
 
-const CustomLink = styled.a.attrs({
+const ExternalSourcesLink = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer',
 })`
@@ -96,7 +90,7 @@ const Result = () => {
         <PageHead title="Keine Daten" />
 
         <NoResultsWrapper>
-          <Section wrapped>
+          <Section>
             <Title>Das RKI hat leider keine Daten für den Standort.</Title>
           </Section>
         </NoResultsWrapper>
@@ -119,7 +113,7 @@ const Result = () => {
 
       <Main>
         <Header riskLevel={riskLevel} inversed>
-          <Section wrapped>
+          <Section>
             <Link href="/">
               <a>
                 <WhiteCoronaIcon />
@@ -145,18 +139,18 @@ const Result = () => {
           </p>
 
           <Grid>
-            <CustomLink
+            <ExternalSourcesLink
               href={`https://corona-was-darf-ich.de/de/${state.replace(
                 '-',
                 '_'
               )}`}
             >
               FAQ über lokale Regelungen
-            </CustomLink>
+            </ExternalSourcesLink>
 
-            <CustomLink href="https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-bundeslaender-1745198">
+            <ExternalSourcesLink href="https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-bundeslaender-1745198">
               Informationen der Bundesländer
-            </CustomLink>
+            </ExternalSourcesLink>
           </Grid>
         </Section>
 

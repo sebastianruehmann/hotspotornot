@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { RISK_LEVELS } from '../constants'
 
@@ -5,8 +6,7 @@ import BarIcon from './assets/bar'
 import GroupIcon from './assets/group'
 import MasksIcon from './assets/masks'
 import SocialDistancingIcon from './assets/social-distancing'
-import MoreIcon from './assets/more'
-import { Section } from './Layout'
+import { Grid } from './Grid'
 
 const measures = [
   {
@@ -69,19 +69,6 @@ const MeasureHeadline = styled.h4`
   font-size: 1rem;
   font-weight: bold;
   margin: 0.3rem 0 0.2rem;
-`
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem 2rem;
-`
-
-const AdditionalMeasures = styled.div`
-  background: silver;
-  border-radius: 8px;
-  padding: 1rem;
-  color: white;
 `
 
 function Measures({ riskLevel }) {

@@ -16,7 +16,7 @@ const Label = styled.label`
   font-weight: 400;
   padding: 1rem;
   &:after {
-    content: '${(props) => (props.isExpanded ? '\\02796' : '\\02795')}';
+    content: '${(props) => (props.expanded ? '\\02796' : '\\02795')}';
     font-size: 1.2rem;
     align-self: center;
     margin-left: auto;
@@ -30,10 +30,10 @@ const Wrapper = styled.div`
 const Content = styled.div`
   color: #686868;
   font-size: 1.2rem;
-  padding-bottom: ${(props) => (props.isExpanded ? '1rem' : '0')};
-  padding-left: ${(props) => (props.isExpanded ? '1rem' : '0')};
-  padding-right: ${(props) => (props.isExpanded ? '1rem' : '0')};
-  max-height: ${(props) => (props.isExpanded ? '100%' : '0')};
+  padding-bottom: ${(props) => (props.expanded ? '1rem' : '0')};
+  padding-left: ${(props) => (props.expanded ? '1rem' : '0')};
+  padding-right: ${(props) => (props.expanded ? '1rem' : '0')};
+  max-height: ${(props) => (props.expanded ? '100%' : '0')};
   overflow: hidden;
 `
 
@@ -47,14 +47,10 @@ export const Accordion = ({ itemId, label, children }) => {
         name={itemId}
         onChange={() => setExpanded((expanded) => !expanded)}
       />
-      <Label isExpanded={expanded} htmlFor={itemId}>
+      <Label expanded={expanded} htmlFor={itemId}>
         {label}
       </Label>
-      <Content isExpanded={expanded}>{children}</Content>
+      <Content expanded={expanded}>{children}</Content>
     </Wrapper>
   )
-}
-
-export default {
-  Accordion,
 }

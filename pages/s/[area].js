@@ -8,7 +8,7 @@ import { NoResultsWrapper } from '../../components/NoResultsWrapper'
 import { LoadingIndicator } from '../../components/LoadingIndicator'
 import { Footer } from '../../components/Footer'
 
-const Area = (props) => {
+const Area = () => {
   const router = useRouter()
 
   const { area } = router.query
@@ -42,7 +42,7 @@ const Area = (props) => {
       <>
         <PageHead title="Fehler beim Laden" />
         <NoResultsWrapper>
-          <Section wrapped>
+          <Section>
             <Title>
               Leider gab es einen Fehler beim Abrufen der Daten des RKIs.
             </Title>

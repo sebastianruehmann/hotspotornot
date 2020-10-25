@@ -9,7 +9,6 @@ import { Button } from './Button'
 import { track } from '../helpers/track'
 
 const SubmitButton = styled(Button)`
-  color: white;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 0 12px 0 15px;
