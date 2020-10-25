@@ -4,7 +4,7 @@ import { LocalMeasure } from './LocalMeasure'
 import { GeneralLocalMeasures } from './GeneralLocalMeasures'
 import { GeneralMeasures } from './GeneralMeasures'
 
-export const Measures = ({ riskLevel, area }) => {
+export const Measures = ({ riskLevel, area, state }) => {
   const localMeasure = useLocalMeasure(area)
 
   if (localMeasure) {
@@ -13,7 +13,7 @@ export const Measures = ({ riskLevel, area }) => {
 
   return (
     <>
-      <GeneralLocalMeasures />
+      <GeneralLocalMeasures state={state} />
       <GeneralMeasures riskLevel={riskLevel} />
     </>
   )

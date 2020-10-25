@@ -1,13 +1,13 @@
 import React from 'react'
-import { RISK_LEVELS } from '../../constants'
+import styled from 'styled-components'
+import { Section } from '../Layout'
+import { Grid } from '../Grid'
+import { Headline2 } from '../Headline2'
 import MasksIcon from '../assets/masks'
+import { RISK_LEVELS } from '../../constants'
 import GroupIcon from '../assets/group'
 import BarIcon from '../assets/bar'
 import SocialDistancingIcon from '../assets/social-distancing'
-import { Section } from '../Layout'
-import { Grid } from '../Grid'
-import styled from 'styled-components'
-import { Headline2 } from '../Headline2'
 
 const measures = [
   {

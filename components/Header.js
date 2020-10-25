@@ -1,22 +1,29 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { RISK_LEVELS } from '../constants'
 
-const getColor = ({ riskLevel }) => {
+const backgroundStyles = ({ riskLevel }) => {
+  let backgroundColor = '#f5f5f7'
+
   switch (riskLevel) {
     case RISK_LEVELS.low:
-      return '#57b160'
+      backgroundColor = '#57b160'
+      break
     case RISK_LEVELS.medium:
-      return '#E2CB31'
+      backgroundColor = '#E2CB31'
+      break
     case RISK_LEVELS.high:
-      return '#C34838'
+      backgroundColor = '#C34838'
+      break
   }
-  return '#f5f5f7'
+  return css`
+    background: ${backgroundColor};
+  `
 }
 
 const Wrapper = styled.div`
-  background: ${(props) => getColor(props)};
   color: ${(props) => (props.inversed ? 'white' : 'inherit')};
+  ${backgroundStyles};
 `
 
 function Header({ riskLevel, inversed, children }) {

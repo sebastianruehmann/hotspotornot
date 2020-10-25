@@ -1,16 +1,12 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const Section = styled.section`
   background: ${(props) => (props.grey ? '#f5f5f7' : 'transparent')};
   padding: 5rem 2rem;
 
-  ${(props) =>
-    props.wrapped &&
-    css`
-      margin: 0 auto;
-      max-width: 1040px;
-      width: 100%;
-    `}
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 100%;
 `
 
 const Main = styled.main``

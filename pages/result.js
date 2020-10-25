@@ -28,10 +28,6 @@ const WhiteCoronaIcon = styled(CoronaIcon)`
   }
 `
 
-const Wrapper = styled.div`
-  display: flex;
-`
-
 const IncidenceValue = styled.h2`
   font-weight: bold;
 `
@@ -74,7 +70,7 @@ const Result = () => {
         <PageHead title="Keine Daten" />
 
         <NoResultsWrapper>
-          <Section wrapped>
+          <Section>
             <Title>Das RKI hat leider keine Daten für den Standort.</Title>
           </Section>
         </NoResultsWrapper>
@@ -97,7 +93,7 @@ const Result = () => {
 
       <Main>
         <Header riskLevel={riskLevel} inversed>
-          <Section wrapped>
+          <Section>
             <Link href="/">
               <a>
                 <WhiteCoronaIcon />
@@ -114,7 +110,7 @@ const Result = () => {
           </Section>
         </Header>
 
-        <Measures riskLevel={riskLevel} area={area} />
+        <Measures riskLevel={riskLevel} area={area} state={state} />
       </Main>
 
       <Footer />

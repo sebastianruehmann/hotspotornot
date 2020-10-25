@@ -10,18 +10,20 @@ export const LocationButton = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (coords) {
-      track('Submitted current location')
-      router
-        .push(
-          {
-            pathname: '/result',
-            query: { coords },
-          },
-          '/result'
-        )
-        .then(() => window.scrollTo(0, 0))
+    if (!coords) {
+      return
     }
+
+    track('Submitted current location')
+    router
+      .push(
+        {
+          pathname: '/result',
+          query: { coords },
+        },
+        '/result'
+      )
+      .then(() => window.scrollTo(0, 0))
   }, [coords])
 
   useEffect(() => {
@@ -31,6 +33,18 @@ export const LocationButton = () => {
     }
   }, [isIdle, isError])
 
+  const makeButtonText = () => {
+    if (isIdle) {
+      return 'Standort angefragt...'
+    }
+
+    if (error) {
+      return 'Standortabfrage nicht erfolgreich'
+    }
+
+    return 'Lass dich orten'
+  }
+
   return (
     <Button
       onClick={request}
@@ -38,11 +52,7 @@ export const LocationButton = () => {
       isLoading={isIdle}
       disabled={isIdle || error}
     >
-      {isIdle
-        ? 'Standort angefragt...'
-        : error
-        ? 'Standortabfrage nicht erfolgreich'
-        : 'Lass dich orten'}
+      {makeButtonText()}
     </Button>
   )
 }

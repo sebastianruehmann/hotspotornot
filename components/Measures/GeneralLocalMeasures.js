@@ -4,7 +4,7 @@ import { Section } from '../Layout'
 import { Grid } from '../Grid'
 import { Headline2 } from '../Headline2'
 
-export const GeneralLocalMeasures = () => {
+export const GeneralLocalMeasures = ({ state }) => {
   return (
     <Section wrapped>
       <Headline2>Gezielte Maßnahmen</Headline2>
@@ -15,7 +15,9 @@ export const GeneralLocalMeasures = () => {
       </p>
 
       <Grid>
-        <ExternalSourceLink href="https://corona-was-darf-ich.de/de">
+        <ExternalSourceLink
+          href={`https://corona-was-darf-ich.de/de/${state.replace('-', '_')}`}
+        >
           FAQ über lokale Regelungen
         </ExternalSourceLink>
 
