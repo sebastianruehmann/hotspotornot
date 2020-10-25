@@ -6,6 +6,9 @@ export const Link = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer',
 })`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 16px;
   background: #0071e3;
   border-radius: 4px;
@@ -13,9 +16,6 @@ export const Link = styled.a.attrs({
   width: 100%;
   text-align: center;
   font-size: 16px;
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
 `
 
 export const ExternalSourceLink = ({ children, href }) => {

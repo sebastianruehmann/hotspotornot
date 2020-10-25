@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { Section, Main, Title, Header, Footer } from '../components'
+import { Section, Title, Header, Footer } from '../components'
 
 export default function Datenschutz() {
   return (
@@ -10,7 +10,7 @@ export default function Datenschutz() {
         <title>Hotspot or not? - Datenschutz</title>
       </Head>
 
-      <Main>
+      <main>
         <Header>
           <Title>Datenschutz&shy;erklärung</Title>
         </Header>
@@ -80,7 +80,7 @@ export default function Datenschutz() {
             werden, erfolgt ebenfalls nicht.
           </p>
         </Section>
-      </Main>
+      </main>
 
       <Footer />
     </>

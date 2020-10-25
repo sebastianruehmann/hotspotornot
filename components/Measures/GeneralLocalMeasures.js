@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExternalSourceLink } from '../ExternalSourceLink'
-import { Section } from '../Layout'
+import { Section } from '../Section'
 import { Grid } from '../Grid'
 import { Headline2 } from '../Headline2'
 

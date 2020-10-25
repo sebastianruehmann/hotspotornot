@@ -4,7 +4,7 @@ import { RISK_LEVELS } from '../constants'
 
 import { CoronaIcon as OriginalCoronaIcon } from '../icons'
 import Link from 'next/link'
-import { Section } from './Layout'
+import { Section } from './Section'
 
 const CoronaIcon = styled(OriginalCoronaIcon)`
   height: auto;

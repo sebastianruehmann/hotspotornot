@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
 import {
-  Main,
   Title,
   Section,
   Measures,
@@ -80,7 +79,7 @@ const Result = () => {
     <>
       <PageHead title={message} />
 
-      <Main>
+      <main>
         <Header riskLevel={riskLevel} inversed>
           <Title>{message}</Title>
           <IncidenceValue>
@@ -93,7 +92,7 @@ const Result = () => {
         </Header>
 
         <Measures riskLevel={riskLevel} area={area} state={state} />
-      </Main>
+      </main>
 
       <Footer />
     </>

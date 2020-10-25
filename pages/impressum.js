@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { Section, Main, Title, Header, Footer } from '../components'
+import { Section, Title, Header, Footer } from '../components'
 
 export default function Impressum() {
   return (
@@ -9,7 +9,7 @@ export default function Impressum() {
         <title>Hotspot or not? - Impressum</title>
       </Head>
 
-      <Main>
+      <main>
         <Header>
           <Title>Impressum</Title>
         </Header>
@@ -100,7 +100,7 @@ export default function Impressum() {
             unverzüglich entfernen.
           </p>
         </Section>
-      </Main>
+      </main>
 
       <Footer />
     </>

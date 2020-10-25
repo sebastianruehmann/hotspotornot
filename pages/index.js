@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import {
   Section,
-  Main,
   Paragraph,
   Header,
   LocationButton,
@@ -34,7 +33,7 @@ export default function Home() {
         <title>Hotspot or not?</title>
       </Head>
 
-      <Main>
+      <main>
         <Header>
           <h1>
             Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
@@ -51,7 +50,7 @@ export default function Home() {
         <Section>
           <FAQ />
         </Section>
-      </Main>
+      </main>
 
       <Footer />
     </>

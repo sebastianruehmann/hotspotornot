@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section } from '../Layout'
+import { Section } from '../Section'
 import { Grid } from '../Grid'
 import { Headline2 } from '../Headline2'
-import { MasksIcon, GroupIcon, BarIcon, SocialDistancingIcon } from '../icons'
+import {
+  MasksIcon,
+  GroupIcon,
+  BarIcon,
+  SocialDistancingIcon,
+} from '../../icons'
 import { RISK_LEVELS } from '../../constants'
 
 const measures = [
