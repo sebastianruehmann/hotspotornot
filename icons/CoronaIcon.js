@@ -1,6 +1,7 @@
 import React from 'react'
+import styled, { css } from 'styled-components'
 
-export const CoronaIcon = (props) => (
+const BaseCoronaIcon = (props) => (
   <svg
     width="100%"
     height="100%"
@@ -96,3 +97,29 @@ export const CoronaIcon = (props) => (
     </g>
   </svg>
 )
+
+const colorStyles = (props) => {
+  if (props.color === 'red') {
+    return css`
+      & .body {
+        fill: #d73d34;
+      }
+      & .circles {
+        fill: #ad3129;
+      }
+    `
+  }
+
+  return css`
+    & .body {
+      fill: white;
+    }
+    & .circles {
+      fill: lightgrey;
+    }
+  `
+}
+
+export const CoronaIcon = styled(BaseCoronaIcon)`
+  ${colorStyles}
+`
