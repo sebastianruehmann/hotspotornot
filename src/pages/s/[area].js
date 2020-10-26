@@ -65,7 +65,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(props) {
   const result = await searchByArea(props.params.area)
 
-  return { props: { result } }
+  return { props: { result }, revalidate: 30 }
 }
 
 export default Area
