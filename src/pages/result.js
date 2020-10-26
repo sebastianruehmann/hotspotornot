@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
-import { search } from '../services/Api'
+import { searchByCoordinates } from '../services/Api'
 import {
   Title,
   Section,
@@ -25,7 +25,7 @@ const Result = () => {
   const coords = router.query.coords || []
   const { isError, data } = useQuery(
     ['area', coords],
-    () => search(coords[0], coords[1]),
+    () => searchByCoordinates(coords[0], coords[1]),
     {
       enabled: !!coords,
       retry: false,

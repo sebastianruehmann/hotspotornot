@@ -1,75 +1,71 @@
 import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
-import { getCoordinatesByAddress } from '../../services/Geocoding'
-
+import styled from 'styled-components'
+import axios from 'axios'
+import { RISK_LEVELS } from '../../constants'
+import { searchByArea, fetchAreas } from '../../services/Api'
+import { hasHigherRiskLevel, mapRiskLevel } from '../../services/RiskLevels'
 import {
-  Section,
   Title,
+  Section,
+  Measures,
+  Header,
+  LoadingIndicator,
   PageHead,
   NoResultsWrapper,
-  LoadingIndicator,
   Footer,
 } from '../../components'
 
-const Area = () => {
-  const router = useRouter()
+const IncidenceValue = styled.h2`
+  font-weight: bold;
+`
 
-  const { area } = router.query
+const Area = ({ result }) => {
+  const { area, cases7Per100k, state } = result || {}
 
-  const { isLoading, data, isError } = useQuery(area, getCoordinatesByAddress, {
-    refetchOnWindowFocus: false,
-    enabled: area,
-    retry: false,
-  })
+  const riskLevel = mapRiskLevel(cases7Per100k)
+  const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium)
+    ? `${area} ist ein Covid-19 Hotspot.`
+    : `${area} ist kein Covid-19 Hotspot.`
 
-  useEffect(() => {
-    if (!data) {
-      return
-    }
-    router.push(
-      {
-        pathname: '/result',
-        query: {
-          coords: [data.lat, data.lng],
-        },
-      },
-      `/s/${area}`,
-      {
-        shallow: true,
-      }
-    )
-  }, [data])
+  return (
+    <>
+      <PageHead title={message} />
 
-  if (isError) {
-    return (
-      <>
-        <PageHead title="Fehler beim Laden" />
-        <NoResultsWrapper>
-          <Section>
-            <Title>
-              Leider gab es einen Fehler beim Abrufen der Daten des RKIs.
-            </Title>
-          </Section>
-        </NoResultsWrapper>
+      <main>
+        <Header riskLevel={riskLevel} inversed>
+          <Title>{message}</Title>
+          <IncidenceValue>
+            Die 7-Tage-Inzidenz liegt aktuell bei{' '}
+            {cases7Per100k.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
+            })}
+            .
+          </IncidenceValue>
+        </Header>
 
-        <Footer />
-      </>
-    )
-  }
+        <Measures riskLevel={riskLevel} area={area} state={state} />
+      </main>
 
-  if (isLoading) {
-    return (
-      <>
-        <PageHead title="Laden..." />
-        <LoadingIndicator />
+      <Footer />
+    </>
+  )
+}
 
-        <Footer />
-      </>
-    )
-  }
+export async function getStaticPaths() {
+  const areas = await fetchAreas()
 
-  return null
+  const paths = areas.map((area) => ({
+    params: { area: area },
+  }))
+
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps(props) {
+  const result = await searchByArea(props.params.area)
+
+  return { props: { result } }
 }
 
 export default Area

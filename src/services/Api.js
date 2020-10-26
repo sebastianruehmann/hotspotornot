@@ -2,41 +2,81 @@ import axios from 'axios'
 
 const params = {
   outFields: 'OBJECTID,cases7_per_100k,GEN,last_update,BL',
-  geometryType: 'esriGeometryPoint',
-  spatialRel: 'esriSpatialRelWithin',
-  inSR: '4326',
-  outSR: '4326',
+  returnGeometry: false,
   f: 'json',
 }
 
-//  TODO: Rename fields in here.
+const formatResponse = (response) => {
+  const features = response.data.features
+  const {
+    GEN: area,
+    cases7_per_100k: cases7Per100k,
+    last_update: lastUpdated,
+    BL: state,
+  } = features[0]?.attributes || {}
 
-export function search(lat, lng) {
+  return {
+    area,
+    cases7Per100k,
+    lastUpdated,
+    state,
+  }
+}
+
+export function searchByCoordinates(lat, lng) {
   return axios
     .get(process.env.NEXT_PUBLIC_RKI_API, {
       params: {
         ...params,
+        geometryType: 'esriGeometryPoint',
+        spatialRel: 'esriSpatialRelWithin',
+        inSR: '4326',
+        outSR: '4326',
         geometry: lng + ',' + lat,
       },
     })
     .then((response) => {
-      const features = response.data.features
-      if (!features.length) {
+      if (!response.data.features.length) {
         throw new Error('No area data found')
       }
 
-      const {
-        GEN: area,
-        cases7_per_100k: cases7Per100k,
-        last_update: lastUpdated,
-        BL: state,
-      } = features[0]?.attributes || {}
+      return formatResponse(response)
+    })
+}
 
-      return {
-        area,
-        cases7Per100k,
-        lastUpdated,
-        state,
+export function fetchAreas() {
+  return axios
+    .get(process.env.NEXT_PUBLIC_RKI_API, {
+      params: {
+        ...params,
+        outFields: 'GEN',
+        where: '1=1',
+      },
+    })
+    .then((response) => {
+      if (!response.data.features.length) {
+        throw new Error('No area data found')
       }
+
+      const areas = response.data.features.map(
+        (feature) => feature.attributes.GEN
+      )
+      return areas
+    })
+}
+
+export function searchByArea(area) {
+  return axios
+    .get(`${process.env.NEXT_PUBLIC_RKI_API}?where=GEN = '${area}'`, {
+      params: {
+        ...params,
+      },
+    })
+    .then((response) => {
+      if (!response.data.features.length) {
+        throw new Error('No area data found')
+      }
+
+      return formatResponse(response)
     })
 }
