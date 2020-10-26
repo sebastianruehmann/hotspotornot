@@ -67,11 +67,16 @@ export function fetchAreas() {
 
 export function searchByArea(area) {
   return axios
-    .get(`${process.env.NEXT_PUBLIC_RKI_API}?where=GEN = '${area}'`, {
-      params: {
-        ...params,
-      },
-    })
+    .get(
+      `${process.env.NEXT_PUBLIC_RKI_API}?where=GEN = '${encodeURIComponent(
+        area
+      )}'`,
+      {
+        params: {
+          ...params,
+        },
+      }
+    )
     .then((response) => {
       if (!response.data.features.length) {
         throw new Error('No area data found')
