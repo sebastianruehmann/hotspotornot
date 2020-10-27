@@ -16,4 +16,14 @@ export const localMeasures = {
     url:
       'https://www.hannover.de/Leben-in-der-Region-Hannover/Gesundheit/Gesundheitsschutz/Coronavirus-in-der-Region-Hannover/Meldungen-zum-Coronavirus/Region-Hannover-informiert-zum-aktuellen-Infektionsgeschehen',
   },
+  'Region Dresden': {
+    title: 'Offizielle Regeln auf dresden.de',
+    url:
+      'https://www.dresden.de/de/leben/gesundheit/hygiene/infektionsschutz/corona.php',
+  },  
+  'Region Bautzen': {
+    title: 'Offizielle Regeln auf bautzen.de',
+    url:
+      'https://www.landkreis-bautzen.de/coronavirus.php',
+  },    
 }
