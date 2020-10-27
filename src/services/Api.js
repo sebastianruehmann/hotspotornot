@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+const baseUrl =
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query'
+
 const params = {
   outFields: 'OBJECTID,cases7_per_100k,GEN,last_update,BL',
   geometryType: 'esriGeometryPoint',
@@ -13,7 +16,7 @@ const params = {
 
 export function search(lat, lng) {
   return axios
-    .get(process.env.NEXT_PUBLIC_RKI_API, {
+    .get(baseUrl, {
       params: {
         ...params,
         geometry: lng + ',' + lat,

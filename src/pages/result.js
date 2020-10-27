@@ -70,7 +70,7 @@ const Result = () => {
     )
   }
 
-  const { area, cases7Per100k, state } = data
+  const { area, cases7Per100k, state, lastUpdated } = data
 
   const riskLevel = mapRiskLevel(cases7Per100k)
   const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium)
@@ -91,6 +91,7 @@ const Result = () => {
               }),
             })}
           </IncidenceValue>
+          <small>Daten vom {lastUpdated}</small>
         </Header>
 
         <Measures riskLevel={riskLevel} area={area} state={state} />
