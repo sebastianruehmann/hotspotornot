@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Accordion } from '../Accordion'
-import { questionAndAnswers } from './questionAndAnswers'
+import { useTranslation } from '../../i18n'
 
 const Stack = styled.div`
   > * {
@@ -14,12 +14,15 @@ const Stack = styled.div`
 `
 
 export const FAQ = () => {
+  const { t } = useTranslation('faq')
+  const questionsAndAnswers = t('faq', { returnObjects: true })
+
   return (
     <>
       <h2>FAQ</h2>
       <Stack>
-        {questionAndAnswers.map((it) => (
-          <Accordion key={it.id} itemId={it.id} label={it.label}>
+        {questionsAndAnswers.map((it, index) => (
+          <Accordion key={index} itemId={index} label={it.label}>
             {it.answer}
           </Accordion>
         ))}

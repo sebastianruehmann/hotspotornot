@@ -15,12 +15,14 @@ import {
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
+import { Trans, useTranslation } from '../i18n'
 
 const IncidenceValue = styled.h2`
   font-weight: bold;
 `
 
 const Result = () => {
+  const { t } = useTranslation()
   const router = useRouter()
   const coords = router.query.coords || []
   const { isError, data } = useQuery(
@@ -45,7 +47,7 @@ const Result = () => {
   if (!data) {
     return (
       <>
-        <PageHead title="Laden..." />
+        <PageHead title={t('result.loadingTitle')} />
         <LoadingIndicator />
         <Footer />
       </>
@@ -55,11 +57,11 @@ const Result = () => {
   if (isError) {
     return (
       <>
-        <PageHead title="Keine Daten" />
+        <PageHead title={t('result.noDataTitle')} />
 
         <NoResultsWrapper>
           <Section>
-            <Title>Das RKI hat leider keine Daten für den Standort.</Title>
+            <Title>{t('result.noDataHeadline')}</Title>
           </Section>
         </NoResultsWrapper>
 
@@ -72,8 +74,8 @@ const Result = () => {
 
   const riskLevel = mapRiskLevel(cases7Per100k)
   const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium)
-    ? `${area} ist ein Covid-19 Hotspot.`
-    : `${area} ist kein Covid-19 Hotspot.`
+    ? t('result.hotspot', { area })
+    : t('result.noHotspot', { area })
 
   return (
     <>
@@ -83,11 +85,11 @@ const Result = () => {
         <Header riskLevel={riskLevel} inversed>
           <Title>{message}</Title>
           <IncidenceValue>
-            Die 7-Tage-Inzidenz liegt aktuell bei{' '}
-            {cases7Per100k.toLocaleString('de-DE', {
-              maximumFractionDigits: 2,
+            {t('result.incidenceValue', {
+              incidence: cases7Per100k.toLocaleString('de-DE', {
+                maximumFractionDigits: 2,
+              }),
             })}
-            .
           </IncidenceValue>
         </Header>
 

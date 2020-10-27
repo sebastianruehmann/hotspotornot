@@ -1,0 +1,72 @@
+{
+  "index": {
+    "title": "Hotspot or not?",
+    "headline": "Bin ich in einem Covid-19 Hotspot?",
+    "subHeadline": "Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein Covid‑19 Hotspot ist."
+  },
+  "locationButton": {
+    "notInitiated": "Lass dich orten",
+    "error": "Standortabfrage nicht erfolgreich",
+    "pending": "Standort angefragt..."
+  },
+  "locationInput": {
+    "placeholder": "Gib deinen Ort ein...",
+    "button": "Suchen",
+    "pendingButton": "Lädt..."
+  },
+  "result": {
+    "loadingTitle": "Laden...",
+    "noDataTitle": "Keine Daten",
+    "noDataHeadline": "Das RKI hat leider keine Daten für den Standort.",
+    "hotspot": "{{area}} ist ein Covid-19 Hotspot.",
+    "noHotspot": "{{area}} ist kein Covid-19 Hotspot.",
+    "incidenceValue": "Die 7-Tage Inzidenz liegt aktuell bei {{incidence}}.",
+    "errorTitle": "Fehler beim Laden",
+    "errorHeadline": "Leider gab es einen Fehler beim Abrufen der Daten des RKIs."
+  },
+  "measures": {
+    "local": {
+      "headline": "Gezielte Maßnahmen für {{area}}",
+      "linkDescription": "Unter dem folgendem Link findest du die aktuell geltenden Regeln für {{area}}"
+    },
+    "generalLocal": {
+      "headline": "Gezielte Maßnahmen",
+      "description": "Pro Bundesland und Landkreis können abweichende Regelungen gelten. Da\n        sich diese stetig ändern, findest du hier entsprechende Links, die dir\n        Informationen über die an diesem Ort geltenden Regelungen liefern.",
+      "coronaWasDarfIchLinkText": "FAQ über lokale Regelungen",
+      "bundesregierungLinkText": "Informationen der Bundesländer"
+    },
+    "general": {
+      "headline": "Grundsätzliche Maßnahmen",
+      "description": "Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke\n        jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen können."
+    },
+    "list": {
+      "masksMedium": {
+        "title": "Maskenpflicht",
+        "description": "Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen."
+      },
+      "partiesMedium": {
+        "title": "Private Feiern",
+        "description": "Höchstens 25 Personen sind im öffentlichen Raum erlaubt, 15 aus maximal zwei Haushalten bei Feiern zuhause."
+      },
+      "masksHigh": {
+        "title": "Maskenpflicht",
+        "description": "Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen. Individuelle Erweiterung möglich."
+      },
+      "partiesHigh": {
+        "title": "Private Feiern",
+        "description": "Höchstens 10 Personen sind im öffentlichen Raum erlaubt, 10 aus maximal zwei Haushalten bei Feiern zuhause."
+      },
+      "curfew": {
+        "title": "Sperrstunde für Gastronomie",
+        "description": "Verbindliche Sperrstunde um 23 Uhr, außerdem Außenabgabeverbot von Alkohol ab 23 Uhr."
+      },
+      "contactRestrictions": {
+        "title": "Kontaktbeschränkungen",
+        "description": "Höchstens 10 Personen sind im öffentlichen Raum erlaubt. Wenn weitere Maßnahmen keine Besserung bringen, kann die Beschränkung auf 5 Personen oder zwei Haushalte reduziert werden."
+      }
+    }
+  },
+  "footer": {
+    "credits": "Die Köpfe hinter \"Hotspot or not?\" <a target=\"_blank\" href=\"https://seb.astian.eu\">Sebastian</a>, <a target=\"_blank\" href=\"https://julianblohm.vercel.app\">Julian</a> und <a target=\"_blank\" href=\"https://jonas.re\">Jonas</a>"
+  }
+}
