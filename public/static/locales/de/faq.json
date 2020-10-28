@@ -1,4 +1,5 @@
 {
+  "title": "FAQ",
   "faq": [
     {
       "label": "Wie funktioniert \"Hotspot or not?\"",
@@ -28,6 +29,10 @@
     {
       "label": "Was ist der Inzidenzwert?",
       "answer": "Der Inzidenzwert ist die Maßzahl dafür, wie viele von 100.000 Einwohnern innerhalb von 7 Tagen an Covid-19 erkrankt sind."
+    },
+    {
+      "label": "Ich habe ein Problem. Wo kann ich mich melden?",
+      "answer": "Bei Problemen, Fragen oder Anmerkungen wenden Sie sich bitte an <a href=\"mailto:service@hotspotornot.de\">service@hotspotornot.de</a>"
     }
   ]
 }

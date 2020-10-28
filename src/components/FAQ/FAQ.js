@@ -19,21 +19,17 @@ export const FAQ = () => {
 
   return (
     <>
-      <h2>FAQ</h2>
+      <h2>{t('title')}</h2>
       <Stack>
         {questionsAndAnswers.map((it, index) => (
           <Accordion key={index} itemId={index} label={it.label}>
-            {it.answer}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: it.answer,
+              }}
+            />
           </Accordion>
         ))}
-
-        <Accordion
-          itemId="support"
-          label="Ich habe ein Problem. Wo kann ich mich melden?"
-        >
-          Bei Problemen, Fragen oder Anmerkungen wenden Sie sich bitte an{' '}
-          <a href="mailto:service@hotspotornot.de">service@hotspotornot.de</a>
-        </Accordion>
       </Stack>
     </>
   )
