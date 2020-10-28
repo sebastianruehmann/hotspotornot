@@ -21,6 +21,11 @@ const IncidenceValue = styled.h2`
   font-weight: bold;
 `
 
+const DateUpdated = ({ date }) => {
+  const { t } = useTranslation()
+  return <small>{t('result.lastUpdated', { date })}</small>
+}
+
 const Result = () => {
   const { t } = useTranslation()
   const router = useRouter()
@@ -91,7 +96,7 @@ const Result = () => {
               }),
             })}
           </IncidenceValue>
-          <small>Daten vom {lastUpdated}</small>
+          <DateUpdated date={lastUpdated.split(',')[0]} />
         </Header>
 
         <Measures riskLevel={riskLevel} area={area} state={state} />

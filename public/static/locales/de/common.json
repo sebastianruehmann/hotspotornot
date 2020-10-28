@@ -22,7 +22,8 @@
     "noHotspot": "{{area}} ist kein Covid-19 Hotspot.",
     "incidenceValue": "Die 7-Tage Inzidenz liegt aktuell bei {{incidence}}.",
     "errorTitle": "Fehler beim Laden",
-    "errorHeadline": "Leider gab es einen Fehler beim Abrufen der Daten des RKIs."
+    "errorHeadline": "Leider gab es einen Fehler beim Abrufen der Daten des RKIs.",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}"
   },
   "measures": {
     "local": {
