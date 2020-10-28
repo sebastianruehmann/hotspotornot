@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { I18nContext } from 'next-i18next'
+
 import { ExternalSourceLink } from '../ExternalSourceLink'
 import { Section } from '../Section'
 import { Grid } from '../Grid'
@@ -7,6 +9,9 @@ import { useTranslation } from '../../i18n'
 
 export const GeneralLocalMeasures = ({ state }) => {
   const { t } = useTranslation()
+  const {
+    i18n: { language },
+  } = useContext(I18nContext)
 
   return (
     <Section>
@@ -15,7 +20,10 @@ export const GeneralLocalMeasures = ({ state }) => {
 
       <Grid>
         <ExternalSourceLink
-          href={`https://corona-was-darf-ich.de/de/${state.replace('-', '_')}`}
+          href={`https://corona-was-darf-ich.de/${language}/${state.replace(
+            '-',
+            '_'
+          )}`}
         >
           {t('measures.generalLocal.coronaWasDarfIchLinkText')}
         </ExternalSourceLink>
