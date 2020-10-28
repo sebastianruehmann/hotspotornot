@@ -5,7 +5,7 @@
     "subHeadline": "Use the RKI data to check whether you are in a Covid-19 Hotspot."
   },
   "locationButton": {
-    "notInitiated": "Locate yourself",
+    "notInitiated": "Locate me",
     "error": "Checking your location failed",
     "pending": "Getting your location..."
   },
@@ -20,7 +20,7 @@
     "noDataHeadline": "Unfortuntaly, the RKI does not have any data for this location.",
     "hotspot": "{{area}} is a Covid-19 Hotspot.",
     "noHotspot": "{{area}} is not a Covid-19 Hotspot.",
-    "incidenceValue": "At the moment, the 7 days incidence is {{incidence}}.",
+    "incidenceValue": "Currently, the 7 days incidence is {{incidence}}.",
     "errorTitle": "Error while loading data",
     "errorHeadline": "Unfortunately, an error occurred while fetching data from the RKI",
     "lastUpdated": "Last updated: {{date}}"
@@ -28,11 +28,11 @@
   "measures": {
     "local": {
       "headline": "Specific measures for {{area}}",
-      "linkDescription": "Use the following link to find the rules in place for {{area}}"
+      "linkDescription": "Use the following link to find the rules in place for {{area}}."
     },
     "generalLocal": {
       "headline": "Specific measures",
-      "description": "Measures can be different dependent on state (Bundesland) and district (Landkreis). Because they often change, please find useful links below.",
+      "description": "Measures may vary depending on state (Bundesland) and district (Landkreis). Because they often change, please find useful links below.",
       "coronaWasDarfIchLinkText": "FAQ for your area",
       "bundesregierungLinkText": "Information of the states"
     },
@@ -42,28 +42,28 @@
     },
     "list": {
       "masksMedium": {
-        "title": "Mask requirement",
+        "title": "Wear a mask",
         "description": "Everywhere in public areas where people have closer contact."
       },
       "partiesMedium": {
-        "title": "Private parties",
-        "description": "At most, 25 people are allowed in the public area, 15 from max. two different households at home."
+        "title": "Private gatherings",
+        "description": "A maximum of 25 people are allowed in public areas, 15 from max. two different households at home."
       },
       "masksHigh": {
-        "title": "Mask requirement",
-        "description": "Everywhere in public areas where people have closer contact. Individual extension possible."
+        "title": "Wear a mask",
+        "description": "Everywhere in public areas where people have closer contact. Individual extension may apply."
       },
       "partiesHigh": {
-        "title": "Private parties",
-        "description": "At most, 10 people are allowed in the public area, 10 from max. two different households at home."
+        "title": "Private gatherings",
+        "description": "A maximum of 10 people is permitted in public areas, 10 people from max. two different households may gather indoors."
       },
       "curfew": {
         "title": "Curfew for restaurants and bars",
-        "description": "Curfew starting at 11pm. Also, selling alcohol is prohibited."
+        "description": "Curfew starting at 11pm. Also, the sale of alcohol is prohibited."
       },
       "contactRestrictions": {
         "title": "Contact restrictions",
-        "description": "At most, 10 people are allowed in public areas. If additional measures do not have an effect, they can be further extended to max. 5 people or two households."
+        "description": "A maximum of 10 people are allowed in public areas. If additional measures do not have an effect, they can be further extended to max. 5 people or two households."
       }
     }
   },
