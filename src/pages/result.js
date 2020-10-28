@@ -15,7 +15,7 @@ import {
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
-import { Trans, useTranslation } from '../i18n'
+import { useTranslation } from '../i18n'
 
 const IncidenceValue = styled.h2`
   font-weight: bold;
@@ -106,5 +106,9 @@ const Result = () => {
     </>
   )
 }
+
+Result.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+})
 
 export default Result

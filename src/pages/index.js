@@ -55,4 +55,8 @@ function Home() {
   )
 }
 
+Home.getInitialProps = async () => ({
+  namespacesRequired: ['common', 'faq'],
+})
+
 export default Home
