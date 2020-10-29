@@ -7,6 +7,7 @@ import { getCoordinatesByAddress } from '../services/Geocoding'
 import { Input } from './Input'
 import { Button } from './Button'
 import { track } from '../helpers/track'
+import { useTranslation } from '../i18n'
 
 const SubmitButton = styled(Button)`
   border-top-left-radius: 0;
@@ -34,6 +35,8 @@ export const AddressForm = () => {
     }
   )
 
+  const { t } = useTranslation()
+
   const onSubmit = async (event) => {
     event.preventDefault()
 
@@ -58,10 +61,12 @@ export const AddressForm = () => {
       <Input
         onChange={(event) => setAddress(event.target.value)}
         value={address}
-        placeholder="Gib deinen Ort ein..."
+        placeholder={t('locationInput.placeholder')}
       />
       <SubmitButton isLoading={isLoading} disabled={!address}>
-        {isLoading ? 'Lädt...' : 'Suchen'}
+        {isLoading
+          ? t('locationInput.pendingButton')
+          : t('locationInput.button')}
       </SubmitButton>
     </Form>
   )

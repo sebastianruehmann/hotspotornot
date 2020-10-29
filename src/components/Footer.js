@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { Section } from './Section'
+import { useTranslation } from '../i18n'
 
 const Wrapper = styled(Section)`
   width: 100%;
@@ -34,6 +35,8 @@ const Right = styled(Item)`
 `
 
 export const Footer = () => {
+  const { t } = useTranslation()
+
   return (
     <FooterWrapper>
       <Item>
@@ -46,20 +49,7 @@ export const Footer = () => {
           <a>Datenschutz</a>
         </Link>
       </Item>
-      <Right>
-        Die Köpfe hinter "Hotspot or not?"{' '}
-        <a target="_blank" href="https://seb.astian.eu">
-          Sebastian
-        </a>
-        ,{' '}
-        <a target="_blank" href="https://julianblohm.vercel.app">
-          Julian
-        </a>{' '}
-        und{' '}
-        <a target="_blank" href="https://jonas.re">
-          Jonas
-        </a>
-      </Right>
+      <Right dangerouslySetInnerHTML={{ __html: t('footer.credits') }} />
     </FooterWrapper>
   )
 }

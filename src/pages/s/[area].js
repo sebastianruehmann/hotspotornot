@@ -12,8 +12,11 @@ import {
   Footer,
 } from '../../components'
 
+import { useTranslation } from '../../i18n'
+
 const Area = () => {
   const router = useRouter()
+  const { t } = useTranslation()
 
   const { area } = router.query
 
@@ -44,12 +47,10 @@ const Area = () => {
   if (isError) {
     return (
       <>
-        <PageHead title="Fehler beim Laden" />
+        <PageHead title={t('result.errorTitle')} />
         <NoResultsWrapper>
           <Section>
-            <Title>
-              Leider gab es einen Fehler beim Abrufen der Daten des RKIs.
-            </Title>
+            <Title>{t('result.errorHeadline')}</Title>
           </Section>
         </NoResultsWrapper>
 
@@ -61,7 +62,7 @@ const Area = () => {
   if (isLoading) {
     return (
       <>
-        <PageHead title="Laden..." />
+        <PageHead title={t('result.loadingTitle')} />
         <LoadingIndicator />
 
         <Footer />

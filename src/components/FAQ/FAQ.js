@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Accordion } from '../Accordion'
-import { questionAndAnswers } from './questionAndAnswers'
+import { useTranslation } from '../../i18n'
 
 const Stack = styled.div`
   > * {
@@ -14,23 +14,22 @@ const Stack = styled.div`
 `
 
 export const FAQ = () => {
+  const { t } = useTranslation('faq')
+  const questionsAndAnswers = t('faq', { returnObjects: true })
+
   return (
     <>
-      <h2>FAQ</h2>
+      <h2>{t('title')}</h2>
       <Stack>
-        {questionAndAnswers.map((it) => (
-          <Accordion key={it.id} itemId={it.id} label={it.label}>
-            {it.answer}
+        {questionsAndAnswers.map((it, index) => (
+          <Accordion key={index} itemId={index} label={it.label}>
+            <span
+              dangerouslySetInnerHTML={{
+                __html: it.answer,
+              }}
+            />
           </Accordion>
         ))}
-
-        <Accordion
-          itemId="support"
-          label="Ich habe ein Problem. Wo kann ich mich melden?"
-        >
-          Bei Problemen, Fragen oder Anmerkungen wenden Sie sich bitte an{' '}
-          <a href="mailto:service@hotspotornot.de">service@hotspotornot.de</a>
-        </Accordion>
       </Stack>
     </>
   )
