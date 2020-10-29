@@ -5,4 +5,7 @@ module.exports = new NextI18Next({
   defaultLanguage: 'de',
   otherLanguages: ['en'],
   localePath: path.resolve('./public/static/locales'),
+  detection: {
+    caches: [],
+  },
 })
