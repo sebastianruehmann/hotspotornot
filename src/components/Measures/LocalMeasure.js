@@ -4,16 +4,17 @@ import { useLocalMeasure } from './useLocalMeasure'
 import { Section } from '../Section'
 import { Grid } from '../Grid'
 import { Headline2 } from '../Headline2'
-import { useTranslation } from '../../i18n'
 
 export const LocalMeasure = ({ area }) => {
   const localMeasure = useLocalMeasure(area)
-  const { t } = useTranslation()
 
   return (
     <Section>
-      <Headline2>{t('measures.local.headline', { area })}</Headline2>
-      <p>{t('measures.local.linkDescription', { area })}</p>
+      <Headline2>Gezielte Maßnahmen für {area}</Headline2>
+      <p>
+        Unter dem folgendem Link findest du die aktuell geltenden Regeln für{' '}
+        {area}.
+      </p>
 
       <Grid>
         <ExternalSourceLink href={localMeasure.url}>

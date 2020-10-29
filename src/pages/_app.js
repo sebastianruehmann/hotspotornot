@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 
 import { GlobalStyle } from '../components'
-import { appWithTranslation } from '../i18n'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -82,4 +81,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default MyApp

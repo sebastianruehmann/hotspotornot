@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
-import { useTranslation } from '../i18n'
 
 import {
   Section,
@@ -27,19 +26,22 @@ const Actions = styled.div`
   }
 `
 
-function Home() {
-  const { t } = useTranslation()
-
+export default function Home() {
   return (
     <>
       <Head>
-        <title>{t('index.title')}</title>
+        <title>Hotspot or not?</title>
       </Head>
 
       <main>
         <Header>
-          <h1>{t('index.headline')}</h1>
-          <Paragraph>{t('index.subHeadline')}</Paragraph>
+          <h1>
+            Bin ich in einem <Nobr>Covid-19</Nobr> H<I>o</I>tsp<I>o</I>t?
+          </h1>
+          <Paragraph>
+            Überprüfe jetzt anhand der RKI Daten, ob dein aktueller Standort ein{' '}
+            <Nobr>Covid‑19</Nobr> Hotspot ist.
+          </Paragraph>
           <Actions>
             <LocationButton />
             <AddressForm />
@@ -55,8 +57,10 @@ function Home() {
   )
 }
 
-Home.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'faq'],
-})
+const I = styled.i`
+  color: #d73d34;
+`
 
-export default Home
+const Nobr = styled.span`
+  white-space: nowrap;
+`

@@ -15,19 +15,12 @@ import {
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
-import { useTranslation } from '../i18n'
 
 const IncidenceValue = styled.h2`
   font-weight: bold;
 `
 
-const DateUpdated = ({ date }) => {
-  const { t } = useTranslation()
-  return <small>{t('result.lastUpdated', { date })}</small>
-}
-
 const Result = () => {
-  const { t } = useTranslation()
   const router = useRouter()
   const coords = router.query.coords || []
   const { isError, data } = useQuery(
@@ -52,7 +45,7 @@ const Result = () => {
   if (!data) {
     return (
       <>
-        <PageHead title={t('result.loadingTitle')} />
+        <PageHead title="Laden..." />
         <LoadingIndicator />
         <Footer />
       </>
@@ -62,11 +55,11 @@ const Result = () => {
   if (isError) {
     return (
       <>
-        <PageHead title={t('result.noDataTitle')} />
+        <PageHead title="Keine Daten" />
 
         <NoResultsWrapper>
           <Section>
-            <Title>{t('result.noDataHeadline')}</Title>
+            <Title>Das RKI hat leider keine Daten für den Standort.</Title>
           </Section>
         </NoResultsWrapper>
 
@@ -79,8 +72,8 @@ const Result = () => {
 
   const riskLevel = mapRiskLevel(cases7Per100k)
   const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium)
-    ? t('result.hotspot', { area })
-    : t('result.noHotspot', { area })
+    ? `${area} ist ein Covid-19 Hotspot.`
+    : `${area} ist kein Covid-19 Hotspot.`
 
   return (
     <>
@@ -90,13 +83,13 @@ const Result = () => {
         <Header riskLevel={riskLevel} inversed>
           <Title>{message}</Title>
           <IncidenceValue>
-            {t('result.incidenceValue', {
-              incidence: cases7Per100k.toLocaleString('de-DE', {
-                maximumFractionDigits: 2,
-              }),
+            Die 7-Tage-Inzidenz liegt aktuell bei{' '}
+            {cases7Per100k.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
             })}
+            .
           </IncidenceValue>
-          <DateUpdated date={lastUpdated.split(',')[0]} />
+          <small>Daten vom {lastUpdated}</small>
         </Header>
 
         <Measures riskLevel={riskLevel} area={area} state={state} />
@@ -106,9 +99,5 @@ const Result = () => {
     </>
   )
 }
-
-Result.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
-})
 
 export default Result

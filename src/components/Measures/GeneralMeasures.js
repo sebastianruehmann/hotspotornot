@@ -1,11 +1,60 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import { Section } from '../Section'
 import { Grid } from '../Grid'
 import { Headline2 } from '../Headline2'
-import { useTranslation } from '../../i18n'
-import { useMeasures } from './useMeasures'
+import {
+  MasksIcon,
+  GroupIcon,
+  BarIcon,
+  SocialDistancingIcon,
+} from '../../icons'
+import { RISK_LEVELS } from '../../constants'
+
+const measures = [
+  {
+    title: 'Maskenpflicht',
+    description:
+      'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen.',
+    type: RISK_LEVELS.medium,
+    Icon: MasksIcon,
+  },
+  {
+    title: 'Private Feiern',
+    description:
+      'Höchstens 25 Personen sind im öffentlichen Raum erlaubt, 15 aus maximal zwei Haushalten bei Feiern zuhause.',
+    type: RISK_LEVELS.medium,
+    Icon: GroupIcon,
+  },
+  {
+    title: 'Maskenpflicht',
+    description:
+      'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen. Individuelle Erweiterung möglich.',
+    type: RISK_LEVELS.high,
+    Icon: MasksIcon,
+  },
+  {
+    title: 'Private Feiern',
+    description:
+      'Höchstens 10 Personen sind im öffentlichen Raum erlaubt, 10 aus maximal zwei Haushalten bei Feiern zuhause.',
+    type: RISK_LEVELS.high,
+    Icon: GroupIcon,
+  },
+  {
+    title: 'Sperrstunde für Gastronomie',
+    description:
+      'Verbindliche Sperrstunde um 23 Uhr, außerdem Außenabgabeverbot von Alkohol ab 23 Uhr.',
+    type: RISK_LEVELS.high,
+    Icon: BarIcon,
+  },
+  {
+    title: 'Kontaktbeschränkungen',
+    description:
+      'Höchstens 10 Personen sind im öffentlichen Raum erlaubt. Wenn weitere Maßnahmen keine Besserung bringen, kann die Beschränkung auf 5 Personen oder zwei Haushalte reduziert werden.',
+    type: RISK_LEVELS.high,
+    Icon: SocialDistancingIcon,
+  },
+]
 
 const MeasureHeadline = styled.h4`
   font-size: 1rem;
@@ -26,8 +75,6 @@ const IconWrapper = styled.div`
 `
 
 export const GeneralMeasures = ({ riskLevel }) => {
-  const { t } = useTranslation()
-  const measures = useMeasures()
   const allMeasures = measures.filter(({ type }) => riskLevel === type)
 
   if (!allMeasures.length) {
@@ -36,8 +83,12 @@ export const GeneralMeasures = ({ riskLevel }) => {
 
   return (
     <Section style={{ paddingTop: 0 }}>
-      <Headline2>{t('measures.general.headline')}</Headline2>
-      <p>{t('measures.general.description')}</p>
+      <Headline2>Grundsätzliche Maßnahmen</Headline2>
+      <p>
+        Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke
+        jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen
+        können.
+      </p>
 
       <div>
         <Grid>
