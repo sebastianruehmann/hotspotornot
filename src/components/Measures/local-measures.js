@@ -1,7 +1,7 @@
 export const localMeasures = {
   Hamburg: {
     title: 'Offizielle Regeln auf hamburg.de',
-    url: 'https://www.hamburg.de/coronavirus/13757524/das-ist-erlaubt/',
+    url: 'https://www.hamburg.de/coronavirus/14545624/das-ist-erlaubt/',
   },
   München: {
     title: 'Offizielle Regeln auf muenchen.de',
@@ -16,14 +16,13 @@ export const localMeasures = {
     url:
       'https://www.hannover.de/Leben-in-der-Region-Hannover/Gesundheit/Gesundheitsschutz/Coronavirus-in-der-Region-Hannover/Meldungen-zum-Coronavirus/Region-Hannover-informiert-zum-aktuellen-Infektionsgeschehen',
   },
-  'Dresden': {
+  Dresden: {
     title: 'Offizielle Regeln auf dresden.de',
     url:
       'https://www.dresden.de/de/leben/gesundheit/hygiene/infektionsschutz/corona.php',
-  },  
-  'Bautzen': {
+  },
+  Bautzen: {
     title: 'Offizielle Regeln auf bautzen.de',
-    url:
-      'https://www.landkreis-bautzen.de/coronavirus.php',
-  },    
+    url: 'https://www.landkreis-bautzen.de/coronavirus.php',
+  },
 }

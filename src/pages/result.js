@@ -6,7 +6,7 @@ import { search } from '../services/Api'
 import {
   Title,
   Section,
-  Measures,
+  LockdownMeasures,
   Header,
   LoadingIndicator,
   PageHead,
@@ -92,7 +92,7 @@ const Result = () => {
           <small>Daten vom {lastUpdated}</small>
         </Header>
 
-        <Measures riskLevel={riskLevel} area={area} state={state} />
+        <LockdownMeasures area={area} state={state} />
       </main>
 
       <Footer />
