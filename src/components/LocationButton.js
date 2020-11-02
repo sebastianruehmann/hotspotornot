@@ -3,11 +3,13 @@ import { usePosition } from '../hooks/usePosition'
 import { useRouter } from 'next/router'
 import { Button } from './Button'
 import { track } from '../helpers/track'
+import { useTranslation } from '../i18n'
 
 export const LocationButton = () => {
   const { coords, isIdle, isError, request } = usePosition()
   const [error, setError] = useState(false)
   const router = useRouter()
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (!coords) {
@@ -35,14 +37,14 @@ export const LocationButton = () => {
 
   const makeButtonText = () => {
     if (isIdle) {
-      return 'Standort angefragt...'
+      return t('locationButton.pending')
     }
 
     if (error) {
-      return 'Standortabfrage nicht erfolgreich'
+      return t('locationButton.error')
     }
 
-    return 'Lass dich orten'
+    return t('locationButton.notInitiated')
   }
 
   return (

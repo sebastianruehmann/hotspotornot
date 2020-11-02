@@ -1,7 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
+import App from 'next/app'
 
 import { GlobalStyle } from '../components'
+import { appWithTranslation } from '../i18n'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -81,4 +83,8 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+MyApp.getInitialProps = async (appContext) => ({
+  ...(await App.getInitialProps(appContext)),
+})
+
+export default appWithTranslation(MyApp)
