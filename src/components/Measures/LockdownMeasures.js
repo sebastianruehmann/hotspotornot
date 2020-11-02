@@ -125,8 +125,8 @@ export const LockdownMeasures = ({ area, state }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Seit dem 02.11.20 gilt in Deutschland ein bundesweiter Lockdown und
-          damit verbunden auch einheitliche Regelungen.
+          Seit dem 02.11.20 gelten in Deutschland die folgenden einheitlichen
+          Regelungen.
         </p>
 
         <div>
