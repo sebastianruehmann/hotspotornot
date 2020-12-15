@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }) {
           async
           defer
           data-domain="hotspotornot.de"
-          src="https://plausible.io/js/plausible.js"
+          src="https://analytics.hotspotornot.de/js/plausible.js"
         ></script>
         <script
           dangerouslySetInnerHTML={{
