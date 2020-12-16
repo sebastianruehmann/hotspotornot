@@ -24,9 +24,9 @@ const measures = [
       'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
   },
   {
-    title: 'Groß- und Einzelhandel',
+    title: 'Einzelhandel',
     description:
-      'Der Groß- und Einzelhandel bleibt geöffnet. Es gilt eine Pflicht zum Tragen eines Mund-Nasen-Schutzes beim Einkaufen.',
+      'Der Einzelhandel ist bis zum 10. Januar geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post, Reinigungen und Weihnachtsbaumhändler.',
   },
   {
     title: 'Gastronomie',
@@ -49,11 +49,6 @@ const measures = [
       'Fitnessstudios und ähnliche Einrichtungen bleiben geschlossen. Erlaubt bleibt der Individualsport sowie Sport zu zweit oder mit den Angehörigen des eigenen Hausstands.',
   },
   {
-    title: 'Spielplätze',
-    description:
-      'Spielplätze haben in den allermeisten Bundesländern geöffnet.',
-  },
-  {
     title: 'Amateursport',
     description: 'Der Freizeit- und Amateursportbetrieb wird eingestellt.',
   },
@@ -70,12 +65,12 @@ const measures = [
   {
     title: 'Kitas & Schulen',
     description:
-      'Kinder sollen in dieser Zeit wann immer möglich zu Hause betreut werden. Daher werden in diesem Zeitraum die Schulen grundsätzlich geschlossen oder die Präsenzpflicht wird ausgesetzt. Es wird eine Notfallbetreuung sichergestellt und Distanzlernen angeboten. Analog wird in Kindertagesstätten verfahren. ',
+      'Kinder sollen in dieser Zeit wann immer möglich zu Hause betreut werden. Daher werden in diesem Zeitraum Schulen und Kindertagesstätte grundsätzlich geschlossen oder die Präsenzpflicht wird ausgesetzt. Es wird eine Notfallbetreuung sichergestellt und Distanzlernen angeboten.',
   },
   {
     title: 'Betriebsstätten',
     description:
-      'Arbeitgeberinnen und Arbeitgeber werden dringend gebeten zu prüfen, ob die Betriebsstätten entweder durch Betriebsferien oder großzügige Home-Office-Lösungen von dem heutigen Mittwoch bis zum 10. Januar 2021 geschlossen werden können.',
+      'Arbeitgeberinnen und Arbeitgeber werden dringend gebeten zu prüfen, ob die Betriebsstätten entweder durch Betriebsferien oder großzügige Home-Office-Lösungen bis zum 10. Januar 2021 geschlossen werden können.',
   },
 ]
 
