@@ -21,7 +21,7 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Es dürfen maximal zehn Personen mit maximal zwei Haushalten zusammenkommen. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
+      'Es dürfen maximal fünf Personen mit maximal zwei Haushalten zusammenkommen. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
   },
   {
     title: 'Groß- und Einzelhandel',
@@ -41,7 +41,7 @@ const measures = [
   {
     title: 'Dienstleistungen Körperpflege',
     description:
-      'Kosmetikstudios, Massagepraxen, Tattoo-Studios und ähnliche Betriebe bleiben geschlossen. Physio-, Ergo- und Logotherapien sowie Podologie/Fußpflege bleiben weiter möglich. Des Weiteren bleiben Friseure geöffnet.',
+      'Kosmetikstudios, Massagepraxen, Tattoo-Studios, Friseure und ähnliche Betriebe bleiben geschlossen. Physio-, Ergo- und Logotherapien sowie Podologie/Fußpflege bleiben weiter möglich.',
   },
   {
     title: 'Sport',
@@ -70,7 +70,12 @@ const measures = [
   {
     title: 'Kitas & Schulen',
     description:
-      'Kitas und Schulen bleiben wie bisher auch geöffnet. Es können allerdings pro Bundesland unterschiedliche Regelungen (z.B. beim Tragen des Mund-Nasen-Schutzes) gelten.',
+      'Kinder sollen in dieser Zeit wann immer möglich zu Hause betreut werden. Daher werden in diesem Zeitraum die Schulen grundsätzlich geschlossen oder die Präsenzpflicht wird ausgesetzt. Es wird eine Notfallbetreuung sichergestellt und Distanzlernen angeboten. Analog wird in Kindertagesstätten verfahren. ',
+  },
+  {
+    title: 'Betriebsstätten',
+    description:
+      'Arbeitgeberinnen und Arbeitgeber werden dringend gebeten zu prüfen, ob die Betriebsstätten entweder durch Betriebsferien oder großzügige Home-Office-Lösungen von dem heutigen Mittwoch bis zum 10. Januar 2021 geschlossen werden können.',
   },
 ]
 
