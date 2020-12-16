@@ -21,7 +21,7 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Es dürfen maximal fünf Personen mit maximal zwei Haushalten zusammenkommen. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
+      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
   },
   {
     title: 'Groß- und Einzelhandel',
