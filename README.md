@@ -1,4 +1,4 @@
 # Hotspot or not?
-[hotspotornot.de](hotspotornot.de)
+[hotspotornot.de](https://hotspotornot.de/)
 
 To be written...
