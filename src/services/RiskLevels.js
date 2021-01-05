@@ -11,5 +11,6 @@ export const hasHigherRiskLevel = (riskLevel, neededRiskLevel) => {
 export const mapRiskLevel = (cases7Per100k) => {
   if (cases7Per100k < 35) return RISK_LEVELS.low
   if (cases7Per100k <= 50) return RISK_LEVELS.medium
-  return RISK_LEVELS.high
+  if (cases7Per100k <= 200) return RISK_LEVELS.high
+  return RISK_LEVELS.veryHigh
 }

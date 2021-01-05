@@ -6,6 +6,7 @@ import { Grid } from '../Grid'
 import { Section } from '../Section'
 import { ExternalSourceLink } from '../ExternalSourceLink'
 import { useLocalMeasure } from './useLocalMeasure'
+import { RISK_LEVELS } from '../../constants'
 
 const MeasureHeadline = styled.h4`
   font-size: 1rem;
@@ -102,7 +103,20 @@ const useMeasures = ({ area, state }) => {
   return measures
 }
 
-export const LockdownMeasures = ({ area, state }) => {
+const VeryHighIncidenceMeasure = () => {
+  return (
+    <Wrapper>
+      <div>
+        <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
+        <p>
+          Der Bewegungsradius um den Wohnort wird auf 15 Kilometer begrenzt.
+        </p>
+      </div>
+    </Wrapper>
+  )
+}
+
+export const LockdownMeasures = ({ area, state, riskLevel }) => {
   const helpfulLinks = useMeasures({ area, state })
 
   return (
@@ -139,6 +153,9 @@ export const LockdownMeasures = ({ area, state }) => {
                 </div>
               </Wrapper>
             ))}
+            {riskLevel === RISK_LEVELS.veryHigh ? (
+              <VeryHighIncidenceMeasure />
+            ) : null}
           </Grid>
         </div>
       </Section>

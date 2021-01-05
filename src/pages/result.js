@@ -92,7 +92,7 @@ const Result = () => {
           <small>Daten vom {lastUpdated}</small>
         </Header>
 
-        <LockdownMeasures area={area} state={state} />
+        <LockdownMeasures area={area} state={state} riskLevel={riskLevel} />
       </main>
 
       <Footer />
