@@ -142,7 +142,7 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
         <Headline2>Maßnahmen</Headline2>
         <p>
           Seit dem 16.12.20 gelten in Deutschland die folgenden einheitlichen
-          Regelungen. Diese können Außnahmefällen regional verschärft werden,
+          Regelungen. Diese können in Außnahmefällen regional verschärft werden,
           deshalb informiere dich auch bei deinem Gesundheitsamt.
         </p>
 
