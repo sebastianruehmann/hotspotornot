@@ -61,7 +61,7 @@ const measures = [
   {
     title: 'Zoobesuche',
     description:
-      'Zoos, zoologische Gärten oder Tieparks sind grundsätzlich geschlossen.',
+      'Zoos, zoologische Gärten oder Tierparks sind grundsätzlich geschlossen.',
   },
   {
     title: 'Kitas & Schulen',
