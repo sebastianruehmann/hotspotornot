@@ -22,7 +22,7 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Private Zusammenkünfte sind nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt.',
+      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Ab dem 11.01.21 sind private Zusammenkünfte nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
   },
   {
     title: 'Einzelhandel',
@@ -109,7 +109,8 @@ const VeryHighIncidenceMeasure = () => {
       <div>
         <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
         <p>
-          Der Bewegungsradius um den Wohnort wird auf 15 Kilometer begrenzt.
+          Ab dem 11.01.21 wird der Bewegungsradius um den Wohnort auf 15
+          Kilometer begrenzt.
         </p>
       </div>
     </Wrapper>
@@ -139,8 +140,7 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Seit dem 06.01.21 gelten in Deutschland die folgenden einheitlichen
-          Regelungen.
+          Aktuell gelten in Deutschland die folgenden einheitlichen Regelungen.
         </p>
 
         <div>
