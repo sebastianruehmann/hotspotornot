@@ -22,12 +22,12 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
+      'Private Zusammenkünfte sind nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt.',
   },
   {
     title: 'Einzelhandel',
     description:
-      'Der Einzelhandel ist bis zum 10. Januar geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post, Reinigungen und Weihnachtsbaumhändler.',
+      'Der Einzelhandel ist bis auf Weiteres geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post, Reinigungen und Weihnachtsbaumhändler.',
   },
   {
     title: 'Gastronomie',
@@ -71,7 +71,7 @@ const measures = [
   {
     title: 'Betriebsstätten',
     description:
-      'Arbeitgeberinnen und Arbeitgeber werden dringend gebeten zu prüfen, ob die Betriebsstätten entweder durch Betriebsferien oder großzügige Home-Office-Lösungen bis zum 10. Januar 2021 geschlossen werden können.',
+      'Arbeitgeberinnen und Arbeitgeber werden dringend gebeten zu prüfen, ob die Betriebsstätten entweder durch Betriebsferien oder großzügige Home-Office-Lösungen bis zum 31. Januar 2021 geschlossen werden können.',
   },
 ]
 
@@ -139,12 +139,15 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Seit dem 02.11.20 gelten in Deutschland die folgenden einheitlichen
+          Seit dem 06.01.21 gelten in Deutschland die folgenden einheitlichen
           Regelungen.
         </p>
 
         <div>
           <Grid>
+            {riskLevel === RISK_LEVELS.veryHigh ? (
+              <VeryHighIncidenceMeasure />
+            ) : null}
             {measures.map(({ title, description }) => (
               <Wrapper key={title}>
                 <div>
@@ -153,9 +156,6 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
                 </div>
               </Wrapper>
             ))}
-            {riskLevel === RISK_LEVELS.veryHigh ? (
-              <VeryHighIncidenceMeasure />
-            ) : null}
           </Grid>
         </div>
       </Section>
