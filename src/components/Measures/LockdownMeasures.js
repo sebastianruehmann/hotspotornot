@@ -109,8 +109,8 @@ const VeryHighIncidenceMeasure = () => {
       <div>
         <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
         <p>
-          Ab dem 11. Januar gilt eine Beschränkung des Bewegungsradius auf 15km
-          um den Wohnort, sofern kein triftiger Grund vorliegt.
+          Ab dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km um
+          den Wohnort, sofern kein triftiger Grund vorliegt.
         </p>
       </div>
     </Wrapper>
