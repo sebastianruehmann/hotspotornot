@@ -109,8 +109,8 @@ const VeryHighIncidenceMeasure = () => {
       <div>
         <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
         <p>
-          Ab dem 11.01.21 wird der Bewegungsradius um den Wohnort auf 15
-          Kilometer begrenzt.
+          Ab dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km um
+          den Wohnort, sofern kein triftiger Grund vorliegt.
         </p>
       </div>
     </Wrapper>
@@ -140,7 +140,10 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Aktuell gelten in Deutschland die folgenden einheitlichen Regelungen.
+          Bis vorläufig zum 31. Januar 2021 gelten in Deutschland die folgenden
+          einheitlichen Maßnahmen. Diese können in Außnahmefällen regional
+          verschärft werden, deshalb informiere dich auch bei deinem
+          Gesundheitsamt.{' '}
         </p>
 
         <div>

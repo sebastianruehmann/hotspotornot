@@ -26,7 +26,7 @@ const backgroundStyles = ({ riskLevel }) => {
       backgroundColor = '#c33838'
       break
     case RISK_LEVELS.veryHigh:
-      backgroundColor = '#411313'
+      backgroundColor = '#800000'
       break
   }
   return css`
