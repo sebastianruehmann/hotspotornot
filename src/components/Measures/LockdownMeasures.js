@@ -22,7 +22,7 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Ab dem 11.01.21 sind private Zusammenkünfte nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
+      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Seit dem 11.01.21 sind private Zusammenkünfte nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
   },
   {
     title: 'Einzelhandel',
@@ -109,7 +109,7 @@ const VeryHighIncidenceMeasure = () => {
       <div>
         <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
         <p>
-          Ab dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km um
+          Seit dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km um
           den Wohnort, sofern kein triftiger Grund vorliegt.
         </p>
       </div>
