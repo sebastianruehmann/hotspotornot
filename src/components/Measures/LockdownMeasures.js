@@ -27,7 +27,7 @@ const measures = [
   {
     title: 'Einzelhandel',
     description:
-      'Der Einzelhandel ist bis auf Weiteres geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post, Reinigungen und Weihnachtsbaumhändler.',
+      'Der Einzelhandel ist bis auf Weiteres geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post und Reinigungen.',
   },
   {
     title: 'Gastronomie',
