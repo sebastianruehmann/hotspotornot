@@ -9,13 +9,13 @@ export const Link = styled.a.attrs({
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 13px;
   background: #0071e3;
   border-radius: 4px;
   color: white;
   width: 100%;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.3rem;
 `
 
 export const ExternalSourceLink = ({ children, href }) => {

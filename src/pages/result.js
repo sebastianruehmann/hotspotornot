@@ -13,82 +13,15 @@ import {
   PageHead,
   NoResultsWrapper,
   Footer,
+  ShareButton,
+  HomeLink,
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
 
-const IndexLink = styled.a`
-  display: inline-block;
-  padding: 16px;
-  background: white;
-  border-radius: 4px;
-  font-size: 16px;
-  text-align: center;
-  color: #1d1d1f;
-  width: 100%;
-
-  @media screen and (min-width: 450px) {
-    width: 200px;
-  }
-`
-
 const IncidenceValue = styled.h2`
   font-weight: bold;
 `
-
-const ShareButtonBums = styled.button`
-  background: #0071e3;
-  padding: 16px;
-  border-radius: 4px;
-  color: white;
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  border: 0;
-
-  @media screen and (min-width: 450px) {
-    width: 300px;
-  }
-`
-
-const ShareButton = () => {
-  const [copied, setCopied] = React.useState(false)
-  const [shared, setShared] = React.useState(false)
-
-  const onClick = async () => {
-    if (!navigator.share) {
-      await navigator.clipboard.writeText('https://hotspotornot.de')
-      setCopied(true)
-      setTimeout(() => setCopied(false), 5000)
-      return
-    }
-
-    try {
-      await navigator.share({
-        title: 'Hotspot or not?',
-        url: 'https://hotspotornot.de',
-      })
-
-      setShared(true)
-    } catch (e) {}
-
-    setTimeout(() => setShared(false), 5000)
-  }
-
-  const makeText = () => {
-    if (copied) {
-      return 'Link in die Zwischenablage kopiert!'
-    }
-
-    if (shared) {
-      return 'Danke fürs Weitersagen!'
-    }
-
-    return 'Empfehle "Hotspot or not?"'
-  }
-
-  return <ShareButtonBums onClick={onClick}>{makeText()}</ShareButtonBums>
-}
 
 const Result = () => {
   const router = useRouter()
@@ -163,7 +96,7 @@ const Result = () => {
 
           <div style={{ marginTop: '48px' }}>
             <Link href="/" passHref>
-              <IndexLink>Neue Suche</IndexLink>
+              <HomeLink>Neue Suche</HomeLink>
             </Link>
           </div>
         </Header>
