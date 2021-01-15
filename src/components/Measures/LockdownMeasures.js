@@ -22,12 +22,12 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Ab dem 11.01.21 sind private Zusammenkünfte nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
+      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Seit dem 11.01.21 sind private Zusammenkünfte nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
   },
   {
     title: 'Einzelhandel',
     description:
-      'Der Einzelhandel ist bis auf Weiteres geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post, Reinigungen und Weihnachtsbaumhändler.',
+      'Der Einzelhandel ist bis auf Weiteres geschlossen. Ausnahmen gelten für Lebensmittelgeschäfte, Drogerien, Apotheken, Optiker, Tankstellen, Autowerkstätten, Banken, die Post und Reinigungen.',
   },
   {
     title: 'Gastronomie',
@@ -109,8 +109,8 @@ const VeryHighIncidenceMeasure = () => {
       <div>
         <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
         <p>
-          Ab dem 11.01.21 wird der Bewegungsradius um den Wohnort auf 15
-          Kilometer begrenzt.
+          Seit dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km um
+          den Wohnort, sofern kein triftiger Grund vorliegt.
         </p>
       </div>
     </Wrapper>
@@ -140,7 +140,10 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Aktuell gelten in Deutschland die folgenden einheitlichen Regelungen.
+          Bis vorläufig zum 31. Januar 2021 gelten in Deutschland die folgenden
+          einheitlichen Maßnahmen. Diese können in Außnahmefällen regional
+          verschärft werden, deshalb informiere dich auch bei deinem
+          Gesundheitsamt.{' '}
         </p>
 
         <div>
