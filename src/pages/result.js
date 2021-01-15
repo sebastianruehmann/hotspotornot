@@ -36,6 +36,60 @@ const IncidenceValue = styled.h2`
   font-weight: bold;
 `
 
+const ShareButtonBums = styled.button`
+  background: #0071e3;
+  padding: 16px;
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  border: 0;
+
+  @media screen and (min-width: 450px) {
+    width: 300px;
+  }
+`
+
+const ShareButton = () => {
+  const [copied, setCopied] = React.useState(false)
+  const [shared, setShared] = React.useState(false)
+
+  const onClick = async () => {
+    if (!navigator.share) {
+      await navigator.clipboard.writeText('https://hotspotornot.de')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 5000)
+      return
+    }
+
+    try {
+      await navigator.share({
+        title: 'Hotspot or not?',
+        url: 'https://hotspotornot.de',
+      })
+
+      setShared(true)
+    } catch (e) {}
+
+    setTimeout(() => setShared(false), 5000)
+  }
+
+  const makeText = () => {
+    if (copied) {
+      return 'Link in die Zwischenablage kopiert!'
+    }
+
+    if (shared) {
+      return 'Danke fürs Weitersagen!'
+    }
+
+    return 'Empfehle "Hotspot or not?"'
+  }
+
+  return <ShareButtonBums onClick={onClick}>{makeText()}</ShareButtonBums>
+}
+
 const Result = () => {
   const router = useRouter()
   const coords = router.query.coords || []
@@ -115,6 +169,10 @@ const Result = () => {
         </Header>
 
         <LockdownMeasures area={area} state={state} riskLevel={riskLevel} />
+
+        <Section style={{ paddingTop: '0' }}>
+          <ShareButton />
+        </Section>
       </main>
 
       <Footer />
