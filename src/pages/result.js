@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
 import {
@@ -15,6 +16,21 @@ import {
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
+
+const IndexLink = styled.a`
+  display: inline-block;
+  padding: 16px;
+  background: white;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  color: #1d1d1f;
+  width: 100%;
+
+  @media screen and (min-width: 450px) {
+    width: 200px;
+  }
+`
 
 const IncidenceValue = styled.h2`
   font-weight: bold;
@@ -90,6 +106,12 @@ const Result = () => {
             .
           </IncidenceValue>
           <small>Daten vom {lastUpdated}</small>
+
+          <div style={{ marginTop: '48px' }}>
+            <Link href="/" passHref>
+              <IndexLink>Neue Suche</IndexLink>
+            </Link>
+          </div>
         </Header>
 
         <LockdownMeasures area={area} state={state} riskLevel={riskLevel} />
