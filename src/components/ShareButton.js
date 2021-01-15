@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { track } from '../helpers/track'
 
 const Button = styled.button`
   background: #0071e3;
@@ -24,6 +25,7 @@ export const ShareButton = () => {
     if (!navigator.share) {
       try {
         await navigator.clipboard.writeText('https://hotspotornot.de')
+        track('Copied share url to clipboard')
         setCopied(true)
         setTimeout(() => setCopied(false), 5000)
         return
@@ -37,9 +39,9 @@ export const ShareButton = () => {
       })
 
       setShared(true)
+      track('Opened share sheet')
+      setTimeout(() => setShared(false), 5000)
     } catch (e) {}
-
-    setTimeout(() => setShared(false), 5000)
   }
 
   const makeText = () => {
