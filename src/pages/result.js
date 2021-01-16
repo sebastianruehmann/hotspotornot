@@ -96,7 +96,7 @@ const Result = () => {
 
           <div style={{ marginTop: '48px' }}>
             <Link href="/" passHref>
-              <HomeLink>Neue Suche</HomeLink>
+              <HomeLink riskLevel={riskLevel}>Neue Suche</HomeLink>
             </Link>
           </div>
         </Header>
