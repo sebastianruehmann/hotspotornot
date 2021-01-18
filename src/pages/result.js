@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useQuery } from 'react-query'
 import { search } from '../services/Api'
 import {
@@ -12,6 +13,8 @@ import {
   PageHead,
   NoResultsWrapper,
   Footer,
+  ShareButton,
+  HomeLink,
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
@@ -90,9 +93,19 @@ const Result = () => {
             .
           </IncidenceValue>
           <small>Daten vom {lastUpdated}</small>
+
+          <div style={{ marginTop: '48px' }}>
+            <Link href="/" passHref>
+              <HomeLink riskLevel={riskLevel}>Neue Suche</HomeLink>
+            </Link>
+          </div>
         </Header>
 
         <LockdownMeasures area={area} state={state} riskLevel={riskLevel} />
+
+        <Section style={{ paddingTop: '0' }}>
+          <ShareButton />
+        </Section>
       </main>
 
       <Footer />
