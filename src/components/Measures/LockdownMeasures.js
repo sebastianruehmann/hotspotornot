@@ -83,10 +83,6 @@ const measures = [
     description:
       'Arbeitgeber*Innen werden dringend gebeten zu prüfen, ob die Betriebsstätten durch Betriebsferien geschlossen werden können.',
   },
-  {
-    title: '',
-    description: 'Aktualisiert am 21.01.2021',
-  },
 ]
 
 const useMeasures = ({ area, state }) => {
@@ -154,7 +150,7 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Bis vorläufig zum 31. Januar 2021 gelten in Deutschland die folgenden
+          Bis vorläufig zum 14. Februar 2021 gelten in Deutschland die folgenden
           einheitlichen Maßnahmen. Diese können in Außnahmefällen regional
           verschärft werden, deshalb informiere dich auch bei deinem
           Gesundheitsamt.{' '}
@@ -174,6 +170,7 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
               </Wrapper>
             ))}
           </Grid>
+          <p>Aktualisiert am 21.01.2021</p>
         </div>
       </Section>
     </>
