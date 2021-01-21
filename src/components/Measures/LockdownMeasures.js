@@ -22,7 +22,12 @@ const measures = [
   {
     title: 'Kontaktbeschränkungen',
     description:
-      'Es dürfen maximal fünf Personen aus maximal zwei Haushalten zusammenkommen. Seit dem 11.01.21 sind private Zusammenkünfte nur noch mit einer weiteren nicht im Haushalt lebenden Person erlaubt. Grundsätzlich gilt, Kontakte auf ein nötiges Minimum zu reduzieren.',
+      'Private Zusammenkünfte sind weiterhin im eigenen Haushalt und mit max. einer weiteren nicht im Haushalt lebenden Person gestattet. Die Zahl der Kontakt-Haushalte sollte konstant und klein sein.',
+  },
+  {
+    title: 'Medizinische Masken',
+    description:
+      'In Bus und Bahn sowie in Geschäften gilt die Pflicht zum Tragen medizinischer (z.B. OP- oder FFP2-) Masken.',
   },
   {
     title: 'Einzelhandel',
@@ -33,6 +38,11 @@ const measures = [
     title: 'Gastronomie',
     description:
       'Restaurants sowie Bars, Clubs, Diskotheken, Kneipen und ähnliche Einrichtungen bleiben geschlossen. Davon ausgenommen sind die Lieferung und Abholung von Speisen für den Verzehr zu Hause.',
+  },
+  {
+    title: 'Homeoffice',
+    description:
+      'Arbeitgeber*Innen müssen künftig überall, wo es möglich ist, Arbeiten im Homeoffice ermöglichen.',
   },
   {
     title: 'Kino, Theater, Opern, Konzerthäuser',
@@ -51,7 +61,7 @@ const measures = [
   },
   {
     title: 'Amateursport',
-    description: 'Der Freizeit- und Amateursportbetrieb wird eingestellt.',
+    description: 'Der Freizeit- und Amateursportbetrieb bleibt eingestellt.',
   },
   {
     title: 'Profisport',
@@ -71,7 +81,11 @@ const measures = [
   {
     title: 'Betriebsstätten',
     description:
-      'Arbeitgeberinnen und Arbeitgeber werden dringend gebeten zu prüfen, ob die Betriebsstätten entweder durch Betriebsferien oder großzügige Home-Office-Lösungen bis zum 31. Januar 2021 geschlossen werden können.',
+      'Arbeitgeber*Innen werden dringend gebeten zu prüfen, ob die Betriebsstätten durch Betriebsferien geschlossen werden können.',
+  },
+  {
+    title: '',
+    description: 'Aktualisiert am 21.01.2021',
   },
 ]
 
@@ -109,8 +123,8 @@ const VeryHighIncidenceMeasure = () => {
       <div>
         <MeasureHeadline>Bewegungseinschränkungen</MeasureHeadline>
         <p>
-          Seit dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km um
-          den Wohnort, sofern kein triftiger Grund vorliegt.
+          Seit dem 11.01.21 gilt eine Beschränkung des Bewegungsradius auf 15km
+          um den Wohnort, sofern kein triftiger Grund vorliegt.
         </p>
       </div>
     </Wrapper>

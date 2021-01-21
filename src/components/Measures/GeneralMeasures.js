@@ -89,6 +89,10 @@ export const GeneralMeasures = ({ riskLevel }) => {
         jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen
         können.
       </p>
+      <p>
+        Alle bis zum 31. Januar befristeten Maßnahmen sind vorläufig bis zum 14.
+        Februar 2021 verlängert.
+      </p>
 
       <div>
         <Grid>
