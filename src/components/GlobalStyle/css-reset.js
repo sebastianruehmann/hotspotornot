@@ -257,7 +257,7 @@ export const cssReset = css`
   input,
   select,
   textarea {
-    font-size: 100%; /* 1 */
+    font-size: 16px; /* 1 */
     margin: 0; /* 2 */
     vertical-align: baseline; /* 3 */
     *vertical-align: middle; /* 3 */
