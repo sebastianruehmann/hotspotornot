@@ -52,7 +52,7 @@ const measures = [
   {
     title: 'Dienstleistungen Körperpflege',
     description:
-      'Kosmetikstudios, Massagepraxen, Tattoo-Studios, Friseure und ähnliche Betriebe bleiben geschlossen. Physio-, Ergo- und Logotherapien sowie Podologie/Fußpflege bleiben weiter möglich.',
+      'Kosmetikstudios, Massagepraxen, Tattoo-Studios, Friseure und ähnliche Betriebe bleiben geschlossen. Friseure dürfen ab dem 1. März wieder öffnen. Physio-, Ergo- und Logotherapien sowie Podologie/Fußpflege bleiben weiter möglich.',
   },
   {
     title: 'Sport',
@@ -150,10 +150,10 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
       <Section style={{ paddingTop: 0 }}>
         <Headline2>Maßnahmen</Headline2>
         <p>
-          Bis vorläufig zum 14. Februar 2021 gelten in Deutschland die folgenden
+          Bis vorläufig zum 7. März 2021 gelten in Deutschland die folgenden
           einheitlichen Maßnahmen. Diese können in Außnahmefällen regional
           verschärft werden, deshalb informiere dich auch bei deinem
-          Gesundheitsamt.{' '}
+          Gesundheitsamt.
         </p>
 
         <div>
@@ -170,7 +170,7 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
               </Wrapper>
             ))}
           </Grid>
-          <p>Aktualisiert am 21.01.2021</p>
+          <p>Aktualisiert am 14.02.2021</p>
         </div>
       </Section>
     </>
