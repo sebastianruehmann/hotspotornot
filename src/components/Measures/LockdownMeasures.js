@@ -76,7 +76,7 @@ const measures = [
   {
     title: 'Kitas & Schulen',
     description:
-      'Kinder sollen in dieser Zeit wann immer möglich zu Hause betreut werden. Daher werden in diesem Zeitraum Schulen und Kindertagesstätte grundsätzlich geschlossen oder die Präsenzpflicht wird ausgesetzt. Es wird eine Notfallbetreuung sichergestellt und Distanzlernen angeboten.',
+      'Kinder sollen in dieser Zeit wann immer möglich zu Hause betreut werden. In Kitas ist aber eine Notfallbetreuung möglich. Die Öffnung der Schulen variiert pro Bundesland, eine gute Übersicht lässt sich <a href="https://deutsches-schulportal.de/bildungswesen/schulschliessungen-corona-werden-die-schulen-wieder-geschlossen/">hier</a> finden.',
   },
   {
     title: 'Betriebsstätten',
@@ -165,12 +165,12 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
               <Wrapper key={title}>
                 <div>
                   <MeasureHeadline>{title}</MeasureHeadline>
-                  <p>{description}</p>
+                  <p dangerouslySetInnerHTML={{ __html: description }} />
                 </div>
               </Wrapper>
             ))}
           </Grid>
-          <p>Aktualisiert am 14.02.2021</p>
+          <p>Aktualisiert am 21.02.2021</p>
         </div>
       </Section>
     </>
