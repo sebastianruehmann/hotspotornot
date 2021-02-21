@@ -170,7 +170,7 @@ export const LockdownMeasures = ({ area, state, riskLevel }) => {
               </Wrapper>
             ))}
           </Grid>
-          <p>Aktualisiert am 14.02.2021</p>
+          <p>Aktualisiert am 21.02.2021</p>
         </div>
       </Section>
     </>
