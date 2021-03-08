@@ -48,7 +48,7 @@ const Area = () => {
         <NoResultsWrapper>
           <Section>
             <Title>
-              Leider gab es einen Fehler beim Abrufen der Daten des RKIs.
+              Leider gab es einen Fehler beim Auflösen des Landkreises.
             </Title>
           </Section>
         </NoResultsWrapper>

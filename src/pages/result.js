@@ -7,7 +7,7 @@ import { search } from '../services/Api'
 import {
   Title,
   Section,
-  LockdownMeasures,
+  GeneralMeasures,
   Header,
   LoadingIndicator,
   PageHead,
@@ -101,7 +101,7 @@ const Result = () => {
           </div>
         </Header>
 
-        <LockdownMeasures area={area} state={state} riskLevel={riskLevel} />
+        <GeneralMeasures area={area} state={state} incidence={cases7Per100k} />
 
         <Section style={{ paddingTop: '0' }}>
           <ShareButton />

@@ -1,60 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section } from '../Section'
-import { Grid } from '../Grid'
-import { Headline2 } from '../Headline2'
-import {
-  MasksIcon,
-  GroupIcon,
-  BarIcon,
-  SocialDistancingIcon,
-} from '../../icons'
-import { RISK_LEVELS } from '../../constants'
 
-const measures = [
-  {
-    title: 'Maskenpflicht',
-    description:
-      'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen.',
-    type: RISK_LEVELS.medium,
-    Icon: MasksIcon,
-  },
-  {
-    title: 'Private Feiern',
-    description:
-      'Höchstens 25 Personen sind im öffentlichen Raum erlaubt, 15 aus maximal zwei Haushalten bei Feiern zuhause.',
-    type: RISK_LEVELS.medium,
-    Icon: GroupIcon,
-  },
-  {
-    title: 'Maskenpflicht',
-    description:
-      'Überall im öffentlichen Raum, wo Menschen dichter und länger zusammenkommen. Individuelle Erweiterung möglich.',
-    type: RISK_LEVELS.high,
-    Icon: MasksIcon,
-  },
-  {
-    title: 'Private Feiern',
-    description:
-      'Höchstens 10 Personen sind im öffentlichen Raum erlaubt, 10 aus maximal zwei Haushalten bei Feiern zuhause.',
-    type: RISK_LEVELS.high,
-    Icon: GroupIcon,
-  },
-  {
-    title: 'Sperrstunde für Gastronomie',
-    description:
-      'Verbindliche Sperrstunde um 23 Uhr, außerdem Außenabgabeverbot von Alkohol ab 23 Uhr.',
-    type: RISK_LEVELS.high,
-    Icon: BarIcon,
-  },
-  {
-    title: 'Kontaktbeschränkungen',
-    description:
-      'Höchstens 10 Personen sind im öffentlichen Raum erlaubt. Wenn weitere Maßnahmen keine Besserung bringen, kann die Beschränkung auf 5 Personen oder zwei Haushalte reduziert werden.',
-    type: RISK_LEVELS.high,
-    Icon: SocialDistancingIcon,
-  },
-]
+import { Headline2 } from '../Headline2'
+import { Grid } from '../Grid'
+import { Section } from '../Section'
+import { ExternalSourceLink } from '../ExternalSourceLink'
+import { useLocalMeasure } from './useLocalMeasure'
+import { useLocalMeasures } from './useMeasures'
 
 const MeasureHeadline = styled.h4`
   font-size: 1rem;
@@ -66,49 +18,78 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const IconWrapper = styled.div`
-  margin-right: 1rem;
-  & svg {
-    fill: #0071e3;
-    height: 2rem;
-  }
-`
+const useHelpfulLinks = ({ area, state }) => {
+  const measures = []
 
-export const GeneralMeasures = ({ riskLevel }) => {
-  const allMeasures = measures.filter(({ type }) => riskLevel === type)
-
-  if (!allMeasures.length) {
-    return null
+  const localMeasure = useLocalMeasure(area)
+  if (localMeasure) {
+    measures.push(localMeasure)
   }
+
+  measures.push(
+    {
+      url: `https://corona-was-darf-ich.de/de/${state.replace('-', '_')}`,
+      title: 'FAQ über lokale Regelungen',
+    },
+    {
+      url:
+        'https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-massnahmen-1734724',
+      title: 'FAQ bundesregierung.de',
+    },
+    {
+      url:
+        'https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-bundeslaender-1745198',
+      title: 'Regeln der Bundesländer',
+    }
+  )
+
+  return measures
+}
+
+export const GeneralMeasures = ({ area, state, incidence }) => {
+  const helpfulLinks = useHelpfulLinks({ area, state })
+  const measures = useLocalMeasures(incidence)
 
   return (
-    <Section style={{ paddingTop: 0 }}>
-      <Headline2>Grundsätzliche Maßnahmen</Headline2>
-      <p>
-        Die folgenden Regelungen wurden auf Bundesebene beschlossen. Bedenke
-        jedoch, dass pro Bundesland und Landkreis diese teilweise abweichen
-        können.
-      </p>
-      <p>
-        Alle bis zum 31. Januar befristeten Maßnahmen sind vorläufig bis zum 14.
-        Februar 2021 verlängert.
-      </p>
-
-      <div>
+    <>
+      <Section>
+        <Headline2>Hilfreiche Links</Headline2>
+        <p>
+          Anbei findest du nützliche Links zu vertrauenswürdigen Seiten, auf
+          denen du dich informieren kannst.
+        </p>
         <Grid>
-          {allMeasures.map(({ title, description, Icon }) => (
-            <Wrapper key={title}>
-              <IconWrapper>
-                <Icon />
-              </IconWrapper>
-              <div>
-                <MeasureHeadline>{title}</MeasureHeadline>
-                <p>{description}</p>
-              </div>
-            </Wrapper>
+          {helpfulLinks.map((it, index) => (
+            <ExternalSourceLink key={index} href={it.url}>
+              {it.title}
+            </ExternalSourceLink>
           ))}
         </Grid>
-      </div>
-    </Section>
+      </Section>
+
+      <Section style={{ paddingTop: 0 }}>
+        <Headline2>Maßnahmen</Headline2>
+        <p>
+          Bis vorläufig zum 28. März 2021 gelten in Deutschland die folgenden
+          einheitlichen Maßnahmen. Diese können in Außnahmefällen regional
+          verschärft werden, deshalb informiere dich auch bei deinem
+          Gesundheitsamt.
+        </p>
+
+        <div>
+          <Grid>
+            {measures.map(({ title, description }) => (
+              <Wrapper key={title}>
+                <div>
+                  <MeasureHeadline>{title}</MeasureHeadline>
+                  <p dangerouslySetInnerHTML={{ __html: description }} />
+                </div>
+              </Wrapper>
+            ))}
+          </Grid>
+          <p>Aktualisiert am 08.03.2021</p>
+        </div>
+      </Section>
+    </>
   )
 }
