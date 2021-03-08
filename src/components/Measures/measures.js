@@ -88,7 +88,7 @@ export const measures = [
         minIncidence: 50,
         maxIncidence: 100,
         description:
-          'Individualsport ist draußen möglich, mit maximal fünf Personen aus zwei Haushalten oder maximal 20 Kinden.',
+          'Individualsport ist draußen möglich, mit maximal fünf Personen aus zwei Haushalten oder maximal 20 Kindern.',
       },
     ],
   },
