@@ -56,7 +56,7 @@ export const measures = [
   },
   {
     title: 'Friseure',
-    description: 'Die Friseure sind regular geöffnet.',
+    description: 'Die Friseure sind regulär geöffnet.',
   },
   {
     title: 'Museen, Galerien, Zoos, botanische Gärten & Gedenkstätten',
