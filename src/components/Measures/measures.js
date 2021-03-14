@@ -14,6 +14,12 @@ export const measures = [
         minIncidence: 35,
         maxIncidence: 100,
       },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann ist das Treffen von einer Person erlaubt.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
+      },
     ],
   },
   {
@@ -23,18 +29,54 @@ export const measures = [
   },
   {
     title: 'Buchhandlungen, Blumengeschäfte & Gartenmärkte',
-    description:
-      'Geschäfte dieser Kategorie dürfen wieder öffnen. Jedoch gibt es eine Begrenzung auf einen Kunden pro zehn Quadratmeter für die ersten 800 Quadratmeter Verkaufsfläche und einen weiteren für jede weiteren 20 Quadratmeter.',
+    variants: [
+      {
+        description:
+          'Geschäfte dieser Kategorie dürfen wieder öffnen. Jedoch gibt es eine Begrenzung auf einen Kunden pro zehn Quadratmeter für die ersten 800 Quadratmeter Verkaufsfläche und einen weiteren für jede weiteren 20 Quadratmeter.',
+        minIncidence: 0,
+        maxIncidence: 100,
+      },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen Buchhandlungen, Blumengeschäfte & Gartenmärkte wieder schließen.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
+      },
+    ],
   },
   {
     title: 'Körpernahe Dienstleistungen',
-    description:
-      'Körpernahe Dienstleistungen dürfen wieder stattfinden. Wenn nicht permanent eine Maske getragen wird, muss ein tagesaktueller Schnelltest vorliegen und ein Testkonzept für das Personal existieren.',
+    variants: [
+      {
+        description:
+          'Körpernahe Dienstleistungen dürfen wieder stattfinden. Wenn nicht permanent eine Maske getragen wird, muss ein tagesaktueller Schnelltest vorliegen und ein Testkonzept für das Personal existieren.',
+        minIncidence: 0,
+        maxIncidence: 100,
+      },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen körpernahe Dienstleistungen wieder schließen.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
+      },
+    ],
   },
   {
     title: 'Fahr- und Flugschulen',
-    description:
-      'Fahr- und Flugschulen dürfen wieder öffnen. Wenn nicht permanent eine Maske getragen wird, muss ein tagesaktueller Schnelltest vorliegen und ein Testkonzept für das Personal existieren.',
+    variants: [
+      {
+        description:
+          'Fahr- und Flugschulen dürfen wieder öffnen. Wenn nicht permanent eine Maske getragen wird, muss ein tagesaktueller Schnelltest vorliegen und ein Testkonzept für das Personal existieren.',
+        minIncidence: 0,
+        maxIncidence: 100,
+      },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen Fahr- und Flugschulen wieder schließen.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
+      },
+    ],
   },
   {
     title: 'Einzelhandel',
@@ -51,6 +93,12 @@ export const measures = [
           'Der Einzelhandel darf mit bestimmten Einkaufsterminen öffnen. Jeweils ein Kunde pro 40 Quadratmeter Verkaufsfläche darf nach Anmeldung in einem bestimmten Zeitraum einkaufen.',
         minIncidence: 50,
         maxIncidence: 100,
+      },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann wird der Einzelhandel geschlossen.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
       },
     ],
   },
@@ -73,6 +121,12 @@ export const measures = [
         minIncidence: 50,
         maxIncidence: 100,
       },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen Museen, Galerien, Zoos, botanische Gärten & Gedenkstätten geschlossen.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
+      },
     ],
   },
   {
@@ -89,6 +143,12 @@ export const measures = [
         maxIncidence: 100,
         description:
           'Individualsport ist draußen möglich, mit maximal fünf Personen aus zwei Haushalten oder maximal 20 Kindern.',
+      },
+      {
+        description:
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann ist Außensport mit einer Person erlaubt.',
+        minIncidence: 100,
+        maxIncidence: Infinity,
       },
     ],
   },

@@ -71,7 +71,7 @@ export const GeneralMeasures = ({ area, state, incidence }) => {
         <Headline2>Maßnahmen</Headline2>
         <p>
           Bis vorläufig zum 28. März 2021 gelten in Deutschland die folgenden
-          einheitlichen Maßnahmen. Diese können in Außnahmefällen regional
+          einheitlichen Maßnahmen. Diese können in Ausnahmefällen regional
           verschärft werden, deshalb informiere dich auch bei deinem
           Gesundheitsamt.
         </p>
