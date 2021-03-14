@@ -16,7 +16,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100, dann ist das Treffen eines Haushaltes mit einer weiteren Person erlaubt.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann ist das Treffen eines Haushaltes mit einer weiteren Person erlaubt.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -38,7 +38,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen Buchhandlungen, Blumengeschäfte & Gartenmärkte wieder schließen.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann müssen Buchhandlungen, Blumengeschäfte & Gartenmärkte wieder schließen.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -55,7 +55,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen körpernahe Dienstleistungen wieder schließen.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann müssen körpernahe Dienstleistungen wieder schließen.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -96,7 +96,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann wird der Einzelhandel geschlossen.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann wird der Einzelhandel geschlossen.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -123,7 +123,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen Museen, Galerien, Zoos, botanische Gärten & Gedenkstätten geschlossen.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann müssen Museen, Galerien, Zoos, botanische Gärten & Gedenkstätten wieder schließen.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -146,7 +146,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100, dann ist Außensport eines Haushalts mit einer weiteren Person erlaubt.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann ist Außensport eines Haushalts mit einer weiteren Person erlaubt.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
