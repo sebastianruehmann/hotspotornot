@@ -16,7 +16,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann ist das Treffen von einer Person erlaubt.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100, dann ist das Treffen eines Haushaltes mit einer weiteren Person erlaubt.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -146,7 +146,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann ist Außensport mit einer Person erlaubt.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100, dann ist Außensport eines Haushalts mit einer weiteren Person erlaubt.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
