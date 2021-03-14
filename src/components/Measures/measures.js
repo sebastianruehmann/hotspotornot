@@ -72,7 +72,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100 dann müssen Fahr- und Flugschulen wieder schließen.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von 3 Tagen über einem Wert von 100, dann müssen Fahr- und Flugschulen wieder schließen.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
@@ -96,7 +96,7 @@ export const measures = [
       },
       {
         description:
-          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann wird der Einzelhandel geschlossen.',
+          'Bleibt der Inzidenzwert über einen Zeitraum von drei Tagen über einem Wert von 100, dann wird der Einzelhandel wieder schließen.',
         minIncidence: 100,
         maxIncidence: Infinity,
       },
