@@ -97,12 +97,12 @@ const Result = () => {
             Im Bundesland {state} haben bisher{' '}
             {data.firstDose.toLocaleString('de-DE', {
               maximumFractionDigits: 2,
-            })}{' '}
-            % mindestens die erste Impfdosis erhalten,{' '}
+            })}
+            {'\u00A0'}% mindestens die erste Impfdosis erhalten,{' '}
             {data.secondDose.toLocaleString('de-DE', {
               maximumFractionDigits: 2,
-            })}{' '}
-            % sind vollständig geimpft.
+            })}
+            {'\u00A0'}% sind vollständig geimpft.
           </h3>
 
           <small>Daten vom {lastUpdated}</small>
