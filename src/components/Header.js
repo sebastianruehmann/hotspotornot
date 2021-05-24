@@ -37,11 +37,13 @@ const backgroundStyles = ({ riskLevel }) => {
 const Wrapper = styled.div`
   color: ${(props) => (props.inversed ? 'white' : 'inherit')};
   ${backgroundStyles};
+
+  min-height: ${(props) => (props.big ? '100vh' : 'inherit')};
 `
 
-export const Header = ({ riskLevel, inversed, children }) => {
+export const Header = ({ riskLevel, inversed, children, big }) => {
   return (
-    <Wrapper inversed={inversed} riskLevel={riskLevel}>
+    <Wrapper inversed={inversed} riskLevel={riskLevel} big={big}>
       <Section>
         <Link href="/">
           <a>

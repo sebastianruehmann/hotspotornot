@@ -7,17 +7,15 @@ import { search } from '../services/Api'
 import {
   Title,
   Section,
-  GeneralMeasures,
   Header,
   LoadingIndicator,
   PageHead,
   NoResultsWrapper,
   Footer,
-  ShareButton,
-  HomeLink,
 } from '../components'
 import { RISK_LEVELS } from '../constants'
 import { hasHigherRiskLevel, mapRiskLevel } from '../services/RiskLevels'
+import { HomeLink } from '../components/HomeLink'
 
 const IncidenceValue = styled.h2`
   font-weight: bold;
@@ -71,7 +69,7 @@ const Result = () => {
     )
   }
 
-  const { area, cases7Per100k, state, lastUpdated } = data
+  const { area, cases7Per100k, lastUpdated, state } = data
 
   const riskLevel = mapRiskLevel(cases7Per100k)
   const message = hasHigherRiskLevel(riskLevel, RISK_LEVELS.medium)
@@ -83,7 +81,7 @@ const Result = () => {
       <PageHead title={message} />
 
       <main>
-        <Header riskLevel={riskLevel} inversed>
+        <Header riskLevel={riskLevel} inversed big>
           <Title>{message}</Title>
           <IncidenceValue>
             Die 7-Tage-Inzidenz liegt aktuell bei{' '}
@@ -92,6 +90,21 @@ const Result = () => {
             })}
             .
           </IncidenceValue>
+
+          <h3
+            style={{ marginTop: '16px', fontWeight: '600', fontSize: '1.6rem' }}
+          >
+            Im Bundesland {state} haben bisher{' '}
+            {data.firstDose.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
+            })}{' '}
+            % mindestens die erste Impfdosis erhalten,{' '}
+            {data.secondDose.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
+            })}{' '}
+            % sind vollständig geimpft.
+          </h3>
+
           <small>Daten vom {lastUpdated}</small>
 
           <div style={{ marginTop: '48px' }}>
@@ -100,12 +113,6 @@ const Result = () => {
             </Link>
           </div>
         </Header>
-
-        <GeneralMeasures area={area} state={state} incidence={cases7Per100k} />
-
-        <Section style={{ paddingTop: '0' }}>
-          <ShareButton />
-        </Section>
       </main>
 
       <Footer />
