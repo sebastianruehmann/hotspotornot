@@ -36,6 +36,11 @@ function MyApp({ Component, pageProps }) {
           name="msapplication-config"
           content="/favicons/browserconfig.xml"
         />
+        <script
+          data-ad-client="ca-pub-7744980260457752"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
