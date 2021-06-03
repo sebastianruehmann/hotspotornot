@@ -113,19 +113,14 @@ const Result = () => {
             </Link>
           </div>
         </Header>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <ins
-          class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-7744980260457752"
-          data-ad-slot="4769756892"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <AdSense.Google
+          client="ca-pub-7744980260457752"
+          slot="4769756892"
+          style={{ display: 'block' }}
+          format="auto"
+          responsive="true"
+          layoutKey="-gw-1+2a-9x+5c"
+        />
       </main>
 
       <Footer />
