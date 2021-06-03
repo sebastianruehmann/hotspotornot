@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useQuery } from 'react-query'
+import AdSense from 'react-adsense'
 import { search } from '../services/Api'
 import {
   Title,
