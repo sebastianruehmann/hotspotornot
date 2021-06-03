@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useQuery } from 'react-query'
-import AdSense from 'react-adsense'
+import { Adsense } from '@ctrl/react-adsense'
 import { search } from '../services/Api'
 import {
   Title,
@@ -114,14 +114,22 @@ const Result = () => {
             </Link>
           </div>
         </Header>
-        <AdSense.Google
-          client="ca-pub-7744980260457752"
-          slot="4769756892"
-          style={{ display: 'block' }}
-          format="auto"
-          responsive="true"
-          layoutKey="-gw-1+2a-9x+5c"
-        />
+        <div
+          style={{
+            margin: '0 auto',
+            padding: 40,
+            maxWidth: 800,
+            width: '100%',
+          }}
+        >
+          <Adsense
+            client="ca-pub-7744980260457752"
+            slot="4769756892"
+            style={{ display: 'block' }}
+            responsive="true"
+            layoutKey="-gw-1+2a-9x+5c"
+          />
+        </div>
       </main>
 
       <Footer />
