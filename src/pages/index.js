@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
+import AdSense from 'react-adsense'
 
 import {
   Section,
@@ -48,6 +49,14 @@ export default function Home() {
           </Actions>
         </Header>
         <Section>
+          <AdSense.Google
+            client="ca-pub-7744980260457752"
+            slot="9147985605"
+            style={{ display: 'block' }}
+            format="auto"
+            responsive="true"
+            layoutKey="-gw-1+2a-9x+5c"
+          />
           <FAQ />
         </Section>
       </main>

@@ -11,6 +11,7 @@
     "axios": "^0.20.0",
     "next": "9.5.5",
     "react": "16.14.0",
+    "react-adsense": "^0.1.0",
     "react-dom": "16.14.0",
     "react-query": "^2.23.1",
     "react-spinners": "^0.9.0",
