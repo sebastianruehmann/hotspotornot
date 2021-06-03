@@ -48,6 +48,19 @@ export default function Home() {
           </Actions>
         </Header>
         <Section>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
+          <ins
+            class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-7744980260457752"
+            data-ad-slot="9147985605"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
           <FAQ />
         </Section>
       </main>
