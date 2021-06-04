@@ -12,12 +12,6 @@ export const questionAndAnswers = [
       'Du hast die Option "Hotspot or not?" Deinen Standort freizugeben. Anhand Deines Standort wird die aktuelle 7-Tage-Inzidenz mit Covid-19 Infizierten in Deinem Landkreis abgerufen.',
   },
   {
-    id: 'privacy',
-    label: 'Welche persönliche Daten werden gespeichert?',
-    answer:
-      '"Hotspot or not?" speichert keine persönlichen Daten und nutzt keine Cookies.',
-  },
-  {
     id: 'hotspot',
     label: 'Was ist ein COVID-19 Hotspot?',
     answer:
