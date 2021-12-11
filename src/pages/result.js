@@ -103,7 +103,11 @@ const Result = () => {
             {data.secondDose.toLocaleString('de-DE', {
               maximumFractionDigits: 2,
             })}
-            {'\u00A0'}% sind vollständig geimpft.
+            {'\u00A0'}% sind vollständig geimpft.{' '}
+            {data.booster.toLocaleString('de-DE', {
+              maximumFractionDigits: 2,
+            })}
+            {'\u00A0'}% wurden bereits geboostert.
           </h3>
 
           <small>Daten vom {lastUpdated}</small>

@@ -44,7 +44,7 @@ const getIncidenceData = (lng, lat) => {
 
 const getVaccinationData = () => {
   return axios
-    .get('https://rki-vaccination-data.vercel.app/api')
+    .get('https://rki-vaccination-data.vercel.app/api/v2')
     .then((response) => response.data)
 }
 
@@ -58,12 +58,16 @@ export default function handler(req, res) {
     (values) => {
       const rkiData = values[0]
       const vaccinationData = values[1]
-      const vaccinationDataForState = vaccinationData.states[rkiData.state]
+
+      const vaccinationDataForState = vaccinationData.data.find(
+        (vaccinationData) => vaccinationData.name === rkiData.state
+      )
 
       res.status(200).json({
         ...values[0],
-        firstDose: vaccinationDataForState.quote,
-        secondDose: vaccinationDataForState['2nd_vaccination'].quote,
+        firstDose: vaccinationDataForState.vaccinatedAtLeastOnce.quote,
+        secondDose: vaccinationDataForState.fullyVaccinated.quote,
+        booster: vaccinationDataForState.boosterVaccinated.quote,
       })
     }
   )
