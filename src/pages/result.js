@@ -95,19 +95,15 @@ const Result = () => {
           <h3
             style={{ marginTop: '16px', fontWeight: '600', fontSize: '1.6rem' }}
           >
-            Im Bundesland {state} haben bisher{' '}
-            {data.firstDose.toLocaleString('de-DE', {
-              maximumFractionDigits: 2,
-            })}
-            {'\u00A0'}% mindestens die erste Impfdosis erhalten,{' '}
+            Im Bundesland {state} sind{' '}
             {data.secondDose.toLocaleString('de-DE', {
               maximumFractionDigits: 2,
             })}
-            {'\u00A0'}% sind vollständig geimpft.{' '}
+            {'\u00A0'}% vollständig geimpft und{' '}
             {data.booster.toLocaleString('de-DE', {
               maximumFractionDigits: 2,
             })}
-            {'\u00A0'}% wurden bereits geboostert.
+            {'\u00A0'}% sind geboostert.
           </h3>
 
           <small>Daten vom {lastUpdated}</small>
