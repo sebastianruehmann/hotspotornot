@@ -92,20 +92,6 @@ const Result = () => {
             .
           </IncidenceValue>
 
-          <h3
-            style={{ marginTop: '16px', fontWeight: '600', fontSize: '1.6rem' }}
-          >
-            Im Bundesland {state} sind{' '}
-            {data.secondDose.toLocaleString('de-DE', {
-              maximumFractionDigits: 2,
-            })}
-            {'\u00A0'}% vollständig geimpft und{' '}
-            {data.booster.toLocaleString('de-DE', {
-              maximumFractionDigits: 2,
-            })}
-            {'\u00A0'}% sind geboostert.
-          </h3>
-
           <small>Daten vom {lastUpdated}</small>
 
           <div style={{ marginTop: '48px' }}>
