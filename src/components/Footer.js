@@ -52,10 +52,7 @@ export const Footer = () => {
           Sebastian
         </a>
         ,{' '}
-        <a target="_blank" href="https://julianblohm.vercel.app">
-          Julian
-        </a>{' '}
-        und{' '}
+        Julian und{' '}
         <a target="_blank" href="https://jonas.re">
           Jonas
         </a>
